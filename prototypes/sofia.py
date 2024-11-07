@@ -6,10 +6,8 @@ from collections import deque
 
 # Initialize Pygame
 pygame.init()
-PLANT_GRID_SIZE = 5  # Size of the inner grid for plants
-PATH_WIDTH = 1  # Width of the path around plants
-GRID_SIZE = PLANT_GRID_SIZE + (PATH_WIDTH * 2)  # Total grid size including paths
-WIDTH, HEIGHT = 400, 400  # Make window slightly larger
+WIDTH, HEIGHT = 300, 300
+GRID_SIZE = 2
 CELL_SIZE = WIDTH // GRID_SIZE
 FPS = 2
 
@@ -22,7 +20,6 @@ GRAY = (169, 169, 169)
 YELLOW = (255, 255, 0)
 ORANGE = (255, 165, 0)
 BLACK = (0, 0, 0)
-PATH_COLOR = (240, 240, 240)
 
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Farm Simulation")
@@ -75,7 +72,7 @@ class Tractor(ap.Agent):
 
 class FarmModel(ap.Model):
     def initialize(self):
-        """Custom initialization method with paths"""
+        """Custom initialization method"""
         # Create grid
         self.grid = ap.Grid(self, [GRID_SIZE, GRID_SIZE])
         
@@ -83,9 +80,9 @@ class FarmModel(ap.Model):
         self.plants = []
         positions = []
         
-        # Create plants only in inner grid
-        for y in range(PATH_WIDTH, GRID_SIZE - PATH_WIDTH):
-            for x in range(PATH_WIDTH, GRID_SIZE - PATH_WIDTH):
+        # Create plants
+        for y in range(GRID_SIZE):
+            for x in range(GRID_SIZE):
                 plant = Plant(self)
                 plant.setup()
                 plant.position = (x, y)
@@ -96,37 +93,21 @@ class FarmModel(ap.Model):
         self.plants = ap.AgentList(self, self.plants)
         self.grid.add_agents(self.plants, positions)
         
-        # Initialize tractors only on paths
+        # Initialize tractors
         self.tractors = []
         tractor_positions = []
         
-        # Define possible path positions
-        path_positions = []
-        
-        # Add top and bottom paths
-        for x in range(GRID_SIZE):
-            for y in range(PATH_WIDTH):  # Top path
-                path_positions.append((x, y))
-            for y in range(GRID_SIZE - PATH_WIDTH, GRID_SIZE):  # Bottom path
-                path_positions.append((x, y))
-                
-        # Add left and right paths (excluding corners to avoid duplicates)
-        for y in range(PATH_WIDTH, GRID_SIZE - PATH_WIDTH):
-            for x in range(PATH_WIDTH):  # Left path
-                path_positions.append((x, y))
-            for x in range(GRID_SIZE - PATH_WIDTH, GRID_SIZE):  # Right path
-                path_positions.append((x, y))
-        
-        # Create tractors only on paths
+        # Create tractors
         for _ in range(self.p['num_tractors']):
             while True:
-                pos = path_positions[np.random.randint(len(path_positions))]
-                if pos not in tractor_positions:
+                x = np.random.randint(0, GRID_SIZE)
+                y = np.random.randint(0, GRID_SIZE)
+                if (x, y) not in tractor_positions:
                     tractor = Tractor(self)
                     tractor.setup()
-                    tractor.position = pos
+                    tractor.position = (x, y)
                     self.tractors.append(tractor)
-                    tractor_positions.append(pos)
+                    tractor_positions.append((x, y))
                     break
         
         # Convert tractors to AgentList and add to grid
@@ -149,17 +130,7 @@ class FarmModel(ap.Model):
             for dx, dy in [(0, 1), (1, 0), (0, -1), (-1, 0)]:
                 new_x, new_y = x + dx, y + dy
                 if 0 <= new_x < GRID_SIZE and 0 <= new_y < GRID_SIZE:
-                    # Check if position is either on a path or the target position
-                    is_path = (new_x < PATH_WIDTH or 
-                             new_x >= GRID_SIZE - PATH_WIDTH or 
-                             new_y < PATH_WIDTH or 
-                             new_y >= GRID_SIZE - PATH_WIDTH)
-                    is_target = (new_x, new_y) == end
-                    if is_path or is_target:
-                        # Check if position is not occupied by another tractor
-                        if not any(t.position == (new_x, new_y) 
-                                 for t in self.tractors if t.position != start):
-                            neighbors.append((new_x, new_y))
+                    neighbors.append((new_x, new_y))
             return neighbors
         
         frontier = [(h(start), start)]
@@ -239,16 +210,7 @@ def draw_grid(model):
     for y in range(GRID_SIZE + 1):
         pygame.draw.line(screen, BLACK, (0, y * CELL_SIZE), (WIDTH, y * CELL_SIZE))
     
-    # Draw path areas with light gray background
-    for x in range(GRID_SIZE):
-        for y in range(GRID_SIZE):
-            if (x < PATH_WIDTH or x >= GRID_SIZE - PATH_WIDTH or 
-                y < PATH_WIDTH or y >= GRID_SIZE - PATH_WIDTH):
-                pygame.draw.rect(screen, PATH_COLOR,
-                               (x * CELL_SIZE + 1, y * CELL_SIZE + 1,
-                                CELL_SIZE - 2, CELL_SIZE - 2))
-    
-    # Draw plants
+    # Draw plants first (so tractors appear on top)
     for plant in model.plants:
         x, y = plant.position
         if plant.harvested:
@@ -261,39 +223,46 @@ def draw_grid(model):
             green_value = int(155 + (plant.maturity * 20))
             color = (0, green_value, 0)
         
-        pygame.draw.rect(screen, color,
-                       (x * CELL_SIZE + 1, y * CELL_SIZE + 1,
+        # Fill entire cell with plant color
+        pygame.draw.rect(screen, color, 
+                       (x * CELL_SIZE + 1, y * CELL_SIZE + 1, 
                         CELL_SIZE - 2, CELL_SIZE - 2))
         
+        # Draw maturity number
         text = font.render(str(plant.maturity), True, BLACK)
-        text_rect = text.get_rect(center=(x * CELL_SIZE + CELL_SIZE//2,
+        text_rect = text.get_rect(center=(x * CELL_SIZE + CELL_SIZE//2, 
                                         y * CELL_SIZE + CELL_SIZE//2))
         screen.blit(text, text_rect)
     
-    # Draw tractors
+    # Draw tractors (smaller and centered in cells)
     for tractor in model.tractors:
         x, y = tractor.position
         color = ORANGE if tractor.task == "watering" else YELLOW
         
+        # Make tractor smaller (60% of cell size) and center it
         tractor_size = int(CELL_SIZE * 0.6)
         margin = (CELL_SIZE - tractor_size) // 2
         
+        # Draw tractor body
         pygame.draw.rect(screen, color,
-                       (x * CELL_SIZE + margin,
+                       (x * CELL_SIZE + margin, 
                         y * CELL_SIZE + margin,
                         tractor_size, tractor_size))
         
+        # Add a black border to the tractor
         pygame.draw.rect(screen, BLACK,
-                       (x * CELL_SIZE + margin,
+                       (x * CELL_SIZE + margin, 
                         y * CELL_SIZE + margin,
                         tractor_size, tractor_size), 2)
         
+        # Draw status indicators above the cell
         water_text = font.render(f"W:{tractor.water_level}", True, BLACK)
         fuel_text = font.render(f"F:{tractor.fuel_level}", True, BLACK)
         
-        water_rect = water_text.get_rect(centerx=x * CELL_SIZE + CELL_SIZE//2,
+        # Position text centered above the cell
+        water_rect = water_text.get_rect(centerx=x * CELL_SIZE + CELL_SIZE//2, 
                                        bottom=y * CELL_SIZE - 2)
-        fuel_rect = fuel_text.get_rect(centerx=x * CELL_SIZE + CELL_SIZE//2,
+        fuel_rect = fuel_text.get_rect(centerx=x * CELL_SIZE + CELL_SIZE//2, 
                                      bottom=water_rect.top - 2)
         
         screen.blit(water_text, water_rect)
@@ -303,9 +272,9 @@ def draw_grid(model):
 
 # Set up parameters
 parameters = {
-    'num_tractors': 4,
-    'water_capacity': 20,
-    'fuel_capacity': 100,
+    'num_tractors': 2,
+    'water_capacity': 2000,
+    'fuel_capacity': 2000,
     'steps': 200,
 }
 
