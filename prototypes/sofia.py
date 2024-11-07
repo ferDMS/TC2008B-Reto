@@ -231,13 +231,13 @@ class FarmModel(ap.Model):
 def draw_grid(model):
     screen.fill(WHITE)
     
-    # Draw grid lines
+    # lineas grid
     for x in range(GRID_SIZE + 1):
         pygame.draw.line(screen, BLACK, (x * CELL_SIZE, 0), (x * CELL_SIZE, HEIGHT))
     for y in range(GRID_SIZE + 1):
         pygame.draw.line(screen, BLACK, (0, y * CELL_SIZE), (WIDTH, y * CELL_SIZE))
     
-    # Draw path areas with light gray background
+    # path
     for x in range(GRID_SIZE):
         for y in range(GRID_SIZE):
             if (x < PATH_WIDTH or x >= GRID_SIZE - PATH_WIDTH or 
@@ -246,7 +246,7 @@ def draw_grid(model):
                                (x * CELL_SIZE + 1, y * CELL_SIZE + 1,
                                 CELL_SIZE - 2, CELL_SIZE - 2))
     
-    # Draw plants
+    # dibujar plantas
     for plant in model.plants:
         x, y = plant.position
         if plant.harvested:
@@ -268,7 +268,7 @@ def draw_grid(model):
                                         y * CELL_SIZE + CELL_SIZE//2))
         screen.blit(text, text_rect)
     
-    # Draw tractors
+    # dibujar tractores
     for tractor in model.tractors:
         x, y = tractor.position
         color = ORANGE if tractor.task == "watering" else YELLOW
