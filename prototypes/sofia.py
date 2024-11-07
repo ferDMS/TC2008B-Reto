@@ -4,16 +4,16 @@ import pygame
 import sys
 from collections import deque
 
-# Initialize Pygame
+#inicializaciones pygame
 pygame.init()
-PLANT_GRID_SIZE = 5  # Size of the inner grid for plants
-PATH_WIDTH = 1  # Width of the path around plants
-GRID_SIZE = PLANT_GRID_SIZE + (PATH_WIDTH * 2)  # Total grid size including paths
-WIDTH, HEIGHT = 400, 400  # Make window slightly larger
+PLANT_GRID_SIZE = 5  
+PATH_WIDTH = 1  
+GRID_SIZE = PLANT_GRID_SIZE + (PATH_WIDTH * 2) 
+WIDTH, HEIGHT = 400, 400  
 CELL_SIZE = WIDTH // GRID_SIZE
 FPS = 2
 
-# Colors
+# colores
 WHITE = (255, 255, 255)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
@@ -73,17 +73,15 @@ class Tractor(ap.Agent):
             return True
         return False
 
+
 class FarmModel(ap.Model):
     def initialize(self):
-        """Custom initialization method with paths"""
-        # Create grid
+
         self.grid = ap.Grid(self, [GRID_SIZE, GRID_SIZE])
-        
-        # Initialize plants as a list first
+    
         self.plants = []
         positions = []
-        
-        # Create plants only in inner grid
+    
         for y in range(PATH_WIDTH, GRID_SIZE - PATH_WIDTH):
             for x in range(PATH_WIDTH, GRID_SIZE - PATH_WIDTH):
                 plant = Plant(self)
@@ -92,15 +90,15 @@ class FarmModel(ap.Model):
                 self.plants.append(plant)
                 positions.append((x, y))
         
-        # Convert plants to AgentList and add to grid
+        # convertir las plantas en AgentList y agregarlas a la grid
         self.plants = ap.AgentList(self, self.plants)
         self.grid.add_agents(self.plants, positions)
         
-        # Initialize tractors only on paths
+        # inicializar tractores
         self.tractors = []
         tractor_positions = []
         
-        # Define possible path positions
+        # definir posibles caminos
         path_positions = []
         
         # Add top and bottom paths
@@ -301,7 +299,7 @@ def draw_grid(model):
     
     pygame.display.flip()
 
-# Set up parameters
+# parametros de inicio
 parameters = {
     'num_tractors': 4,
     'water_capacity': 20,
@@ -309,14 +307,14 @@ parameters = {
     'steps': 200,
 }
 
-# Create and initialize model
+# crear e inicializar el modelo
 model = FarmModel(parameters)
 if not model.initialize():
     print("Failed to initialize model")
     pygame.quit()
     sys.exit(1)
 
-# Main game loop
+# main loop del juego
 running = True
 step_count = 0
 clock = pygame.time.Clock()
