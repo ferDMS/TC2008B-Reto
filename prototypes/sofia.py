@@ -101,21 +101,20 @@ class FarmModel(ap.Model):
         # definir posibles caminos
         path_positions = []
         
-        # Add top and bottom paths
+        # logica de crear tractores
         for x in range(GRID_SIZE):
-            for y in range(PATH_WIDTH):  # Top path
+            for y in range(PATH_WIDTH):
                 path_positions.append((x, y))
-            for y in range(GRID_SIZE - PATH_WIDTH, GRID_SIZE):  # Bottom path
+            for y in range(GRID_SIZE - PATH_WIDTH, GRID_SIZE):  
                 path_positions.append((x, y))
                 
-        # Add left and right paths (excluding corners to avoid duplicates)
+        
         for y in range(PATH_WIDTH, GRID_SIZE - PATH_WIDTH):
-            for x in range(PATH_WIDTH):  # Left path
+            for x in range(PATH_WIDTH):  
                 path_positions.append((x, y))
-            for x in range(GRID_SIZE - PATH_WIDTH, GRID_SIZE):  # Right path
+            for x in range(GRID_SIZE - PATH_WIDTH, GRID_SIZE):
                 path_positions.append((x, y))
         
-        # Create tractors only on paths
         for _ in range(self.p['num_tractors']):
             while True:
                 pos = path_positions[np.random.randint(len(path_positions))]
@@ -127,7 +126,7 @@ class FarmModel(ap.Model):
                     tractor_positions.append(pos)
                     break
         
-        # Convert tractors to AgentList and add to grid
+    
         self.tractors = ap.AgentList(self, self.tractors)
         self.grid.add_agents(self.tractors, tractor_positions)
         
@@ -147,14 +146,11 @@ class FarmModel(ap.Model):
             for dx, dy in [(0, 1), (1, 0), (0, -1), (-1, 0)]:
                 new_x, new_y = x + dx, y + dy
                 if 0 <= new_x < GRID_SIZE and 0 <= new_y < GRID_SIZE:
-                    # Check if position is either on a path or the target position
                     is_path = (new_x < PATH_WIDTH or 
                              new_x >= GRID_SIZE - PATH_WIDTH or 
                              new_y < PATH_WIDTH or 
                              new_y >= GRID_SIZE - PATH_WIDTH)
                     is_target = (new_x, new_y) == end
-                    if is_path or is_target:
-                        # Check if position is not occupied by another tractor
                         if not any(t.position == (new_x, new_y) 
                                  for t in self.tractors if t.position != start):
                             neighbors.append((new_x, new_y))
@@ -202,11 +198,9 @@ class FarmModel(ap.Model):
                                abs(p.position[1] - tractor.position[1]))
 
     def step(self):
-        # Update plants
         for plant in self.plants:
             plant.grow()
         
-        # Update tractors
         for tractor in self.tractors:
             if tractor.fuel_level <= 0:
                 continue
