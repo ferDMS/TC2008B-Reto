@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from lorna import FarmModel
+from prototypes.lorna import FarmModel
 
 app = Flask(__name__)
 model = None
