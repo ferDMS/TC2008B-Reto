@@ -74,7 +74,7 @@ class Tractor(ap.Agent):
         return False
 
 class FarmModel(ap.Model):
-    def initialize(self):
+    def initialize(self, parameters):
         """Custom initialization method with paths"""
         # Create grid
         self.grid = ap.Grid(self, [GRID_SIZE, GRID_SIZE])
@@ -118,7 +118,7 @@ class FarmModel(ap.Model):
                 path_positions.append((x, y))
         
         # Create tractors only on paths
-        for _ in range(self.p['num_tractors']):
+        for _ in range(parameters['num_tractors']):
             while True:
                 pos = path_positions[np.random.randint(len(path_positions))]
                 if pos not in tractor_positions:
@@ -136,7 +136,6 @@ class FarmModel(ap.Model):
         print(f"Setup complete: {len(self.plants)} plants, {len(self.tractors)} tractors")
         return True
 
-    """ Verifica si la posición está ocupada por otro tractor. """
     def is_position_occupied(self, pos, ignore_tractor=None):
         for tractor in self.tractors:
             if tractor.position == pos and tractor != ignore_tractor:
@@ -144,218 +143,57 @@ class FarmModel(ap.Model):
         return False
 
     def find_path(self, start, end):
-        if start == end:
-            return [start]
-            
-        def h(pos):
-            return abs(pos[0] - end[0]) + abs(pos[1] - end[1])
-        
-        def get_neighbors(pos):
-            x, y = pos
-            neighbors = []
-            for dx, dy in [(0, 1), (1, 0), (0, -1), (-1, 0)]:
-                new_x, new_y = x + dx, y + dy
-                if 0 <= new_x < GRID_SIZE and 0 <= new_y < GRID_SIZE:
-                    # Check if position is either on a path or the target position
-                    is_path = (new_x < PATH_WIDTH or 
-                             new_x >= GRID_SIZE - PATH_WIDTH or 
-                             new_y < PATH_WIDTH or 
-                             new_y >= GRID_SIZE - PATH_WIDTH)
-                    is_target = (new_x, new_y) == end
-                    if is_path or is_target:
-                        # Check if position is not occupied by another tractor
-                        if not self.is_position_occupied((new_x, new_y), ignore_tractor=None):
-                            neighbors.append((new_x, new_y))
-            return neighbors
-        
-        frontier = [(h(start), start)]
-        came_from = {start: None}
-        cost_so_far = {start: 0}
-        
-        while frontier:
-            _, current = frontier.pop(0)
-            if current == end:
-                break
-                
-            for next_pos in get_neighbors(current):
-                new_cost = cost_so_far[current] + 1
-                if next_pos not in cost_so_far or new_cost < cost_so_far[next_pos]:
-                    cost_so_far[next_pos] = new_cost
-                    priority = new_cost + h(next_pos)
-                    frontier.append((priority, next_pos))
-                    frontier.sort()
-                    came_from[next_pos] = current
-        
-        if end not in came_from:
-            return None
-        
-        path = []
-        current = end
-        while current is not None:
-            path.append(current)
-            current = came_from[current]
-        return path[::-1]
+        # ... (código existente)
 
     def find_nearest_target(self, tractor):
-        if tractor.task == "watering":
-            targets = [p for p in self.plants if p.needs_water()]
-        else:
-            targets = [p for p in self.plants if p.is_ready_for_harvest()]
-        
-        if not targets:
-            return None
-            
-        return min(targets, 
-                  key=lambda p: abs(p.position[0] - tractor.position[0]) + 
-                               abs(p.position[1] - tractor.position[1]))
+        # ... (código existente)
 
-    def step(self):
-        # Update plants
+    def step(self, steps=1):
+        for _ in range(steps):
+            # Update plants
+            for plant in self.plants:
+                plant.grow()
+
+            # Update tractors
+            for tractor in self.tractors:
+                if tractor.fuel_level <= 0:
+                    continue
+
+                tractor.task = "watering" if tractor.water_level > 0 else "harvesting"
+
+                if not tractor.current_path:
+                    target = self.find_nearest_target(tractor)
+                    if target:
+                        path = self.find_path(tractor.position, target.position)
+                        if path:
+                            tractor.current_path = deque(path)
+
+                if tractor.current_path:
+                    next_pos = tractor.current_path.popleft()
+                    if self.is_position_occupied(next_pos, ignore_tractor=tractor):
+                        print(f"Tractor en {tractor.position} encuentra a otro tractor en {next_pos}. Intentando ruta alternativa.")
+                        if tractor.current_path:
+                            target = self.find_nearest_target(tractor)
+                            if target:
+                                new_path = self.find_path(tractor.position, target.position)
+                                if new_path:
+                                    tractor.current_path = deque(new_path)
+                        continue
+
+                    if tractor.move_to(next_pos):
+                        target_plant = next((p for p in self.plants if p.position == next_pos), None)
+                        if target_plant:
+                            tractor.perform_task(target_plant)
+
+    def get_plant_states(self):
+        return [{"position": plant.position, "maturity": plant.maturity, "watered": plant.watered, "harvested": plant.harvested} for plant in self.plants]
+
+    def get_tractor_states(self):
+        return [{"position": tractor.position, "task": tractor.task, "water_level": tractor.water_level, "fuel_level": tractor.fuel_level} for tractor in self.tractors]
+
+    def get_grid_state(self):
+        grid_state = [[0 for _ in range(GRID_SIZE)] for _ in range(GRID_SIZE)]
         for plant in self.plants:
-            plant.grow()
-
-        # Update tractors
-        for tractor in self.tractors:
-            if tractor.fuel_level <= 0:
-                continue
-
-            tractor.task = "watering" if tractor.water_level > 0 else "harvesting"
-
-            # Si no tiene una ruta, encuentra un objetivo
-            if not tractor.current_path:
-                target = self.find_nearest_target(tractor)
-                if target:
-                    path = self.find_path(tractor.position, target.position)
-                    if path:
-                        tractor.current_path = deque(path)
-
-            """Revisamos si la posicion esta ocupada"""
-            # Movimiento del tractor con evitación de colisiones
-            if tractor.current_path:
-                next_pos = tractor.current_path.popleft()
-                
-                # Si la posición siguiente está ocupada, intenta buscar una ruta alternativa
-                if self.is_position_occupied(next_pos, ignore_tractor=tractor):
-                    print(f"Tractor en {tractor.position} encuentra a otro tractor en {next_pos}. Intentando ruta alternativa.")
-                    # Vuelve a buscar un camino al objetivo
-                    if tractor.current_path:
-                        target = self.find_nearest_target(tractor)
-                        if target:
-                            new_path = self.find_path(tractor.position, target.position)
-                            if new_path:
-                                tractor.current_path = deque(new_path)
-                    continue  # Omite el movimiento en esta iteración para evitar la colisión
-                
-                # Mueve el tractor si no hay colisión
-                if tractor.move_to(next_pos):
-                    target_plant = next(
-                        (p for p in self.plants if p.position == next_pos), None)
-                    if target_plant:
-                        tractor.perform_task(target_plant)
-
-def draw_grid(model):
-    screen.fill(WHITE)
-    
-    # Draw grid lines
-    for x in range(GRID_SIZE + 1):
-        pygame.draw.line(screen, BLACK, (x * CELL_SIZE, 0), (x * CELL_SIZE, HEIGHT))
-    for y in range(GRID_SIZE + 1):
-        pygame.draw.line(screen, BLACK, (0, y * CELL_SIZE), (WIDTH, y * CELL_SIZE))
-    
-    # Draw path areas with light gray background
-    for x in range(GRID_SIZE):
-        for y in range(GRID_SIZE):
-            if (x < PATH_WIDTH or x >= GRID_SIZE - PATH_WIDTH or 
-                y < PATH_WIDTH or y >= GRID_SIZE - PATH_WIDTH):
-                pygame.draw.rect(screen, PATH_COLOR,
-                               (x * CELL_SIZE + 1, y * CELL_SIZE + 1,
-                                CELL_SIZE - 2, CELL_SIZE - 2))
-    
-    # Draw plants
-    for plant in model.plants:
-        x, y = plant.position
-        if plant.harvested:
-            color = GRAY
-        elif plant.watered:
-            color = BLUE
-        elif plant.maturity == 0:
-            color = RED
-        else:
-            green_value = int(155 + (plant.maturity * 20))
-            color = (0, green_value, 0)
-        
-        pygame.draw.rect(screen, color,
-                       (x * CELL_SIZE + 1, y * CELL_SIZE + 1,
-                        CELL_SIZE - 2, CELL_SIZE - 2))
-        
-        text = font.render(str(plant.maturity), True, BLACK)
-        text_rect = text.get_rect(center=(x * CELL_SIZE + CELL_SIZE//2,
-                                        y * CELL_SIZE + CELL_SIZE//2))
-        screen.blit(text, text_rect)
-    
-    # Draw tractors
-    for tractor in model.tractors:
-        x, y = tractor.position
-        color = ORANGE if tractor.task == "watering" else YELLOW
-        
-        tractor_size = int(CELL_SIZE * 0.6)
-        margin = (CELL_SIZE - tractor_size) // 2
-        
-        pygame.draw.rect(screen, color,
-                       (x * CELL_SIZE + margin,
-                        y * CELL_SIZE + margin,
-                        tractor_size, tractor_size))
-        
-        pygame.draw.rect(screen, BLACK,
-                       (x * CELL_SIZE + margin,
-                        y * CELL_SIZE + margin,
-                        tractor_size, tractor_size), 2)
-        
-        water_text = font.render(f"W:{tractor.water_level}", True, BLACK)
-        fuel_text = font.render(f"F:{tractor.fuel_level}", True, BLACK)
-        
-        water_rect = water_text.get_rect(centerx=x * CELL_SIZE + CELL_SIZE//2,
-                                       bottom=y * CELL_SIZE - 2)
-        fuel_rect = fuel_text.get_rect(centerx=x * CELL_SIZE + CELL_SIZE//2,
-                                     bottom=water_rect.top - 2)
-        
-        screen.blit(water_text, water_rect)
-        screen.blit(fuel_text, fuel_rect)
-    
-    pygame.display.flip()
-
-# Set up parameters
-parameters = {
-    'num_tractors': 3,
-    'water_capacity': 20,
-    'fuel_capacity': 100,
-    'steps': 200,
-}
-
-# Create and initialize model
-model = FarmModel(parameters)
-if not model.initialize():
-    print("Failed to initialize model")
-    pygame.quit()
-    sys.exit(1)
-
-# Main game loop
-running = True
-step_count = 0
-clock = pygame.time.Clock()
-
-while running and step_count < parameters['steps']:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-    
-    try:
-        model.step()
-        draw_grid(model)
-        step_count += 1
-        clock.tick(FPS)
-    except Exception as e:
-        print(f"Error during simulation: {e}")
-        running = False
-
-pygame.quit()
+            x, y = plant.position
+            grid_state[y][x] = plant.maturity
+        return grid_state

@@ -4,34 +4,47 @@ from lorna import FarmModel
 app = Flask(__name__)
 model = None
 
-@app.route('/initialize', methods=['POST'])
-def initialize_model():
+@app.route('/configure', methods=['POST'])
+def configure_model():
     global model
-    parameters = request.json or {
-        'num_tractors': 3,
-        'water_capacity': 20,
-        'fuel_capacity': 100,
-        'steps': 200
-    }
+    parameters = request.json
     model = FarmModel(parameters)
-    success = model.initialize()
-    return jsonify({"message": "Model initialized" if success else "Failed to initialize model"}), 200 if success else 500
+    return jsonify({"message": "Model configured successfully"}), 200
 
-@app.route('/step', methods=['POST'])
-def step_model():
+@app.route('/update', methods=['POST'])
+def update_model():
     global model
     if model is None:
-        return jsonify({"error": "Model not initialized"}), 400
-    model.step()
-    return jsonify({"message": "Step executed"}), 200
+        return jsonify({"error": "Model not configured"}), 400
+    
+    steps = request.json.get('steps', 1)
+    for _ in range(steps):
+        model.step()
+    return jsonify({"message": f"{steps} steps executed"}), 200
 
-@app.route('/state', methods=['GET'])
-def get_state():
+@app.route('/plants', methods=['GET'])
+def get_plants():
     global model
     if model is None:
-        return jsonify({"error": "Model not initialized"}), 400
-    state = model.get_state()
-    return jsonify(state), 200
+        return jsonify({"error": "Model not configured"}), 400
+    plants = model.get_plant_states()
+    return jsonify(plants), 200
+
+@app.route('/tractors', methods=['GET'])
+def get_tractors():
+    global model
+    if model is None:
+        return jsonify({"error": "Model not configured"}), 400
+    tractors = model.get_tractor_states()
+    return jsonify(tractors), 200
+
+@app.route('/grid', methods=['GET'])
+def get_grid():
+    global model
+    if model is None:
+        return jsonify({"error": "Model not configured"}), 400
+    grid = model.get_grid_state()
+    return jsonify(grid), 200
 
 if __name__ == '__main__':
     app.run(debug=True)
