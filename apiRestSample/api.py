@@ -1,50 +1,42 @@
 from flask import Flask, jsonify, request
-from prototypes.lorna import FarmModel
+from basefuncional.basemodel import FarmModel  # Cambia esta línea al archivo correcto
 
 app = Flask(__name__)
 model = None
 
-@app.route('/configure', methods=['POST'])
-def configure_model():
+@app.route('/initialize', methods=['POST'])
+def initialize_model():
     global model
-    parameters = request.json
+    parameters = {
+        'num_tractors': request.form.get('num_tractors', type=int),
+        'water_capacity': request.form.get('water_capacity', type=int),
+        'fuel_capacity': request.form.get('fuel_capacity', type=int)
+    }
     model = FarmModel(parameters)
-    return jsonify({"message": "Model configured successfully"}), 200
+    return jsonify({"message": "Model initialized successfully"}), 200
 
-@app.route('/update', methods=['POST'])
-def update_model():
+@app.route('/step', methods=['POST'])
+def step_model():
     global model
     if model is None:
-        return jsonify({"error": "Model not configured"}), 400
+        return jsonify({"error": "Model not initialized"}), 400
     
-    steps = request.json.get('steps', 1)
-    for _ in range(steps):
-        model.step()
+    steps = request.form.get('steps', 1, type=int)
+    model.step(steps)
     return jsonify({"message": f"{steps} steps executed"}), 200
 
-@app.route('/plants', methods=['GET'])
-def get_plants():
+@app.route('/state', methods=['GET'])
+def get_model_state():
     global model
     if model is None:
-        return jsonify({"error": "Model not configured"}), 400
-    plants = model.get_plant_states()
-    return jsonify(plants), 200
-
-@app.route('/tractors', methods=['GET'])
-def get_tractors():
-    global model
-    if model is None:
-        return jsonify({"error": "Model not configured"}), 400
-    tractors = model.get_tractor_states()
-    return jsonify(tractors), 200
-
-@app.route('/grid', methods=['GET'])
-def get_grid():
-    global model
-    if model is None:
-        return jsonify({"error": "Model not configured"}), 400
-    grid = model.get_grid_state()
-    return jsonify(grid), 200
+        return jsonify({"error": "Model not initialized"}), 400
+    
+    state = {
+        "plants": model.get_plant_states(),
+        "tractors": model.get_tractor_states(),
+        "grid": model.get_grid_state()
+    }
+    return jsonify(state), 200
 
 if __name__ == '__main__':
     app.run(debug=True)

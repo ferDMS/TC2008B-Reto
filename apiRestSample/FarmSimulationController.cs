@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Networking;
+using System.Collections;
 
 public class FarmSimulationController : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class FarmSimulationController : MonoBehaviour
         form.AddField("num_tractors", 5);
         form.AddField("water_capacity", 25);
         form.AddField("fuel_capacity", 120);
-        form.AddField("steps", 300);
 
         using (UnityWebRequest www = UnityWebRequest.Post(apiUrl + "/initialize", form))
         {
@@ -28,9 +28,12 @@ public class FarmSimulationController : MonoBehaviour
         }
     }
 
-    IEnumerator StepModel()
+    IEnumerator StepModel(int steps = 1)
     {
-        using (UnityWebRequest www = UnityWebRequest.Post(apiUrl + "/step", ""))
+        WWWForm form = new WWWForm();
+        form.AddField("steps", steps);
+
+        using (UnityWebRequest www = UnityWebRequest.Post(apiUrl + "/step", form))
         {
             yield return www.SendWebRequest();
 
@@ -60,5 +63,20 @@ public class FarmSimulationController : MonoBehaviour
                 Debug.Log(www.downloadHandler.text);
             }
         }
+    }
+
+    void Start()
+    {
+        StartCoroutine(InitializeModel());
+    }
+
+    public void UpdateModel(int steps)
+    {
+        StartCoroutine(StepModel(steps));
+    }
+
+    public void FetchState()
+    {
+        StartCoroutine(GetModelState());
     }
 }
