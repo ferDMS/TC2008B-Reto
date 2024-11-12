@@ -151,9 +151,9 @@ class FarmModel(ap.Model):
                              new_y < PATH_WIDTH or 
                              new_y >= GRID_SIZE - PATH_WIDTH)
                     is_target = (new_x, new_y) == end
-                        if not any(t.position == (new_x, new_y) 
-                                 for t in self.tractors if t.position != start):
-                            neighbors.append((new_x, new_y))
+                    if not any(t.position == (new_x, new_y) 
+                                for t in self.tractors if t.position != start):
+                        neighbors.append((new_x, new_y))
             return neighbors
         
         frontier = [(h(start), start)]
