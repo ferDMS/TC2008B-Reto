@@ -8,7 +8,7 @@ from collections import deque
 pygame.init()
 PLANT_GRID_SIZE = 5  
 PATH_WIDTH = 2
-GRID_SIZE = PLANT_GRID_SIZE + (PATH_WIDTH * 2) 
+GRID_SIZE = PLANT_GRID_SIZE + (PATH_WIDTH * 2)
 WIDTH, HEIGHT = 400, 400  
 CELL_SIZE = WIDTH // GRID_SIZE
 FPS = 2
