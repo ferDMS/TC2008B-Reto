@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from basefuncional.basemodel import FarmModel  # Cambia esta línea al archivo correcto
+from basemodel import FarmModel  # Cambia esta línea al archivo correcto
 
 app = Flask(__name__)
 model = None
@@ -39,4 +39,4 @@ def get_model_state():
     return jsonify(state), 200
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
