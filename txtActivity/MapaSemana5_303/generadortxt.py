@@ -87,8 +87,9 @@ def write_path(robot, path):
         for position in path:
             f.write(f"{position[0]},{position[1]}\n")
 
-def calculate_path(initial_pos, target_positions, grid, other_robot_paths):
+def calculate_path(initial_pos, target_positions, grid, reverse=False):
     path = [initial_pos]
+    target_positions = target_positions[::-1] if reverse else target_positions
     current_pos = initial_pos
     for target in target_positions:
         path_segment = a_star_search(current_pos, target, grid)
@@ -123,22 +124,6 @@ def moving_average(data, window_size):
         window_size = len(data)
     return np.convolve(data, np.ones(window_size) / window_size, mode='valid').tolist()
 
-def calculate_centered_target_path(initial_pos, target_positions, grid):
-    path = [initial_pos]
-    current_pos = initial_pos
-    for target in target_positions:
-        # Prioritize moving towards the center of target positions
-        target_center = (target[0], target[1])
-        path_segment = a_star_search(current_pos, target_center, grid)
-        path.extend(path_segment[1:])  # Exclude the start position to avoid duplicates
-        current_pos = target_center
-
-    # Limit the number of points and smooth the trajectory
-    path = simplify_path(path, max_points=100)
-    smoothed_path = smooth_path(path)
-
-    return smoothed_path
-
 # Example usage
 script_directory = get_script_dir()  # Get the directory of the script
 initial_positions = read_positions(os.path.join(script_directory, "InitialPositions.txt"))
@@ -153,8 +138,25 @@ for obs_file in os.listdir(script_directory):
 # Create grid
 grid = Grid(6, 4, obstacles, clearance=0.2)  # Define grid size (6m x 4m) and pass obstacles
 
-robot_paths = []
-for robot_id, initial_pos in enumerate(initial_positions, start=1):
-    path = calculate_centered_target_path(initial_pos, target_positions, grid)
-    write_path(robot_id, path)
-    robot_paths.append(path)  # Add calculated path to ensure other robots can avoid it
+# Calculate paths for both robots
+robot_1_path = calculate_path(initial_positions[0], target_positions, grid, reverse=False)
+robot_2_path = calculate_path(initial_positions[1], target_positions, grid, reverse=True)
+
+# Adjust Robot 2 path to maintain a safe distance from Robot 1
+adjusted_robot_2_path = []
+for i, pos in enumerate(robot_2_path):
+    if i < len(robot_1_path):
+        robot_1_pos = robot_1_path[i]
+        dx, dy = pos[0] - robot_1_pos[0], pos[1] - robot_1_pos[1]
+        distance = np.linalg.norm([dx, dy])
+        if distance < 0.02:  # If Robot 2 is too close to Robot 1, adjust position
+            adjusted_pos = (pos[0] + 0.02 * (dx / distance), pos[1] + 0.02 * (dy / distance))
+            adjusted_robot_2_path.append(adjusted_pos)
+        else:
+            adjusted_robot_2_path.append(pos)
+    else:
+        adjusted_robot_2_path.append(pos)
+
+# Write paths to files
+write_path(1, robot_1_path)
+write_path(2, adjusted_robot_2_path)
