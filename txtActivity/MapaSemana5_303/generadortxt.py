@@ -40,23 +40,29 @@ class Grid:
     def __init__(self, width, height, obstacles, clearance=0.2):
         self.width = width
         self.height = height
-        self.obstacles = set(obstacles)  # Use a set for faster look-up
-        self.clearance = clearance
+        self.obstacles = self.expand_obstacles(obstacles, clearance)
+
+    def expand_obstacles(self, obstacles, clearance):
+        expanded_obstacles = set()
+        for (ox, oy) in obstacles:
+            for dx in np.arange(-clearance, clearance + 0.05, 0.05):
+                for dy in np.arange(-clearance, clearance + 0.05, 0.05):
+                    expanded_obstacles.add((ox + dx, oy + dy))
+        return expanded_obstacles
 
     def in_bounds(self, id):
         (x, y) = id
         return -self.width / 2 <= x <= self.width / 2 and -self.height / 2 <= y <= self.height / 2
 
     def passable(self, id):
-        for (ox, oy) in self.obstacles:
-            if np.linalg.norm(np.array(id) - np.array((ox, oy))) <= self.clearance:
-                return False
         return id not in self.obstacles
 
     def neighbors(self, id):
         (x, y) = id
-        step_size = 1.0  # Increased step size for faster pathfinding in larger steps
-        results = [(x + step_size, y), (x, y - step_size), (x - step_size, y), (x, y + step_size)]
+        step_size = 0.1  # Smaller step size for better precision
+        results = [(x + step_size, y), (x, y - step_size), (x - step_size, y), (x, y + step_size),
+                   (x + step_size, y + step_size), (x - step_size, y - step_size),
+                   (x + step_size, y - step_size), (x - step_size, y + step_size)]
         results = filter(self.in_bounds, results)
         results = filter(self.passable, results)
         return list(results)  # Convert filter object to list
@@ -105,7 +111,7 @@ for obs_file in os.listdir(script_directory):
         obstacles.extend(read_positions(os.path.join(script_directory, obs_file)))
 
 # Create grid
-grid = Grid(10, 10, obstacles, clearance=0.25)  # Define grid size and pass obstacles
+grid = Grid(10, 10, obstacles, clearance=0.2)  # Define grid size and pass obstacles
 
 robot_paths = []
 for robot_id, initial_pos in enumerate(initial_positions, start=1):
