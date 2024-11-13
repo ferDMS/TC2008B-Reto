@@ -3,7 +3,7 @@ import os
 import heapq
 
 def heuristic(a, b):
-    return abs(b[0] - a[0]) + abs(b[1] - a[1])
+    return np.linalg.norm(np.array(a) - np.array(b))
 
 def a_star_search(start, goal, grid):
     frontier = []
@@ -20,7 +20,7 @@ def a_star_search(start, goal, grid):
             break
 
         for next in grid.neighbors(current):
-            new_cost = cost_so_far[current] + 1  # Assuming all edges have the same cost
+            new_cost = cost_so_far[current] + heuristic(current, next)
             if next not in cost_so_far or new_cost < cost_so_far[next]:
                 cost_so_far[next] = new_cost
                 priority = new_cost + heuristic(goal, next)
@@ -32,8 +32,8 @@ def a_star_search(start, goal, grid):
     while current != start:
         path.append(current)
         current = came_from[current]
-    path.append(start)  # optional
-    path.reverse()  # optional
+    path.append(start)
+    path.reverse()
     return path
 
 class Grid:
@@ -49,13 +49,14 @@ class Grid:
 
     def passable(self, id):
         for (ox, oy) in self.obstacles:
-            if abs(id[0] - ox) <= self.clearance and abs(id[1] - oy) <= self.clearance:
+            if np.linalg.norm(np.array(id) - np.array((ox, oy))) <= self.clearance:
                 return False
         return id not in self.obstacles
 
     def neighbors(self, id):
         (x, y) = id
-        results = [(x + 0.1, y), (x, y - 0.1), (x - 0.1, y), (x, y + 0.1)]
+        step_size = 1.0  # Increased step size for faster pathfinding in larger steps
+        results = [(x + step_size, y), (x, y - step_size), (x - step_size, y), (x, y + step_size)]
         results = filter(self.in_bounds, results)
         results = filter(self.passable, results)
         return list(results)  # Convert filter object to list
@@ -90,15 +91,6 @@ def calculate_path(initial_pos, target_positions, grid, other_robot_paths):
         path.extend(path_segment[1:])  # Exclude the start position to avoid duplicates
         current_pos = target
 
-        # Ensure robots maintain a minimum safe distance from each other
-        for other_path in other_robot_paths:
-            for pos in path_segment:
-                if any(heuristic(pos, other_pos) < grid.clearance for other_pos in other_path):
-                    print("Warning: Potential collision detected, recalculating path.")
-                    path_segment = a_star_search(current_pos, target, grid)  # Recalculate if collision detected
-                    path.extend(path_segment[1:])
-                    break
-
     return path
 
 # Example usage
@@ -113,7 +105,7 @@ for obs_file in os.listdir(script_directory):
         obstacles.extend(read_positions(os.path.join(script_directory, obs_file)))
 
 # Create grid
-grid = Grid(10, 10, obstacles, clearance=0.2)  # Define grid size and pass obstacles
+grid = Grid(10, 10, obstacles, clearance=0.25)  # Define grid size and pass obstacles
 
 robot_paths = []
 for robot_id, initial_pos in enumerate(initial_positions, start=1):
