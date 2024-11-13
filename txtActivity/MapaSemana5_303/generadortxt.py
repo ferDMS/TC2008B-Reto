@@ -1,7 +1,6 @@
 import numpy as np
 import os
 import heapq
-from scipy.interpolate import splprep, splev
 
 def heuristic(a, b):
     return np.linalg.norm(np.array(a) - np.array(b))
@@ -109,19 +108,20 @@ def simplify_path(path, max_points=100):
     indices = np.round(np.linspace(0, len(path) - 1, max_points)).astype(int)
     return [path[i] for i in indices]
 
-def smooth_path(path):
-    """Smooths the path using spline interpolation."""
+def smooth_path(path, window_size=5):
+    """Smooths the path using a moving average."""
     if len(path) < 3:
         return path
     x, y = zip(*path)
-    try:
-        tck, u = splprep([x, y], s=2.0)
-        unew = np.linspace(0, 1.0, min(len(path), 100))
-        x_smooth, y_smooth = splev(unew, tck)
-        return list(zip(x_smooth, y_smooth))
-    except ValueError as e:
-        print(f"Error in smoothing path: {e}")
-        return path
+    x_smooth = moving_average(x, window_size)
+    y_smooth = moving_average(y, window_size)
+    return list(zip(x_smooth, y_smooth))
+
+def moving_average(data, window_size):
+    """Calculates the moving average for smoothing."""
+    if len(data) < window_size:
+        window_size = len(data)
+    return np.convolve(data, np.ones(window_size) / window_size, mode='valid').tolist()
 
 def calculate_centered_target_path(initial_pos, target_positions, grid):
     path = [initial_pos]
