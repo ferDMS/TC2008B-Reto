@@ -2,8 +2,10 @@ import numpy as np
 import os
 import heapq
 
+
 def heuristic(a, b):
     return np.linalg.norm(np.array(a) - np.array(b))
+
 
 def a_star_search(start, goal, grid):
     frontier = []
@@ -20,6 +22,8 @@ def a_star_search(start, goal, grid):
             break
 
         for next in grid.neighbors(current):
+            if next in grid.obstacles:
+                continue
             new_cost = cost_so_far[current] + heuristic(current, next)
             if next not in cost_so_far or new_cost < cost_so_far[next]:
                 cost_so_far[next] = new_cost
@@ -36,6 +40,7 @@ def a_star_search(start, goal, grid):
     path.reverse()
     return path
 
+
 class Grid:
     def __init__(self, width, height, obstacles, clearance=0.2):
         self.width = width
@@ -47,7 +52,7 @@ class Grid:
         for (ox, oy) in obstacles:
             for dx in np.arange(-clearance, clearance + 0.05, 0.05):
                 for dy in np.arange(-clearance, clearance + 0.05, 0.05):
-                    expanded_obstacles.add((ox + dx, oy + dy))
+                    expanded_obstacles.add((round(ox + dx, 2), round(oy + dy, 2)))
         return expanded_obstacles
 
     def in_bounds(self, id):
@@ -65,9 +70,11 @@ class Grid:
         results = filter(self.passable, results)
         return list(results)  # Convert filter object to list
 
+
 def get_script_dir():
     """Returns the directory where the script is located."""
     return os.path.dirname(os.path.realpath(__file__))
+
 
 def read_positions(file_path):
     """Reads two-line CSV files for positions. Ensures file exists."""
@@ -79,6 +86,7 @@ def read_positions(file_path):
         y_values = list(map(float, file.readline().strip().split(',')))
     return list(zip(x_values, y_values))
 
+
 def write_path(robot, path):
     """Writes the calculated path to a file in the script directory."""
     filename = f"Robot_{robot}_Path.txt"
@@ -86,6 +94,7 @@ def write_path(robot, path):
     with open(full_path, 'w') as f:
         for position in path:
             f.write(f"{position[0]},{position[1]}\n")
+
 
 def calculate_path(initial_pos, target_positions, grid, reverse=False):
     path = [initial_pos]
@@ -102,12 +111,14 @@ def calculate_path(initial_pos, target_positions, grid, reverse=False):
 
     return smoothed_path
 
+
 def simplify_path(path, max_points=100):
     """Reduces the number of points in the path to a maximum of max_points."""
     if len(path) <= max_points:
         return path
     indices = np.round(np.linspace(0, len(path) - 1, max_points)).astype(int)
     return [path[i] for i in indices]
+
 
 def smooth_path(path, window_size=5):
     """Smooths the path using a moving average."""
@@ -118,11 +129,13 @@ def smooth_path(path, window_size=5):
     y_smooth = moving_average(y, window_size)
     return list(zip(x_smooth, y_smooth))
 
+
 def moving_average(data, window_size):
     """Calculates the moving average for smoothing."""
     if len(data) < window_size:
         window_size = len(data)
     return np.convolve(data, np.ones(window_size) / window_size, mode='valid').tolist()
+
 
 def adjust_robot_2_path(robot_1_path, robot_2_path):
     adjusted_robot_2_path = []
@@ -139,6 +152,7 @@ def adjust_robot_2_path(robot_1_path, robot_2_path):
         else:
             adjusted_robot_2_path.append(pos)
     return adjusted_robot_2_path
+
 
 # Example usage
 script_directory = get_script_dir()  # Get the directory of the script
