@@ -1,6 +1,7 @@
 import numpy as np
 import os
 import heapq
+from scipy.interpolate import splprep, splev
 
 def heuristic(a, b):
     return np.linalg.norm(np.array(a) - np.array(b))
@@ -59,7 +60,7 @@ class Grid:
 
     def neighbors(self, id):
         (x, y) = id
-        step_size = 0.1  # Smaller step size for better precision
+        step_size = 0.5  # Larger step size for smoother pathfinding
         results = [(x + step_size, y), (x, y - step_size), (x - step_size, y), (x, y + step_size),
                    (x + step_size, y + step_size), (x - step_size, y - step_size),
                    (x + step_size, y - step_size), (x - step_size, y + step_size)]
@@ -97,7 +98,32 @@ def calculate_path(initial_pos, target_positions, grid, other_robot_paths):
         path.extend(path_segment[1:])  # Exclude the start position to avoid duplicates
         current_pos = target
 
-    return path
+    # Limit the number of points and smooth the trajectory
+    path = simplify_path(path, max_points=100)
+    smoothed_path = smooth_path(path)
+
+    return smoothed_path
+
+def simplify_path(path, max_points=100):
+    """Reduces the number of points in the path to a maximum of max_points."""
+    if len(path) <= max_points:
+        return path
+    indices = np.round(np.linspace(0, len(path) - 1, max_points)).astype(int)
+    return [path[i] for i in indices]
+
+def smooth_path(path):
+    """Smooths the path using spline interpolation."""
+    if len(path) < 3:
+        return path
+    x, y = zip(*path)
+    try:
+        tck, u = splprep([x, y], s=2.0)
+        unew = np.linspace(0, 1.0, min(len(path), 100))
+        x_smooth, y_smooth = splev(unew, tck)
+        return list(zip(x_smooth, y_smooth))
+    except ValueError as e:
+        print(f"Error in smoothing path: {e}")
+        return path
 
 # Example usage
 script_directory = get_script_dir()  # Get the directory of the script
