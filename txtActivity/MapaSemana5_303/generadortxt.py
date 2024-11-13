@@ -37,21 +37,25 @@ def a_star_search(start, goal, grid):
     return path
 
 class Grid:
-    def __init__(self, width, height, obstacles):
+    def __init__(self, width, height, obstacles, clearance=0.2):
         self.width = width
         self.height = height
         self.obstacles = set(obstacles)  # Use a set for faster look-up
+        self.clearance = clearance
 
     def in_bounds(self, id):
         (x, y) = id
-        return 0 <= x < self.width and 0 <= y < self.height
+        return -self.width / 2 <= x <= self.width / 2 and -self.height / 2 <= y <= self.height / 2
 
     def passable(self, id):
+        for (ox, oy) in self.obstacles:
+            if abs(id[0] - ox) <= self.clearance and abs(id[1] - oy) <= self.clearance:
+                return False
         return id not in self.obstacles
 
     def neighbors(self, id):
         (x, y) = id
-        results = [(x+1, y), (x, y-1), (x-1, y), (x, y+1)]
+        results = [(x + 0.1, y), (x, y - 0.1), (x - 0.1, y), (x, y + 0.1)]
         results = filter(self.in_bounds, results)
         results = filter(self.passable, results)
         return list(results)  # Convert filter object to list
@@ -70,29 +74,35 @@ def read_positions(file_path):
         y_values = list(map(float, file.readline().strip().split(',')))
     return list(zip(x_values, y_values))
 
-def write_path(group, team, robot, path):
+def write_path(robot, path):
     """Writes the calculated path to a file in the script directory."""
-    filename = f"XY_{group}_{team}_{robot}.txt"
+    filename = f"Robot_{robot}_Path.txt"
     full_path = os.path.join(get_script_dir(), filename)
     with open(full_path, 'w') as f:
         for position in path:
             f.write(f"{position[0]},{position[1]}\n")
 
-def calculate_path(initial_pos, target_positions, grid):
+def calculate_path(initial_pos, target_positions, grid, other_robot_paths):
     path = [initial_pos]
     current_pos = initial_pos
     for target in target_positions:
         path_segment = a_star_search(current_pos, target, grid)
         path.extend(path_segment[1:])  # Exclude the start position to avoid duplicates
         current_pos = target
+
+        # Ensure robots maintain a minimum safe distance from each other
+        for other_path in other_robot_paths:
+            for pos in path_segment:
+                if any(heuristic(pos, other_pos) < grid.clearance for other_pos in other_path):
+                    print("Warning: Potential collision detected, recalculating path.")
+                    path_segment = a_star_search(current_pos, target, grid)  # Recalculate if collision detected
+                    path.extend(path_segment[1:])
+                    break
+
     return path
 
 # Example usage
-group = 1
-team = 1
-robots = [1, 2]  # Assuming two robots for simplicity
 script_directory = get_script_dir()  # Get the directory of the script
-
 initial_positions = read_positions(os.path.join(script_directory, "InitialPositions.txt"))
 target_positions = read_positions(os.path.join(script_directory, "TargetPositions.txt"))
 
@@ -103,8 +113,10 @@ for obs_file in os.listdir(script_directory):
         obstacles.extend(read_positions(os.path.join(script_directory, obs_file)))
 
 # Create grid
-grid = Grid(10, 10, obstacles)  # Define grid size and pass obstacles
+grid = Grid(10, 10, obstacles, clearance=0.2)  # Define grid size and pass obstacles
 
-for robot, initial_pos in zip(robots, initial_positions):
-    path = calculate_path(initial_pos, target_positions, grid)
-    write_path(group, team, robot, path)
+robot_paths = []
+for robot_id, initial_pos in enumerate(initial_positions, start=1):
+    path = calculate_path(initial_pos, target_positions, grid, robot_paths)
+    write_path(robot_id, path)
+    robot_paths.append(path)  # Add calculated path to ensure other robots can avoid it
