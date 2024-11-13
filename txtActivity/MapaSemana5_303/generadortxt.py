@@ -124,6 +124,22 @@ def moving_average(data, window_size):
         window_size = len(data)
     return np.convolve(data, np.ones(window_size) / window_size, mode='valid').tolist()
 
+def adjust_robot_2_path(robot_1_path, robot_2_path):
+    adjusted_robot_2_path = []
+    for i, pos in enumerate(robot_2_path):
+        if i < len(robot_1_path):
+            robot_1_pos = robot_1_path[i]
+            dx, dy = pos[0] - robot_1_pos[0], pos[1] - robot_1_pos[1]
+            distance = np.linalg.norm([dx, dy])
+            if distance < 0.02:  # If Robot 2 is too close to Robot 1, adjust position
+                adjusted_pos = (pos[0] + 0.02 * (dx / distance), pos[1] + 0.02 * (dy / distance))
+                adjusted_robot_2_path.append(adjusted_pos)
+            else:
+                adjusted_robot_2_path.append(pos)
+        else:
+            adjusted_robot_2_path.append(pos)
+    return adjusted_robot_2_path
+
 # Example usage
 script_directory = get_script_dir()  # Get the directory of the script
 initial_positions = read_positions(os.path.join(script_directory, "InitialPositions.txt"))
@@ -143,19 +159,7 @@ robot_1_path = calculate_path(initial_positions[0], target_positions, grid, reve
 robot_2_path = calculate_path(initial_positions[1], target_positions, grid, reverse=True)
 
 # Adjust Robot 2 path to maintain a safe distance from Robot 1
-adjusted_robot_2_path = []
-for i, pos in enumerate(robot_2_path):
-    if i < len(robot_1_path):
-        robot_1_pos = robot_1_path[i]
-        dx, dy = pos[0] - robot_1_pos[0], pos[1] - robot_1_pos[1]
-        distance = np.linalg.norm([dx, dy])
-        if distance < 0.02:  # If Robot 2 is too close to Robot 1, adjust position
-            adjusted_pos = (pos[0] + 0.02 * (dx / distance), pos[1] + 0.02 * (dy / distance))
-            adjusted_robot_2_path.append(adjusted_pos)
-        else:
-            adjusted_robot_2_path.append(pos)
-    else:
-        adjusted_robot_2_path.append(pos)
+adjusted_robot_2_path = adjust_robot_2_path(robot_1_path, robot_2_path)
 
 # Write paths to files
 write_path(1, robot_1_path)
