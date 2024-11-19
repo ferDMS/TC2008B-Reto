@@ -49,7 +49,7 @@ public class UIManager : MonoBehaviour
         plantInfoText.text = "Plants:\n";
         foreach (var plant in plants)
         {
-            plantInfoText.text += $"Pos: ({plant.Position.x}, {plant.Position.y}), Maturity: {plant.Maturity}, Watered: {plant.Watered}, Harvested: {plant.Harvested}\n";
+            plantInfoText.text += $"Pos: ({plant.Position.x}, {plant.Position.y}), Maturity: {plant.Maturity}, Watered: {plant.IsWatered}, Harvested: {plant.Harvested}\n";
         }
     }
 }

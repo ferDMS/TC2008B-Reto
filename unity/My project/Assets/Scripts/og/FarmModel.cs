@@ -7,9 +7,8 @@ public class FarmModel : MonoBehaviour
 {
     public static FarmModel Instance;
 
-    [Header("Farm Settings")]
-    public int FarmWidth = 20; 
-    public int FarmHeight = 20;
+    [Header("References")]
+    [SerializeField] private FarmMap farmMap;
 
     [Header("Agent Collections")]
     public List<Plant> Plants;
@@ -26,6 +25,7 @@ public class FarmModel : MonoBehaviour
 
     [Header("Simulation Settings")]
     public int Steps = 200;
+
     private int currentStep = 0;
     public float StepsPerSecond = 2f;
     private float stepTimer = 0f;
@@ -36,6 +36,10 @@ public class FarmModel : MonoBehaviour
             Instance = this;
         else
             Destroy(gameObject);
+
+        // Get reference to FarmMap if not set in inspector
+        if (farmMap == null)
+            farmMap = FindObjectOfType<FarmMap>();
     }
 
     void Start()
@@ -53,10 +57,9 @@ public class FarmModel : MonoBehaviour
     void InitializePlants()
     {
         Plants = new List<Plant>();
-        FarmMap farmMap = FindObjectOfType<FarmMap>();
-        for (int y = 0; y < FarmHeight; y++)
+        for (int y = 0; y < farmMap.height; y++)
         {
-            for (int x = 0; x < FarmWidth; x++)
+            for (int x = 0; x < farmMap.width; x++)
             {
                 Vector2Int pos = new Vector2Int(x, y);
                 Vector3 worldPos = farmMap.FarmToWorldPosition(x, y);
@@ -70,8 +73,7 @@ public class FarmModel : MonoBehaviour
 
     void InitializeSilo()
     {
-        FarmMap farmMap = FindObjectOfType<FarmMap>();
-        Vector2Int siloPos = new Vector2Int(FarmWidth - 1, 0); // Top-right corner
+        Vector2Int siloPos = new Vector2Int(farmMap.width - 1, 0); // Top-right corner
         Vector3 siloWorldPos = farmMap.FarmToWorldPosition(siloPos.x, siloPos.y);
         GameObject siloObj = Instantiate(SiloPrefab, siloWorldPos, Quaternion.identity);
         Silo = siloObj.GetComponent<Silo>();
@@ -81,17 +83,15 @@ public class FarmModel : MonoBehaviour
     void InitializeTractors()
     {
         Tractors = new List<Tractor>();
-        FarmMap farmMap = FindObjectOfType<FarmMap>();
         Pathfinding pathfinder = FindObjectOfType<Pathfinding>();
 
-        int numTractors = 4; // Example: 4 tractors
-        for (int i = 0; i < numTractors; i++)
+        for (int i = 0; i < farmMap.numTractors; i++)
         {
             // Select random walkable position
-            Vector2Int pos = new Vector2Int(Random.Range(0, FarmWidth), Random.Range(0, FarmHeight));
+            Vector2Int pos = new Vector2Int(Random.Range(0, farmMap.width), Random.Range(0, farmMap.height));
             while (Tractors.Any(t => t.Position == pos) || !farmMap.IsWalkable(pos.x, pos.y))
             {
-                pos = new Vector2Int(Random.Range(0, FarmWidth), Random.Range(0, FarmHeight));
+                pos = new Vector2Int(Random.Range(0, farmMap.width), Random.Range(0, farmMap.height));
             }
 
             Vector3 tractorWorldPos = farmMap.FarmToWorldPosition(pos.x, pos.y);
@@ -147,7 +147,8 @@ public class FarmModel : MonoBehaviour
     // Check if a cell is within farm boundaries
     public bool IsWithinFarm(Vector2Int cell)
     {
-        return cell.x >= 0 && cell.x < FarmWidth && cell.y >= 0 && cell.y < FarmHeight;
+        return cell.x >= 0 && cell.x < farmMap.width && 
+               cell.y >= 0 && cell.y < farmMap.height;
     }
 
     void Update()
@@ -175,7 +176,11 @@ public class FarmModel : MonoBehaviour
     {
         foreach (var plant in Plants)
         {
-            plant.Grow();
+            // Only grow if plant is watered, not harvested, and not fully mature
+            if (plant.IsWatered && !plant.Harvested && plant.Maturity < 5)
+            {
+                plant.Grow();
+            }
         }
     }
 
@@ -184,38 +189,43 @@ public class FarmModel : MonoBehaviour
         foreach (var tractor in Tractors)
         {
             if (tractor.CurrentTask != TractorTask.Idle)
-                continue; // Skip if already assigned
+                continue;
 
+            // Don't assign tasks if out of fuel
             if (tractor.FuelLevel <= 0)
             {
                 tractor.CurrentTask = TractorTask.Idle;
                 continue;
             }
 
+            // First priority: Deposit wheat if full
             if (tractor.WheatLevel >= tractor.WheatCapacity)
             {
-                tractor.AssignTask(TractorTask.Depositing, Silo.transform.position);
+                Vector3 siloWorldPos = farmMap.FarmToWorldPosition(Silo.Position.x, Silo.Position.y);
+                tractor.AssignTask(TractorTask.Depositing, siloWorldPos);
+                continue;
             }
-            else
+
+            // Second priority: Water plants that need water
+            Plant needsWaterPlant = Plants.FirstOrDefault(p => p.NeedsWater());
+            if (needsWaterPlant != null && tractor.WaterLevel > 0)
             {
-                Plant targetPlant = Plants.FirstOrDefault(p => p.NeedsWater());
-                if (targetPlant != null)
-                {
-                    tractor.AssignTask(TractorTask.Watering, targetPlant.transform.position);
-                }
-                else
-                {
-                    targetPlant = Plants.FirstOrDefault(p => p.IsReadyForHarvest());
-                    if (targetPlant != null)
-                    {
-                        tractor.AssignTask(TractorTask.Harvesting, targetPlant.transform.position);
-                    }
-                    else
-                    {
-                        tractor.CurrentTask = TractorTask.Idle;
-                    }
-                }
+                Vector3 plantWorldPos = farmMap.FarmToWorldPosition(needsWaterPlant.Position.x, needsWaterPlant.Position.y);
+                tractor.AssignTask(TractorTask.Watering, plantWorldPos);
+                continue;
             }
+
+            // Third priority: Harvest mature plants
+            Plant readyToHarvestPlant = Plants.FirstOrDefault(p => p.IsReadyForHarvest());
+            if (readyToHarvestPlant != null && tractor.WheatLevel < tractor.WheatCapacity)
+            {
+                Vector3 plantWorldPos = farmMap.FarmToWorldPosition(readyToHarvestPlant.Position.x, readyToHarvestPlant.Position.y);
+                tractor.AssignTask(TractorTask.Harvesting, plantWorldPos);
+                continue;
+            }
+
+            // If no tasks available, remain idle
+            tractor.CurrentTask = TractorTask.Idle;
         }
     }
 
@@ -227,6 +237,34 @@ public class FarmModel : MonoBehaviour
             UIManager.Instance.UpdateStep(currentStep, Steps);
             UIManager.Instance.UpdateTractorInfo(Tractors);
             UIManager.Instance.UpdatePlantInfo(Plants);
+        }
+    }
+
+    // Add this method to handle task completion when tractor reaches target
+    public void HandleTractorAtTarget(Tractor tractor, Vector2Int targetPosition)
+    {
+        if (tractor.CurrentTask == TractorTask.Depositing && targetPosition == Silo.Position)
+        {
+            tractor.DepositWheat();
+            tractor.CurrentTask = TractorTask.Idle;
+        }
+        else
+        {
+            Plant targetPlant = GetPlantAtPosition(targetPosition);
+            if (targetPlant != null)
+            {
+                if (tractor.CurrentTask == TractorTask.Watering && targetPlant.NeedsWater() && tractor.WaterLevel > 0)
+                {
+                    targetPlant.Water();
+                    tractor.UseWater();
+                }
+                else if (tractor.CurrentTask == TractorTask.Harvesting && targetPlant.IsReadyForHarvest() && tractor.WheatLevel < tractor.WheatCapacity)
+                {
+                    targetPlant.Harvest();
+                    tractor.CollectWheat();
+                }
+            }
+            tractor.CurrentTask = TractorTask.Idle;
         }
     }
 }

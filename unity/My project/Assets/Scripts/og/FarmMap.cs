@@ -4,9 +4,13 @@ using UnityEngine;
 public class FarmMap : MonoBehaviour
 {
     [Header("Map Dimensions")]
-    public int width = 20;
-    public int height = 20;
+    public int width = 10;
+    public int height = 10;
     public float cellSize = 5f;
+
+    [Header("Tractor Settings")]
+    public int numTractors = 1;
+
     public LayerMask obstacleMask;
 
     private bool[,] walkable;
@@ -59,8 +63,24 @@ public class FarmMap : MonoBehaviour
             {
                 Vector3 worldPos = FarmToWorldPosition(x, y);
                 Gizmos.color = walkable[x, y] ? Color.green : Color.red;
-                Gizmos.DrawWireCube(worldPos, Vector3.one * (cellSize - 0.1f));
+                Gizmos.DrawLine(worldPos, worldPos + Vector3.right * cellSize);
+                Gizmos.DrawLine(worldPos, worldPos + Vector3.forward * cellSize);
             }
+        }
+
+        // Draw the outer border lines
+        Gizmos.color = Color.white;
+        for (int x = 0; x <= width; x++)
+        {
+            Vector3 start = FarmToWorldPosition(x, 0);
+            Vector3 end = FarmToWorldPosition(x, height);
+            Gizmos.DrawLine(start, end);
+        }
+        for (int y = 0; y <= height; y++)
+        {
+            Vector3 start = FarmToWorldPosition(0, y);
+            Vector3 end = FarmToWorldPosition(width, y);
+            Gizmos.DrawLine(start, end);
         }
     }
 }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4220392822083374661}
   - component: {fileID: 8814547742090389275}
+  - component: {fileID: 6755917738285842309}
   m_Layer: 0
   m_Name: PlantCell
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 3498979211894821539}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -358.1, y: -81.759, z: 2.89}
+  m_LocalPosition: {x: 201, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -48,6 +49,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 434774b28a03f234d9f24579f444af8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Position: {x: 0, y: 0}
+  Watered: 0
+  Harvested: 0
+  Maturity: 0
+--- !u!65 &6755917738285842309
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3498979211894821539}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.4718475, y: 0.12840122, z: 1.8796426}
+  m_Center: {x: -0.57808685, y: -0.4357994, z: 0.88269967}
 --- !u!1001 &1370559160260284331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58,15 +84,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3883035823260746985, guid: 3de640461f794dc44a223f1cfedb8abf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 361.53467
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3883035823260746985, guid: 3de640461f794dc44a223f1cfedb8abf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 81.747284
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3883035823260746985, guid: 3de640461f794dc44a223f1cfedb8abf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.21045
+      value: 0.971
       objectReference: {fileID: 0}
     - target: {fileID: 3883035823260746985, guid: 3de640461f794dc44a223f1cfedb8abf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -100,7 +126,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant_Small
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7467783158756365361, guid: 3de640461f794dc44a223f1cfedb8abf, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -120,15 +147,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3883035823260746985, guid: 3de640461f794dc44a223f1cfedb8abf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 362.4597
+      value: -0.975
       objectReference: {fileID: 0}
     - target: {fileID: 3883035823260746985, guid: 3de640461f794dc44a223f1cfedb8abf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 81.747284
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3883035823260746985, guid: 3de640461f794dc44a223f1cfedb8abf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.1620893
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3883035823260746985, guid: 3de640461f794dc44a223f1cfedb8abf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -162,7 +189,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant_Small (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7467783158756365361, guid: 3de640461f794dc44a223f1cfedb8abf, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -182,15 +210,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3883035823260746985, guid: 3de640461f794dc44a223f1cfedb8abf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 362.42474
+      value: -0.804
       objectReference: {fileID: 0}
     - target: {fileID: 3883035823260746985, guid: 3de640461f794dc44a223f1cfedb8abf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 81.747284
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3883035823260746985, guid: 3de640461f794dc44a223f1cfedb8abf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6.215089
+      value: 0.97
       objectReference: {fileID: 0}
     - target: {fileID: 3883035823260746985, guid: 3de640461f794dc44a223f1cfedb8abf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -224,7 +252,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant_Small (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7467783158756365361, guid: 3de640461f794dc44a223f1cfedb8abf, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -244,15 +273,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3883035823260746985, guid: 3de640461f794dc44a223f1cfedb8abf, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 361.53467
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3883035823260746985, guid: 3de640461f794dc44a223f1cfedb8abf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 81.747284
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3883035823260746985, guid: 3de640461f794dc44a223f1cfedb8abf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.1620893
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3883035823260746985, guid: 3de640461f794dc44a223f1cfedb8abf, type: 3}
       propertyPath: m_LocalRotation.w
@@ -286,7 +315,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant_Small (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7467783158756365361, guid: 3de640461f794dc44a223f1cfedb8abf, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
