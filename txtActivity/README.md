@@ -65,4 +65,24 @@ Al generar los puntos trayectoria no solamente se deben de considerar las arista
 
 - **Dimensiones del robot**: Ambos robots tienen las mismas dimensiones. A pesar de que el robot no tiene dimensiones cuadradas, deberemos considerar un espacio de colisión posible que sea cuadrado (como un square collider). Las dimensiones de este collider son de $0.18\ m$ de longitud y $0.20\ m$ de altura. Considerando que el robot siempre es colocado inicialmente "viendo" en un ángulo de 90 grados (hacia el norte), las dimensiones iniciales son $(0.18\ m\ X,\ 0.20\ m\ Y)$.
 
-- **Margen de Error**: Debido a que es una prioridad muy alta es no colisionar con ningún robot ni obstáculo, para cada objeto que exista en el ambiente queremos agregar un margen de error de $0.02\ m$. Es decir, siempre se mantendrá esta distancia segura del "square collider" de cada robot a cualquier otro objeto en el ambiente, incluyendo aristas de obstáculos u otros "square collider" de otros robots.
+- **Margen de Error**: Debido a que es una prioridad muy alta es no colisionar con ningún robot ni obstáculo, para cada objeto que exista en el ambiente queremos agregar un margen de error de $0.05\ m$. Es decir, siempre se mantendrá esta distancia segura del "square collider" de cada robot a cualquier otro objeto en el ambiente, incluyendo aristas de obstáculos u otros "square collider" de otros robots.
+
+### Visualizando la simulación
+
+Con el objetivo de analizar de manera visual la generación de las trayectorias de los robots, también crearemos figuras en un espacio 2D que simulen la ejecución de los puntos iniciales, los puntos objetivo, los puntos trayectoria, los obstáculos y los robots.
+
+En primer lugar es necesario describir el escenario 2D.
+
+El espacio tiene una altura de $4.5\ m$ y longitud de $4.5\ m$. El fondo del mismo es blanco. Sobre el fondo, existen marcas, puntos negros, a lo largo del plano con el objetivo de tener una mejor perspectiva de las dimensiones del plano. Por ello, los puntos negros están colocados todos en una formación tipo "grid", a $0.5\ m$ de distancia entre cada uno. Existe un punto negro sobre el origen $(0,0)$, desde el cual se designan las posiciones de los demás puntos negros.
+
+Aparte del fondo descrito, también se deben de visualizar los robots y los puntos que existen en el plano:
+
+- Puntos iniciales: Círculos de radio $0.1\ m$, con outline negro y sin fill.
+- Puntos objetivo: Círculos de radio $0.1\ m$, sin outline y con fill azul.
+- Puntos trayectoria: Círculos de radio $0.025\ m$, con outline negro y sin fill.
+- Obstáculos: Polígono formado conectando todos los vértices del mismo, sin outline y con fill rojo.
+- Robots: Rectángulo de dimensiones $0.18\ m\times 0.20\ m$, sin outline y con fill gris claro.
+
+Una configuración ejemplo se puede observar en la siguiente imagen:
+
+![](assets/image.png)
