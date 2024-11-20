@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4220392822083374661}
-  - component: {fileID: 8814547742090389275}
-  - component: {fileID: 6755917738285842309}
+  - component: {fileID: -8579657783444144471}
+  - component: {fileID: -4129925515119403765}
   m_Layer: 0
   m_Name: PlantCell
   m_TagString: Untagged
@@ -37,7 +37,7 @@ Transform:
   - {fileID: 8488181680234333729}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8814547742090389275
+--- !u!114 &-8579657783444144471
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,14 +46,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 3498979211894821539}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 434774b28a03f234d9f24579f444af8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 836abc265cc0785459993e2d8e7f2455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Position: {x: 0, y: 0}
-  Watered: 0
-  Harvested: 0
-  Maturity: 0
---- !u!65 &6755917738285842309
+--- !u!65 &-4129925515119403765
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,8 +68,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.4718475, y: 0.12840122, z: 1.8796426}
-  m_Center: {x: -0.57808685, y: -0.4357994, z: 0.88269967}
+  m_Size: {x: 1.6993408, y: 0.21072984, z: 1.6225877}
+  m_Center: {x: -0.3496704, y: 0.043901946, z: 0.31129396}
 --- !u!1001 &1370559160260284331
 PrefabInstance:
   m_ObjectHideFlags: 0

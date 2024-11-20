@@ -6,36 +6,22 @@ import sys
 from collections import deque
 import json  # Import json module for handling JSON operations
 
+app = Flask(__name__)
 
 # Initialize pygame
-pygame.init()
+#pygame.init()
 PLANT_GRID_SIZE = 5  
 PATH_WIDTH = 2
 GRID_SIZE = PLANT_GRID_SIZE + (PATH_WIDTH * 2)
-WIDTH, HEIGHT = 400, 400  
+WIDTH, HEIGHT = 600, 600  
 CELL_SIZE = WIDTH // GRID_SIZE
 FPS = 2
 
 
+parameters = {}
 
 
-
-
-# Colors
-WHITE = (255, 255, 255)
-GREEN = (0, 255, 0)
-BLUE = (0, 0, 255)
-RED = (255, 0, 0)
-GRAY = (169, 169, 169)
-YELLOW = (255, 255, 0)
-ORANGE = (255, 165, 0)
-BLACK = (0, 0, 0)
-PATH_COLOR = (240, 240, 240)
-
-screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Farm Simulation")
-font = pygame.font.SysFont(None, 20)
-
+# agentes
 class Plant(ap.Agent):
     def setup(self):
         self.maturity = 0
@@ -257,148 +243,99 @@ class FarmModel(ap.Model):
                             if target_plant:
                                 tractor.perform_task(target_plant)
 
-def draw_grid(model):
-    screen.fill(WHITE)
-    
-    # Draw grid lines
-    for x in range(GRID_SIZE + 1):
-        pygame.draw.line(screen, BLACK, (x * CELL_SIZE, 0), (x * CELL_SIZE, HEIGHT))
-    for y in range(GRID_SIZE + 1):
-        pygame.draw.line(screen, BLACK, (0, y * CELL_SIZE), (WIDTH, y * CELL_SIZE))
-    
-    # Draw paths
-    for x in range(GRID_SIZE):
-        for y in range(GRID_SIZE):
-            if (x < PATH_WIDTH or x >= GRID_SIZE - PATH_WIDTH or 
-                y < PATH_WIDTH or y >= GRID_SIZE - PATH_WIDTH):
-                pygame.draw.rect(screen, PATH_COLOR,
-                               (x * CELL_SIZE + 1, y * CELL_SIZE + 1,
-                                CELL_SIZE - 2, CELL_SIZE - 2))
-    
-    # Draw plants
-    for plant in model.plants:
-        x, y = plant.position
-        if plant.harvested:
-            color = GRAY
-        elif any(tractor.position == plant.position and tractor.task == "watering" for tractor in model.tractors):
-            color = BLUE
-        elif plant.maturity == 0:
-            color = RED
-        else:
-            green_value = int(155 + (plant.maturity * 20))
-            color = (0, green_value, 0)
-        
-        pygame.draw.rect(screen, color,
-                       (x * CELL_SIZE + 1, y * CELL_SIZE + 1,
-                        CELL_SIZE - 2, CELL_SIZE - 2))
-        
-        text = font.render(str(plant.maturity), True, BLACK)
-        text_rect = text.get_rect(center=(x * CELL_SIZE + CELL_SIZE//2,
-                                        y * CELL_SIZE + CELL_SIZE//2))
-        screen.blit(text, text_rect)
-    
-    # Draw tractors
-    for tractor in model.tractors:
-        x, y = tractor.position
-        color = ORANGE if tractor.task == "watering" else YELLOW
-        
-        tractor_size = int(CELL_SIZE * 0.6)
-        margin = (CELL_SIZE - tractor_size) // 2
-        
-        pygame.draw.rect(screen, color,
-                       (x * CELL_SIZE + margin,
-                        y * CELL_SIZE + margin,
-                        tractor_size, tractor_size))
-        
-        pygame.draw.rect(screen, BLACK,
-                       (x * CELL_SIZE + margin,
-                        y * CELL_SIZE + margin,
-                        tractor_size, tractor_size), 2)
-        
-        water_text = font.render(f"W:{tractor.water_level}", True, BLACK)
-        fuel_text = font.render(f"F:{tractor.fuel_level}", True, BLACK)
-        wheat_text = font.render(f"WH:{tractor.wheat_level}", True, BLACK)
-        
-        water_rect = water_text.get_rect(centerx=x * CELL_SIZE + CELL_SIZE//2,
-                                       bottom=y * CELL_SIZE - 2)
-        fuel_rect = fuel_text.get_rect(centerx=x * CELL_SIZE + CELL_SIZE//2,
-                                     bottom=water_rect.top - 2)
-        wheat_rect = wheat_text.get_rect(centerx=x * CELL_SIZE + CELL_SIZE//2,
-                                         bottom=fuel_rect.top - 2)
-        
-        screen.blit(water_text, water_rect)
-        screen.blit(fuel_text, fuel_rect)
-        screen.blit(wheat_text, wheat_rect)
-    
-    # Draw silo
-    x, y = model.silo.position
-    pygame.draw.rect(screen, GRAY,
-                   (x * CELL_SIZE + 1, y * CELL_SIZE + 1,
-                    CELL_SIZE - 2, CELL_SIZE - 2))
-    text = font.render("Silo", True, BLACK)
-    text_rect = text.get_rect(center=(x * CELL_SIZE + CELL_SIZE//2,
-                                    y * CELL_SIZE + CELL_SIZE//2))
-    screen.blit(text, text_rect)
-    
-    pygame.display.flip()
 
-# Initial parameters
-parameters = {
-    'num_tractors': 4,
-    'water_capacity': 20,
-    'fuel_capacity': 100,
-    'wheat_capacity': PLANT_GRID_SIZE,
-    'steps': 200,
-}
 
-# Create and initialize the model
-model = FarmModel(parameters)
-if not model.initialize():
-    print("Failed to initialize model")
-    pygame.quit()
-    sys.exit(1)
-
-# Initialize a list to store tractor statuses over time
-tractor_status_over_time = []
-
-# Main simulation loop
-running = True
-step_count = 0
-clock = pygame.time.Clock()
-
-while running and step_count < parameters['steps']:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
-    
+@app.route('/initialize', methods=['POST']) 
+def initialize_values():
     try:
-        model.step()
-        draw_grid(model)
-        
-        # Collect status of tractors
-        current_step = {"step": step_count}
-        for idx, tractor in enumerate(model.tractors):
-            tractor_id = f"tractor_{idx}"
-            current_step[tractor_id] = list(tractor.position)  # [x, y]
-            current_step[f"{tractor_id}_task"] = tractor.task
-            current_step[f"{tractor_id}_water_level"] = tractor.water_level
-            current_step[f"{tractor_id}_fuel_level"] = tractor.fuel_level
-            # If you want to include wheat_level, uncomment the next line
-            # current_step[f"{tractor_id}_wheat_level"] = tractor.wheat_level
-        tractor_status_over_time.append(current_step)
-        
-        step_count += 1
-        clock.tick(FPS)
+        data = request.get_json()
+        if data is None:
+            return jsonify({"error": "Invalid JSON data"}), 400
+    
+        print("Recieved data: ", data)
+        required_keys = ['plant_grid_size', 'path_width', 'num_tractors', 'water_capacity', 'fuel_capacity', 'steps']
+        missing_keys = [key for key in required_keys if key not in data]
+        if missing_keys:
+            return jsonify({"error": f"Missing required keys: {', '.join(missing_keys)}"}), 400
+    
+        global PLANT_GRID_SIZE, PATH_WIDTH
+        PLANT_GRID_SIZE = data['plant_grid_size']
+        PATH_WIDTH = data['path_width']
+
+        global parameters
+        parameters = {
+            'num_tractors': data['num_tractors'],
+        'water_capacity': data['water_capacity'],
+        'fuel_capacity': data['fuel_capacity'],
+        'wheat_capacity': PLANT_GRID_SIZE,
+            'steps': data['steps']
+        }
+
+        GRID_SIZE = PLANT_GRID_SIZE + (PATH_WIDTH * 2)
+        CELL_SIZE = WIDTH // GRID_SIZE
+
+        result = initialize_simulation()
+        return jsonify(result)
     except Exception as e:
-        print(f"Error during simulation: {e}")
-        running = False
+        return jsonify({"error": str(e)}), 500
 
-pygame.quit()
 
-# After the simulation loop, save the statuses to a JSON file
-try:
-    with open('tractor_statuses.json', 'w') as f:
-        json.dump(tractor_status_over_time, f, indent=4)
-    print("Tractor statuses saved to tractor_statuses.json")
-except Exception as e:
-    print(f"Failed to save tractor statuses: {e}")
+@app.route('/test', methods=['GET'])
+def test():
+    return jsonify({"message": "Hello, World!"})
+
+
+
+def initialize_simulation():
+    # Create and initialize the model
+    model = FarmModel(parameters)
+    if not model.initialize():
+        print("Failed to initialize model")
+        # pygame.quit()
+        sys.exit(1)
+
+    # Initialize a list to store tractor statuses over time
+    tractor_status_over_time = []
+
+    # Main simulation loop
+    running = True
+    step_count = 0
+    # clock = pygame.time.Clock()
+
+    while running and step_count < parameters['steps']:
+        try:
+            model.step()
+            # Collect status of tractors
+            current_step = {"step": step_count}
+            for idx, tractor in enumerate(model.tractors):
+                tractor_id = f"tractor_{idx}"
+                current_step[tractor_id] = list(tractor.position)  # [x, y]
+                current_step[f"{tractor_id}_task"] = tractor.task
+                current_step[f"{tractor_id}_water_level"] = tractor.water_level
+                current_step[f"{tractor_id}_fuel_level"] = tractor.fuel_level
+                # If you want to include wheat_level, uncomment the next line
+                # current_step[f"{tractor_id}_wheat_level"] = tractor.wheat_level
+            tractor_status_over_time.append(current_step)
+            
+            step_count += 1
+            # clock.tick(FPS)
+        except Exception as e:
+            print(f"Error during simulation: {e}")
+            running = False
+
+    #pygame.quit()
+
+    # After the simulation loop, save the statuses to a JSON file
+    try:
+        with open('tractor_statuses.json', 'w') as f:
+            json.dump(tractor_status_over_time, f, indent=4)
+        print("Tractor statuses saved to tractor_statuses.json")
+    except Exception as e:
+        print(f"Failed to save tractor statuses: {e}")
+    
+    return tractor_status_over_time
+
+
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000, debug=True)

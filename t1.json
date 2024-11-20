@@ -1,0 +1,2296 @@
+[
+    {
+        "step": 0,
+        "tractor_0": [
+            7,
+            6
+        ],
+        "tractor_0_task": "watering",
+        "tractor_0_water_level": 20,
+        "tractor_0_fuel_level": 99,
+        "tractor_1": [
+            0,
+            7
+        ],
+        "tractor_1_task": "watering",
+        "tractor_1_water_level": 20,
+        "tractor_1_fuel_level": 99,
+        "tractor_2": [
+            4,
+            7
+        ],
+        "tractor_2_task": "watering",
+        "tractor_2_water_level": 20,
+        "tractor_2_fuel_level": 99,
+        "tractor_3": [
+            6,
+            1
+        ],
+        "tractor_3_task": "watering",
+        "tractor_3_water_level": 20,
+        "tractor_3_fuel_level": 99
+    },
+    {
+        "step": 1,
+        "tractor_0": [
+            6,
+            6
+        ],
+        "tractor_0_task": "watering",
+        "tractor_0_water_level": 19,
+        "tractor_0_fuel_level": 98,
+        "tractor_1": [
+            0,
+            6
+        ],
+        "tractor_1_task": "watering",
+        "tractor_1_water_level": 20,
+        "tractor_1_fuel_level": 98,
+        "tractor_2": [
+            4,
+            6
+        ],
+        "tractor_2_task": "watering",
+        "tractor_2_water_level": 19,
+        "tractor_2_fuel_level": 98,
+        "tractor_3": [
+            6,
+            2
+        ],
+        "tractor_3_task": "watering",
+        "tractor_3_water_level": 19,
+        "tractor_3_fuel_level": 98
+    },
+    {
+        "step": 2,
+        "tractor_0": [
+            6,
+            6
+        ],
+        "tractor_0_task": "watering",
+        "tractor_0_water_level": 19,
+        "tractor_0_fuel_level": 97,
+        "tractor_1": [
+            1,
+            6
+        ],
+        "tractor_1_task": "watering",
+        "tractor_1_water_level": 20,
+        "tractor_1_fuel_level": 97,
+        "tractor_2": [
+            4,
+            6
+        ],
+        "tractor_2_task": "watering",
+        "tractor_2_water_level": 19,
+        "tractor_2_fuel_level": 97,
+        "tractor_3": [
+            6,
+            2
+        ],
+        "tractor_3_task": "watering",
+        "tractor_3_water_level": 19,
+        "tractor_3_fuel_level": 97
+    },
+    {
+        "step": 3,
+        "tractor_0": [
+            6,
+            5
+        ],
+        "tractor_0_task": "watering",
+        "tractor_0_water_level": 18,
+        "tractor_0_fuel_level": 96,
+        "tractor_1": [
+            2,
+            6
+        ],
+        "tractor_1_task": "watering",
+        "tractor_1_water_level": 19,
+        "tractor_1_fuel_level": 96,
+        "tractor_2": [
+            4,
+            5
+        ],
+        "tractor_2_task": "watering",
+        "tractor_2_water_level": 18,
+        "tractor_2_fuel_level": 96,
+        "tractor_3": [
+            5,
+            2
+        ],
+        "tractor_3_task": "watering",
+        "tractor_3_water_level": 18,
+        "tractor_3_fuel_level": 96
+    },
+    {
+        "step": 4,
+        "tractor_0": [
+            6,
+            5
+        ],
+        "tractor_0_task": "watering",
+        "tractor_0_water_level": 18,
+        "tractor_0_fuel_level": 95,
+        "tractor_1": [
+            2,
+            6
+        ],
+        "tractor_1_task": "watering",
+        "tractor_1_water_level": 19,
+        "tractor_1_fuel_level": 95,
+        "tractor_2": [
+            4,
+            5
+        ],
+        "tractor_2_task": "watering",
+        "tractor_2_water_level": 18,
+        "tractor_2_fuel_level": 95,
+        "tractor_3": [
+            5,
+            2
+        ],
+        "tractor_3_task": "watering",
+        "tractor_3_water_level": 18,
+        "tractor_3_fuel_level": 95
+    },
+    {
+        "step": 5,
+        "tractor_0": [
+            6,
+            4
+        ],
+        "tractor_0_task": "watering",
+        "tractor_0_water_level": 17,
+        "tractor_0_fuel_level": 94,
+        "tractor_1": [
+            2,
+            5
+        ],
+        "tractor_1_task": "watering",
+        "tractor_1_water_level": 18,
+        "tractor_1_fuel_level": 94,
+        "tractor_2": [
+            4,
+            4
+        ],
+        "tractor_2_task": "watering",
+        "tractor_2_water_level": 17,
+        "tractor_2_fuel_level": 94,
+        "tractor_3": [
+            4,
+            2
+        ],
+        "tractor_3_task": "watering",
+        "tractor_3_water_level": 17,
+        "tractor_3_fuel_level": 94
+    },
+    {
+        "step": 6,
+        "tractor_0": [
+            6,
+            4
+        ],
+        "tractor_0_task": "watering",
+        "tractor_0_water_level": 17,
+        "tractor_0_fuel_level": 93,
+        "tractor_1": [
+            2,
+            5
+        ],
+        "tractor_1_task": "watering",
+        "tractor_1_water_level": 18,
+        "tractor_1_fuel_level": 93,
+        "tractor_2": [
+            4,
+            4
+        ],
+        "tractor_2_task": "watering",
+        "tractor_2_water_level": 17,
+        "tractor_2_fuel_level": 93,
+        "tractor_3": [
+            4,
+            2
+        ],
+        "tractor_3_task": "watering",
+        "tractor_3_water_level": 17,
+        "tractor_3_fuel_level": 93
+    },
+    {
+        "step": 7,
+        "tractor_0": [
+            6,
+            3
+        ],
+        "tractor_0_task": "watering",
+        "tractor_0_water_level": 16,
+        "tractor_0_fuel_level": 92,
+        "tractor_1": [
+            2,
+            4
+        ],
+        "tractor_1_task": "watering",
+        "tractor_1_water_level": 17,
+        "tractor_1_fuel_level": 92,
+        "tractor_2": [
+            4,
+            3
+        ],
+        "tractor_2_task": "watering",
+        "tractor_2_water_level": 16,
+        "tractor_2_fuel_level": 92,
+        "tractor_3": [
+            3,
+            2
+        ],
+        "tractor_3_task": "watering",
+        "tractor_3_water_level": 16,
+        "tractor_3_fuel_level": 92
+    },
+    {
+        "step": 8,
+        "tractor_0": [
+            6,
+            3
+        ],
+        "tractor_0_task": "watering",
+        "tractor_0_water_level": 16,
+        "tractor_0_fuel_level": 91,
+        "tractor_1": [
+            2,
+            4
+        ],
+        "tractor_1_task": "watering",
+        "tractor_1_water_level": 17,
+        "tractor_1_fuel_level": 91,
+        "tractor_2": [
+            4,
+            3
+        ],
+        "tractor_2_task": "watering",
+        "tractor_2_water_level": 16,
+        "tractor_2_fuel_level": 91,
+        "tractor_3": [
+            3,
+            2
+        ],
+        "tractor_3_task": "watering",
+        "tractor_3_water_level": 16,
+        "tractor_3_fuel_level": 91
+    },
+    {
+        "step": 9,
+        "tractor_0": [
+            5,
+            3
+        ],
+        "tractor_0_task": "watering",
+        "tractor_0_water_level": 15,
+        "tractor_0_fuel_level": 90,
+        "tractor_1": [
+            2,
+            3
+        ],
+        "tractor_1_task": "watering",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 90,
+        "tractor_2": [
+            3,
+            3
+        ],
+        "tractor_2_task": "watering",
+        "tractor_2_water_level": 15,
+        "tractor_2_fuel_level": 90,
+        "tractor_3": [
+            2,
+            2
+        ],
+        "tractor_3_task": "watering",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 90
+    },
+    {
+        "step": 10,
+        "tractor_0": [
+            5,
+            3
+        ],
+        "tractor_0_task": "watering",
+        "tractor_0_water_level": 15,
+        "tractor_0_fuel_level": 89,
+        "tractor_1": [
+            2,
+            3
+        ],
+        "tractor_1_task": "watering",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 89,
+        "tractor_2": [
+            3,
+            3
+        ],
+        "tractor_2_task": "watering",
+        "tractor_2_water_level": 15,
+        "tractor_2_fuel_level": 89,
+        "tractor_3": [
+            2,
+            2
+        ],
+        "tractor_3_task": "watering",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 89
+    },
+    {
+        "step": 11,
+        "tractor_0": [
+            5,
+            4
+        ],
+        "tractor_0_task": "watering",
+        "tractor_0_water_level": 14,
+        "tractor_0_fuel_level": 88,
+        "tractor_1": [
+            2,
+            4
+        ],
+        "tractor_1_task": "watering",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 88,
+        "tractor_2": [
+            3,
+            4
+        ],
+        "tractor_2_task": "watering",
+        "tractor_2_water_level": 14,
+        "tractor_2_fuel_level": 88,
+        "tractor_3": [
+            1,
+            2
+        ],
+        "tractor_3_task": "watering",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 88
+    },
+    {
+        "step": 12,
+        "tractor_0": [
+            5,
+            4
+        ],
+        "tractor_0_task": "watering",
+        "tractor_0_water_level": 14,
+        "tractor_0_fuel_level": 87,
+        "tractor_1": [
+            2,
+            4
+        ],
+        "tractor_1_task": "watering",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 88,
+        "tractor_2": [
+            3,
+            4
+        ],
+        "tractor_2_task": "watering",
+        "tractor_2_water_level": 14,
+        "tractor_2_fuel_level": 87,
+        "tractor_3": [
+            1,
+            3
+        ],
+        "tractor_3_task": "watering",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 87
+    },
+    {
+        "step": 13,
+        "tractor_0": [
+            5,
+            5
+        ],
+        "tractor_0_task": "watering",
+        "tractor_0_water_level": 13,
+        "tractor_0_fuel_level": 86,
+        "tractor_1": [
+            2,
+            4
+        ],
+        "tractor_1_task": "watering",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 87,
+        "tractor_2": [
+            3,
+            5
+        ],
+        "tractor_2_task": "watering",
+        "tractor_2_water_level": 13,
+        "tractor_2_fuel_level": 86,
+        "tractor_3": [
+            1,
+            4
+        ],
+        "tractor_3_task": "watering",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 86
+    },
+    {
+        "step": 14,
+        "tractor_0": [
+            5,
+            5
+        ],
+        "tractor_0_task": "watering",
+        "tractor_0_water_level": 13,
+        "tractor_0_fuel_level": 85,
+        "tractor_1": [
+            2,
+            5
+        ],
+        "tractor_1_task": "watering",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 86,
+        "tractor_2": [
+            3,
+            5
+        ],
+        "tractor_2_task": "watering",
+        "tractor_2_water_level": 13,
+        "tractor_2_fuel_level": 85,
+        "tractor_3": [
+            2,
+            4
+        ],
+        "tractor_3_task": "watering",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 85
+    },
+    {
+        "step": 15,
+        "tractor_0": [
+            5,
+            6
+        ],
+        "tractor_0_task": "watering",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 84,
+        "tractor_1": [
+            2,
+            5
+        ],
+        "tractor_1_task": "watering",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 86,
+        "tractor_2": [
+            3,
+            6
+        ],
+        "tractor_2_task": "watering",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 84,
+        "tractor_3": [
+            3,
+            4
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 84
+    },
+    {
+        "step": 16,
+        "tractor_0": [
+            5,
+            6
+        ],
+        "tractor_0_task": "harvesting",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 83,
+        "tractor_1": [
+            2,
+            5
+        ],
+        "tractor_1_task": "harvesting",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 85,
+        "tractor_2": [
+            3,
+            6
+        ],
+        "tractor_2_task": "harvesting",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 83,
+        "tractor_3": [
+            3,
+            4
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 83
+    },
+    {
+        "step": 17,
+        "tractor_0": [
+            4,
+            6
+        ],
+        "tractor_0_task": "harvesting",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 82,
+        "tractor_1": [
+            2,
+            5
+        ],
+        "tractor_1_task": "harvesting",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 84,
+        "tractor_2": [
+            2,
+            6
+        ],
+        "tractor_2_task": "harvesting",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 82,
+        "tractor_3": [
+            3,
+            4
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 82
+    },
+    {
+        "step": 18,
+        "tractor_0": [
+            4,
+            6
+        ],
+        "tractor_0_task": "harvesting",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 81,
+        "tractor_1": [
+            2,
+            4
+        ],
+        "tractor_1_task": "harvesting",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 83,
+        "tractor_2": [
+            2,
+            6
+        ],
+        "tractor_2_task": "harvesting",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 81,
+        "tractor_3": [
+            3,
+            3
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 81
+    },
+    {
+        "step": 19,
+        "tractor_0": [
+            4,
+            5
+        ],
+        "tractor_0_task": "harvesting",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 80,
+        "tractor_1": [
+            2,
+            4
+        ],
+        "tractor_1_task": "harvesting",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 82,
+        "tractor_2": [
+            2,
+            5
+        ],
+        "tractor_2_task": "harvesting",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 80,
+        "tractor_3": [
+            3,
+            3
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 80
+    },
+    {
+        "step": 20,
+        "tractor_0": [
+            4,
+            5
+        ],
+        "tractor_0_task": "harvesting",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 79,
+        "tractor_1": [
+            2,
+            3
+        ],
+        "tractor_1_task": "harvesting",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 81,
+        "tractor_2": [
+            3,
+            5
+        ],
+        "tractor_2_task": "harvesting",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 79,
+        "tractor_3": [
+            3,
+            2
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 79
+    },
+    {
+        "step": 21,
+        "tractor_0": [
+            4,
+            4
+        ],
+        "tractor_0_task": "harvesting",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 78,
+        "tractor_1": [
+            2,
+            3
+        ],
+        "tractor_1_task": "harvesting",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 80,
+        "tractor_2": [
+            3,
+            5
+        ],
+        "tractor_2_task": "harvesting",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 78,
+        "tractor_3": [
+            3,
+            2
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 78
+    },
+    {
+        "step": 22,
+        "tractor_0": [
+            4,
+            4
+        ],
+        "tractor_0_task": "harvesting",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 77,
+        "tractor_1": [
+            2,
+            2
+        ],
+        "tractor_1_task": "harvesting",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 79,
+        "tractor_2": [
+            3,
+            6
+        ],
+        "tractor_2_task": "harvesting",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 77,
+        "tractor_3": [
+            3,
+            2
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 78
+    },
+    {
+        "step": 23,
+        "tractor_0": [
+            4,
+            3
+        ],
+        "tractor_0_task": "harvesting",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 76,
+        "tractor_1": [
+            2,
+            2
+        ],
+        "tractor_1_task": "harvesting",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 78,
+        "tractor_2": [
+            3,
+            6
+        ],
+        "tractor_2_task": "harvesting",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 76,
+        "tractor_3": [
+            3,
+            2
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 77
+    },
+    {
+        "step": 24,
+        "tractor_0": [
+            4,
+            3
+        ],
+        "tractor_0_task": "harvesting",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 75,
+        "tractor_1": [
+            2,
+            1
+        ],
+        "tractor_1_task": "harvesting",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 77,
+        "tractor_2": [
+            4,
+            6
+        ],
+        "tractor_2_task": "harvesting",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 75,
+        "tractor_3": [
+            4,
+            2
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 76
+    },
+    {
+        "step": 25,
+        "tractor_0": [
+            4,
+            3
+        ],
+        "tractor_0_task": "harvesting",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 75,
+        "tractor_1": [
+            3,
+            1
+        ],
+        "tractor_1_task": "harvesting",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 76,
+        "tractor_2": [
+            5,
+            6
+        ],
+        "tractor_2_task": "harvesting",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 74,
+        "tractor_3": [
+            4,
+            2
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 75
+    },
+    {
+        "step": 26,
+        "tractor_0": [
+            4,
+            3
+        ],
+        "tractor_0_task": "harvesting",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 74,
+        "tractor_1": [
+            4,
+            1
+        ],
+        "tractor_1_task": "harvesting",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 75,
+        "tractor_2": [
+            5,
+            6
+        ],
+        "tractor_2_task": "harvesting",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 73,
+        "tractor_3": [
+            5,
+            2
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 74
+    },
+    {
+        "step": 27,
+        "tractor_0": [
+            5,
+            3
+        ],
+        "tractor_0_task": "harvesting",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 73,
+        "tractor_1": [
+            4,
+            2
+        ],
+        "tractor_1_task": "harvesting",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 74,
+        "tractor_2": [
+            5,
+            5
+        ],
+        "tractor_2_task": "harvesting",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 72,
+        "tractor_3": [
+            5,
+            2
+        ],
+        "tractor_3_task": "depositing",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 73
+    },
+    {
+        "step": 28,
+        "tractor_0": [
+            5,
+            3
+        ],
+        "tractor_0_task": "depositing",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 72,
+        "tractor_1": [
+            4,
+            2
+        ],
+        "tractor_1_task": "harvesting",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 73,
+        "tractor_2": [
+            5,
+            5
+        ],
+        "tractor_2_task": "depositing",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 71,
+        "tractor_3": [
+            5,
+            1
+        ],
+        "tractor_3_task": "depositing",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 72
+    },
+    {
+        "step": 29,
+        "tractor_0": [
+            6,
+            3
+        ],
+        "tractor_0_task": "depositing",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 71,
+        "tractor_1": [
+            4,
+            1
+        ],
+        "tractor_1_task": "harvesting",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 72,
+        "tractor_2": [
+            5,
+            4
+        ],
+        "tractor_2_task": "depositing",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 70,
+        "tractor_3": [
+            5,
+            0
+        ],
+        "tractor_3_task": "depositing",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 71
+    },
+    {
+        "step": 30,
+        "tractor_0": [
+            6,
+            2
+        ],
+        "tractor_0_task": "depositing",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 70,
+        "tractor_1": [
+            5,
+            1
+        ],
+        "tractor_1_task": "harvesting",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 71,
+        "tractor_2": [
+            6,
+            4
+        ],
+        "tractor_2_task": "depositing",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 69,
+        "tractor_3": [
+            6,
+            0
+        ],
+        "tractor_3_task": "depositing",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 70
+    },
+    {
+        "step": 31,
+        "tractor_0": [
+            6,
+            1
+        ],
+        "tractor_0_task": "depositing",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 69,
+        "tractor_1": [
+            5,
+            1
+        ],
+        "tractor_1_task": "harvesting",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 71,
+        "tractor_2": [
+            6,
+            3
+        ],
+        "tractor_2_task": "depositing",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 68,
+        "tractor_3": [
+            7,
+            0
+        ],
+        "tractor_3_task": "depositing",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 69
+    },
+    {
+        "step": 32,
+        "tractor_0": [
+            6,
+            0
+        ],
+        "tractor_0_task": "depositing",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 68,
+        "tractor_1": [
+            6,
+            2
+        ],
+        "tractor_1_task": "harvesting",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 70,
+        "tractor_2": [
+            6,
+            3
+        ],
+        "tractor_2_task": "depositing",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 68,
+        "tractor_3": [
+            8,
+            0
+        ],
+        "tractor_3_task": "depositing",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 68
+    },
+    {
+        "step": 33,
+        "tractor_0": [
+            7,
+            0
+        ],
+        "tractor_0_task": "depositing",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 67,
+        "tractor_1": [
+            6,
+            2
+        ],
+        "tractor_1_task": "depositing",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 70,
+        "tractor_2": [
+            6,
+            1
+        ],
+        "tractor_2_task": "depositing",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 67,
+        "tractor_3": [
+            8,
+            0
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 67
+    },
+    {
+        "step": 34,
+        "tractor_0": [
+            7,
+            0
+        ],
+        "tractor_0_task": "depositing",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 67,
+        "tractor_1": [
+            6,
+            2
+        ],
+        "tractor_1_task": "depositing",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 70,
+        "tractor_2": [
+            6,
+            0
+        ],
+        "tractor_2_task": "depositing",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 66,
+        "tractor_3": [
+            8,
+            1
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 66
+    },
+    {
+        "step": 35,
+        "tractor_0": [
+            7,
+            0
+        ],
+        "tractor_0_task": "depositing",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 66,
+        "tractor_1": [
+            6,
+            2
+        ],
+        "tractor_1_task": "depositing",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 70,
+        "tractor_2": [
+            6,
+            0
+        ],
+        "tractor_2_task": "depositing",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 66,
+        "tractor_3": [
+            7,
+            1
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 65
+    },
+    {
+        "step": 36,
+        "tractor_0": [
+            8,
+            0
+        ],
+        "tractor_0_task": "depositing",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 65,
+        "tractor_1": [
+            6,
+            2
+        ],
+        "tractor_1_task": "depositing",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 70,
+        "tractor_2": [
+            6,
+            0
+        ],
+        "tractor_2_task": "depositing",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 66,
+        "tractor_3": [
+            7,
+            2
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 64
+    },
+    {
+        "step": 37,
+        "tractor_0": [
+            8,
+            0
+        ],
+        "tractor_0_task": "harvesting",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 64,
+        "tractor_1": [
+            6,
+            2
+        ],
+        "tractor_1_task": "depositing",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 70,
+        "tractor_2": [
+            6,
+            0
+        ],
+        "tractor_2_task": "depositing",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 66,
+        "tractor_3": [
+            7,
+            3
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 63
+    },
+    {
+        "step": 38,
+        "tractor_0": [
+            8,
+            1
+        ],
+        "tractor_0_task": "harvesting",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 63,
+        "tractor_1": [
+            6,
+            2
+        ],
+        "tractor_1_task": "depositing",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 69,
+        "tractor_2": [
+            6,
+            0
+        ],
+        "tractor_2_task": "depositing",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 65,
+        "tractor_3": [
+            6,
+            3
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 62
+    },
+    {
+        "step": 39,
+        "tractor_0": [
+            8,
+            2
+        ],
+        "tractor_0_task": "harvesting",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 62,
+        "tractor_1": [
+            6,
+            1
+        ],
+        "tractor_1_task": "depositing",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 68,
+        "tractor_2": [
+            7,
+            0
+        ],
+        "tractor_2_task": "depositing",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 64,
+        "tractor_3": [
+            6,
+            3
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 61
+    },
+    {
+        "step": 40,
+        "tractor_0": [
+            8,
+            3
+        ],
+        "tractor_0_task": "harvesting",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 61,
+        "tractor_1": [
+            7,
+            1
+        ],
+        "tractor_1_task": "depositing",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 67,
+        "tractor_2": [
+            8,
+            0
+        ],
+        "tractor_2_task": "depositing",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 63,
+        "tractor_3": [
+            6,
+            4
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 60
+    },
+    {
+        "step": 41,
+        "tractor_0": [
+            7,
+            3
+        ],
+        "tractor_0_task": "harvesting",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 60,
+        "tractor_1": [
+            7,
+            0
+        ],
+        "tractor_1_task": "depositing",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 66,
+        "tractor_2": [
+            8,
+            0
+        ],
+        "tractor_2_task": "harvesting",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 62,
+        "tractor_3": [
+            6,
+            4
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 59
+    },
+    {
+        "step": 42,
+        "tractor_0": [
+            6,
+            3
+        ],
+        "tractor_0_task": "harvesting",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 59,
+        "tractor_1": [
+            7,
+            0
+        ],
+        "tractor_1_task": "depositing",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 66,
+        "tractor_2": [
+            8,
+            1
+        ],
+        "tractor_2_task": "harvesting",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 61,
+        "tractor_3": [
+            5,
+            4
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 58
+    },
+    {
+        "step": 43,
+        "tractor_0": [
+            6,
+            3
+        ],
+        "tractor_0_task": "harvesting",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 58,
+        "tractor_1": [
+            7,
+            0
+        ],
+        "tractor_1_task": "depositing",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 65,
+        "tractor_2": [
+            7,
+            1
+        ],
+        "tractor_2_task": "harvesting",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 60,
+        "tractor_3": [
+            5,
+            4
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 57
+    },
+    {
+        "step": 44,
+        "tractor_0": [
+            6,
+            4
+        ],
+        "tractor_0_task": "harvesting",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 57,
+        "tractor_1": [
+            8,
+            0
+        ],
+        "tractor_1_task": "depositing",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 64,
+        "tractor_2": [
+            6,
+            1
+        ],
+        "tractor_2_task": "harvesting",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 59,
+        "tractor_3": [
+            5,
+            5
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 56
+    },
+    {
+        "step": 45,
+        "tractor_0": [
+            6,
+            5
+        ],
+        "tractor_0_task": "harvesting",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 56,
+        "tractor_1": [
+            8,
+            0
+        ],
+        "tractor_1_task": "harvesting",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 63,
+        "tractor_2": [
+            5,
+            1
+        ],
+        "tractor_2_task": "harvesting",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 58,
+        "tractor_3": [
+            5,
+            5
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 56
+    },
+    {
+        "step": 46,
+        "tractor_0": [
+            6,
+            5
+        ],
+        "tractor_0_task": "harvesting",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 55,
+        "tractor_1": [
+            7,
+            0
+        ],
+        "tractor_1_task": "harvesting",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 62,
+        "tractor_2": [
+            5,
+            2
+        ],
+        "tractor_2_task": "harvesting",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 57,
+        "tractor_3": [
+            5,
+            5
+        ],
+        "tractor_3_task": "harvesting",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 55
+    },
+    {
+        "step": 47,
+        "tractor_0": [
+            6,
+            6
+        ],
+        "tractor_0_task": "harvesting",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 54,
+        "tractor_1": [
+            7,
+            1
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 61,
+        "tractor_2": [
+            5,
+            3
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 56,
+        "tractor_3": [
+            5,
+            6
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 54
+    },
+    {
+        "step": 48,
+        "tractor_0": [
+            6,
+            6
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 53,
+        "tractor_1": [
+            7,
+            2
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 60,
+        "tractor_2": [
+            5,
+            4
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 55,
+        "tractor_3": [
+            5,
+            6
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 54
+    },
+    {
+        "step": 49,
+        "tractor_0": [
+            6,
+            5
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 52,
+        "tractor_1": [
+            7,
+            3
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 59,
+        "tractor_2": [
+            5,
+            4
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 54,
+        "tractor_3": [
+            5,
+            6
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 53
+    },
+    {
+        "step": 50,
+        "tractor_0": [
+            6,
+            4
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 51,
+        "tractor_1": [
+            7,
+            4
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 58,
+        "tractor_2": [
+            5,
+            3
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 53,
+        "tractor_3": [
+            6,
+            6
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 52
+    },
+    {
+        "step": 51,
+        "tractor_0": [
+            6,
+            3
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 50,
+        "tractor_1": [
+            7,
+            5
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 57,
+        "tractor_2": [
+            5,
+            2
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 52,
+        "tractor_3": [
+            7,
+            6
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 51
+    },
+    {
+        "step": 52,
+        "tractor_0": [
+            6,
+            2
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 49,
+        "tractor_1": [
+            7,
+            5
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 57,
+        "tractor_2": [
+            5,
+            1
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 51,
+        "tractor_3": [
+            7,
+            6
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 51
+    },
+    {
+        "step": 53,
+        "tractor_0": [
+            6,
+            1
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 48,
+        "tractor_1": [
+            6,
+            6
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 56,
+        "tractor_2": [
+            5,
+            0
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 50,
+        "tractor_3": [
+            7,
+            4
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 50
+    },
+    {
+        "step": 54,
+        "tractor_0": [
+            6,
+            0
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 47,
+        "tractor_1": [
+            6,
+            6
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 55,
+        "tractor_2": [
+            5,
+            0
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 50,
+        "tractor_3": [
+            8,
+            4
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 49
+    },
+    {
+        "step": 55,
+        "tractor_0": [
+            7,
+            0
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 46,
+        "tractor_1": [
+            6,
+            5
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 54,
+        "tractor_2": [
+            5,
+            0
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 50,
+        "tractor_3": [
+            8,
+            3
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 48
+    },
+    {
+        "step": 56,
+        "tractor_0": [
+            8,
+            0
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 45,
+        "tractor_1": [
+            6,
+            4
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 53,
+        "tractor_2": [
+            5,
+            0
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 50,
+        "tractor_3": [
+            8,
+            2
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 47
+    },
+    {
+        "step": 57,
+        "tractor_0": [
+            8,
+            0
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 44,
+        "tractor_1": [
+            6,
+            3
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 52,
+        "tractor_2": [
+            5,
+            0
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 50,
+        "tractor_3": [
+            8,
+            1
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 46
+    },
+    {
+        "step": 58,
+        "tractor_0": [
+            8,
+            0
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 43,
+        "tractor_1": [
+            6,
+            2
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 51,
+        "tractor_2": [
+            5,
+            0
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 50,
+        "tractor_3": [
+            8,
+            1
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 46
+    },
+    {
+        "step": 59,
+        "tractor_0": [
+            8,
+            0
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 42,
+        "tractor_1": [
+            6,
+            1
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 50,
+        "tractor_2": [
+            5,
+            0
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 50,
+        "tractor_3": [
+            8,
+            1
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 46
+    },
+    {
+        "step": 60,
+        "tractor_0": [
+            8,
+            0
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 41,
+        "tractor_1": [
+            7,
+            1
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 49,
+        "tractor_2": [
+            5,
+            0
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 50,
+        "tractor_3": [
+            8,
+            1
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 46
+    },
+    {
+        "step": 61,
+        "tractor_0": [
+            8,
+            0
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 40,
+        "tractor_1": [
+            7,
+            0
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 48,
+        "tractor_2": [
+            5,
+            0
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 50,
+        "tractor_3": [
+            8,
+            1
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 46
+    },
+    {
+        "step": 62,
+        "tractor_0": [
+            8,
+            0
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 39,
+        "tractor_1": [
+            7,
+            0
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 48,
+        "tractor_2": [
+            5,
+            0
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 50,
+        "tractor_3": [
+            8,
+            1
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 46
+    },
+    {
+        "step": 63,
+        "tractor_0": [
+            8,
+            0
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 38,
+        "tractor_1": [
+            7,
+            0
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 48,
+        "tractor_2": [
+            5,
+            0
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 50,
+        "tractor_3": [
+            8,
+            1
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 46
+    },
+    {
+        "step": 64,
+        "tractor_0": [
+            8,
+            0
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 37,
+        "tractor_1": [
+            7,
+            0
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 48,
+        "tractor_2": [
+            5,
+            0
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 50,
+        "tractor_3": [
+            8,
+            1
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 46
+    },
+    {
+        "step": 65,
+        "tractor_0": [
+            8,
+            0
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 36,
+        "tractor_1": [
+            7,
+            0
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 48,
+        "tractor_2": [
+            5,
+            0
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 50,
+        "tractor_3": [
+            8,
+            1
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 46
+    },
+    {
+        "step": 66,
+        "tractor_0": [
+            8,
+            0
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 35,
+        "tractor_1": [
+            7,
+            0
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 48,
+        "tractor_2": [
+            5,
+            0
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 50,
+        "tractor_3": [
+            8,
+            1
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 46
+    },
+    {
+        "step": 67,
+        "tractor_0": [
+            8,
+            0
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 34,
+        "tractor_1": [
+            7,
+            0
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 48,
+        "tractor_2": [
+            5,
+            0
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 50,
+        "tractor_3": [
+            8,
+            1
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 46
+    },
+    {
+        "step": 68,
+        "tractor_0": [
+            8,
+            0
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 33,
+        "tractor_1": [
+            7,
+            0
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 48,
+        "tractor_2": [
+            5,
+            0
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 50,
+        "tractor_3": [
+            8,
+            1
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 46
+    },
+    {
+        "step": 69,
+        "tractor_0": [
+            8,
+            0
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 32,
+        "tractor_1": [
+            7,
+            0
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 48,
+        "tractor_2": [
+            5,
+            0
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 50,
+        "tractor_3": [
+            8,
+            1
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 46
+    },
+    {
+        "step": 70,
+        "tractor_0": [
+            8,
+            0
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 31,
+        "tractor_1": [
+            7,
+            0
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 48,
+        "tractor_2": [
+            5,
+            0
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 50,
+        "tractor_3": [
+            8,
+            1
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 46
+    },
+    {
+        "step": 71,
+        "tractor_0": [
+            8,
+            0
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 30,
+        "tractor_1": [
+            7,
+            0
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 48,
+        "tractor_2": [
+            5,
+            0
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 50,
+        "tractor_3": [
+            8,
+            1
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 46
+    },
+    {
+        "step": 72,
+        "tractor_0": [
+            8,
+            0
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 29,
+        "tractor_1": [
+            7,
+            0
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 48,
+        "tractor_2": [
+            5,
+            0
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 50,
+        "tractor_3": [
+            8,
+            1
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 46
+    },
+    {
+        "step": 73,
+        "tractor_0": [
+            8,
+            0
+        ],
+        "tractor_0_task": "idle",
+        "tractor_0_water_level": 12,
+        "tractor_0_fuel_level": 28,
+        "tractor_1": [
+            7,
+            0
+        ],
+        "tractor_1_task": "idle",
+        "tractor_1_water_level": 16,
+        "tractor_1_fuel_level": 48,
+        "tractor_2": [
+            5,
+            0
+        ],
+        "tractor_2_task": "idle",
+        "tractor_2_water_level": 12,
+        "tractor_2_fuel_level": 50,
+        "tractor_3": [
+            8,
+            1
+        ],
+        "tractor_3_task": "idle",
+        "tractor_3_water_level": 15,
+        "tractor_3_fuel_level": 46
+    }
+]
