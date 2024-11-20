@@ -151,17 +151,26 @@ def extract_path(tree, parent, target):
     path.reverse()
     return path
 
+def write_trajectory_to_file(path, file_name, group, team, robot):
+    with open(file_name, 'w') as file:
+        for i, (x, y) in enumerate(path):
+            if i < 3:
+                file.write(f"{x},{y},{group if i == 0 else team if i == 1 else robot}\n")
+            else:
+                file.write(f"{x},{y},0\n")
+
 # Example usage
 initial_positions = parse_initial_positions('input/InitialPositions.txt')
 target_positions = parse_target_positions('input/TargetPositions.txt')
 obstacles = parse_obstacles('input')
 
 paths = []
-for initial_position in initial_positions:
+for i, initial_position in enumerate(initial_positions):
     tree, parent, target = rrt_star(initial_position, target_positions, obstacles)
     if target:
         path = extract_path(tree, parent, target)
         paths.append(path)
+        write_trajectory_to_file(path, f"output/XY_303_1_{i+1}.txt", 303, 1, i+1)
     else:
         print(f"No path found for robot starting at {initial_position}.")
 
