@@ -86,3 +86,46 @@ Aparte del fondo descrito, también se deben de visualizar los robots y los punt
 Una configuración ejemplo se puede observar en la siguiente imagen:
 
 ![](assets/image.png)
+
+## Algoritmo
+
+Como referencia, se utilizó la implementación que se encuentra en el siguiente artículo de Medium: https://medium.com/@aggorjefferson/exploring-path-planning-with-rrt-and-visualization-in-python-cf5bd80a6cd6
+
+En el mismo se detalla el algoritmo de exploración de caminos para robots *Rapidly-exploring Random Tree* (RRT). Este algoritmo se utiliza para resolver los desafíos que enfrentan los robots autónomos al intentar encontrar un ruta de un punto inicial a uno objetivo a la vez que se evitan obstáculos en el camino. La versión optimizada del algoritmo, RRT\*, intenta encontrar no solamente un camino, sino uno óptimo, el más corto posible.
+
+El algoritmo se ve de la siguiente manera:
+
+![](assets/rrt_example.gif)
+
+El código del algoritmo utiliza dos clases: `Node`, un punto en el plano perteneciente al grafo dirigido que representa posibles rutas del robot, y `RRTStar`, el objeto que orquestra la ejecución del algoritmo y contiene los parámetros iniciales del sistema.
+
+Dadas estas condiciones iniciales del ambiente, la secuencia de alto nivel del algoritmo es la siguiente:
+
+1. Generar un nuevo punto de manera aleatoria en el plano como referencia.
+2. Obtener el nodo en nuestros caminos posibles (grafo) más cercano al nuevo punto.
+3. Crear un nuevo nodo desde el nodo más cercano en dirección hacia el punto generado. El nuevo nodo estará a una distancia exacta del nodo más cercano y puede no equivaler al punto aleatorio generado.
+4. Checar colisiones del nuevo nodo. En caso de ser un punto válido, optimizar las rutas hacia el nuevo nodo y rutas hacia nodos vecinos.
+5. Si el nuevo nodo es exactamente el nodo objetivo, encontramos un camino posible.
+6. De no ser el nodo objetivo, continuar la ejecución hasta llegar al objetivo.
+
+Ahora, la ejecución del algoritmo a fondo:
+
+1. Generar un nuevo punto de manera aleatoria en el plano, `rand_node`. Este punto será un nuevo punto de referencia para guiarnos. Es decir, lo utilizaremos como guía hacia el objetivo. Debido a que queremos que sea una guía, asignaremos una probabilidad `prob_goal_node = 0.2` de que nuestra guía nos lleve hacia el nodo objetivo. Esta heurística nos ayuda a explorar de manera diversa el espacio pero también a dirigir nuestros esfuerzos hacia el nodo objetivo.
+
+2. Obtener el nodo trayectoria más cercano al nuevo `rand_node`. Es decir, de entre la lista de todos los puntos anteriormente calculados como posibles rutas (nuestro árbol dirigido), encontraremos el nodo más cercano al nodo de referencia generado. Para hacer esto calculamos la distancia euclediana de cada nodo `node_list[i]` hacia el generado `rand_node` como `dist_list[i]`. El nodo que más cercano, de menor distancia, será el elegido, como `nearest_node`.
+
+3. Dirigir el árbol desde `nearest_node` en dirección hacia `rand_node`. Crearemos un nuevo nodo `new_node` a cierta distancia `step_size` del nodo más cercano `nearest_node` en dirección hacia `rand_node`. Es decir, obtenemos el ángulo de `nearest_node` hacia `rand_node`, y avanzamos en esa dirección unicamente una distancia `step_size`.
+   
+   - Una cosa a considerar es que si `rand_node` equivale a nuestro nodo objetivo `goal_node` y además la distancia euclediana entre ambos nodos `nearest_node` y `rand_node` es menor al `step_size`, vamos a querer crear nuestro `new_node` en exactamente la posición del nodo objetivo. Es decir, en este caso la conexión entre `nearest_node` y `new_node` sería menor a `step_size` de manera que podamos conectar directamente con la ubicación del `goal_node`.
+
+4. Checar que el nodo generado no colisione con un obstáculo. Para checar esto se pueden utilizar librerías para detectar colisión de puntos dentro de polígonos así como métodos para evitar colisiones de aristas (edges) dentro de obstáculos, por ejemplo, con `shapely.geometry import Point, LineString, Polygon`. En caso de colisionar, el nodo nunca se agrega a nuestras rutas posibles y empezaremos una nueva generación aleatoria. En caso de librar la colisión, se buscan todos los nodos vecinos a `new_node` dentro de un radio `search_radius` utilizando la distancia euclediana para empezar a optimizar las conexiones entre nodos. Esta es la principal diferencia entre RRT y RRT\*.
+   
+   - Sabemos que a través de nuestras ejecuciones, empezaremos a tener muchos muchos nodos. Debido a esto, nos gustaría siempre mantener sus conexiones lo más cortas posibles. Con el objetivo de hacer esto, intentaremos determinar un el mejor nodo padre `best_node` para nuestro nuevo nodo `new_node` según la distancia más corta para llegar a ese nuevo nodo `new_node`. Para hacer esto, iteramos cada nodo vecino `neighbors[i]` y calculamos la distancia euclediana hacia el `new_node` como `dist[i]`. Considerando la distancia total acumulada hasta cada `neighbors[i]`, el nodo vecino que proporcione la distancia más corta acumulada hacia `new_node` (definida como `neighbors[i].cost` + `dist[i]`) será elegido como padre. La elección de padre debe ser libre de colisiones.
+   
+   - Una vez que se confirma una ruta óptima hacia `new_node` desde un `best_node`, se agrega el `new_node` a la lista nodos en nuestro árbol `node_list[i]`.
+   
+   - Después de escoger de manera óptima el padre de `new_node`, también queremos optimizar las rutas hacia estos mismos nodos `neighbors[i]` en caso de que una ruta que atraviece `new_node` sea más eficiente que cualquiera anterior hacia estos `neighbors`. Para hacerlo usamos nuevamente la distancia euclediana entre `new_node` y cada `neighbors[i]` y las guardamos como `dist[i]`. Si una ruta que pase por el `new_node` hacia cada nodo vecino es más óptima que una anterior (`new_node.cost + dist[i] < neighbors[i].cost`) entonces hacemos "rewiring" de la ruta del vecino. La elección de ruta optimizada debe ser libre de colisiones.
+
+5. En caso de que la ubicación de `new_node` sea exactamente igual a `goal_node` significa que hemos logrado llegar al punto objetivo y hemos optimizado las rutas para llegar al mismo con una distancia tan corta como fuera posible. Para regresar la ruta completa, se realiza reconstruye la ruta a través de cada nodo padre desde `new_node` hasta el nodo origen inicial con padre `None`.
+
+6. En caso de no haber completado la ejecución hacia el `goal_node`, continuar las generaciones nuevos puntos aleatorios.
