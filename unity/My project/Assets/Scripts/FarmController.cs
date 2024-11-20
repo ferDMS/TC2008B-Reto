@@ -14,6 +14,7 @@ public class InitializeData
     public int num_tractors;
     public int water_capacity;
     public int fuel_capacity;
+    public int wheat_capacity;
     public int steps;
 }
 
@@ -25,6 +26,7 @@ public class FarmController : MonoBehaviour
     public int numTractors = 2;
     public int waterCapacity = 100;
     public int fuelCapacity = 50;
+    public int wheatCapacity = 5;
     public int steps = 10;
     private string apiUrl = "http://localhost:5000/initialize";
 
@@ -38,8 +40,6 @@ public class FarmController : MonoBehaviour
     public Color plantAreaColor = Color.green;
     public float gizmoHeight = 0.1f;
 
-
-
     public UnityEvent OnSimulationInitialized = new UnityEvent();
 
     public StepInfo GetStepInfo(int step)
@@ -49,16 +49,6 @@ public class FarmController : MonoBehaviour
             return stepsList[step];
         }
         return null;
-    }
-
-    public Vector2Int GetTractorPosition(int tractorIndex)
-    {
-       if(tractorIndex >= 0 && tractorIndex < stepsList.Count)
-        {
-            StepInfo stepInfo = stepsList[tractorIndex];
-            return stepInfo.tractorPosition;
-        }
-        return Vector2Int.zero;
     }
 
     void Start()
@@ -90,6 +80,7 @@ public class FarmController : MonoBehaviour
         Debug.Log($"Initialized plane with scale: {scaleFactor} for grid size: {totalGridSize}");
     }
 
+    
     IEnumerator SendDataToAPI()
     {
         InitializeData data = new InitializeData
@@ -99,19 +90,19 @@ public class FarmController : MonoBehaviour
             num_tractors = numTractors,
             water_capacity = waterCapacity,
             fuel_capacity = fuelCapacity,
+            wheat_capacity = wheatCapacity,
             steps = steps
         };
 
         string jsonData = JsonUtility.ToJson(data);
         Debug.Log("Sending Data: " + jsonData);
 
-        // Send data to API
-        var request = new UnityWebRequest(apiUrl, "POST");
-        byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonData);
-        request.uploadHandler = new UploadHandlerRaw(bodyRaw);
-        request.downloadHandler = new DownloadHandlerBuffer();
+        var request = new UnityWebRequest(apiUrl, "POST")
+        {
+            uploadHandler = new UploadHandlerRaw(Encoding.UTF8.GetBytes(jsonData)),
+            downloadHandler = new DownloadHandlerBuffer()
+        };
         request.SetRequestHeader("Content-Type", "application/json");
-        request.SetRequestHeader("Accept", "application/json");
 
         yield return request.SendWebRequest();
 
@@ -119,36 +110,46 @@ public class FarmController : MonoBehaviour
         {
             Debug.LogError(request.error);
             Debug.LogError($"Response: {request.downloadHandler.text}");
+            yield break;  // Correctly terminating the coroutine on error
         }
-        else
-        {
-            Debug.Log("Received: " + request.downloadHandler.text);
-            
-            try
-            {
-                TractorStepData[] steps = JsonHelper.FromJson<TractorStepData>(request.downloadHandler.text);
-                stepsList.Clear();
-                foreach (TractorStepData step in steps)
-                {
-                    StepInfo stepInfo = new StepInfo(
-                        step.step,
-                        new int[] { step.tractor_0[0], step.tractor_0[1] },
-                        step.tractor_0_task,
-                        step.tractor_0_water_level,
-                        step.tractor_0_fuel_level
-                    );
-                    stepsList.Add(stepInfo);
-                }
-                Debug.Log($"Processed {stepsList.Count} steps");
-                OnSimulationInitialized.Invoke();
-            }
-            catch (System.Exception e)
-            {
-                Debug.LogError("Error parsing JSON: " + e.Message);
-            }
 
+        Debug.Log("Received: " + request.downloadHandler.text);
+        try
+        {
+            string jsonToParse = "{\"steps\": " + request.downloadHandler.text + "}";
+            SimulationDataWrapper simulationData = JsonHelper.FromJson<SimulationDataWrapper>(jsonToParse);
+
+            List<StepInfo> stepsList = new List<StepInfo>();
+
+            foreach (var step in simulationData.steps)
+            {
+                List<TractorInfo> tractors = new List<TractorInfo>();
+                foreach (var tractor in step.tractors)
+                {
+                    TractorInfo tractorInfo = new TractorInfo(
+                        new int[] { tractor.tractorPosition[0], tractor.tractorPosition[1] },
+                        tractor.tractorTask,
+                        tractor.waterLevel,
+                        tractor.fuelLevel,
+                        tractor.wheatLevel
+                    );
+                    tractors.Add(tractorInfo);
+                }
+
+                StepInfo stepInfo = new StepInfo(step.step, tractors);
+                stepsList.Add(stepInfo);
+            }
+            Debug.Log($"Processed {stepsList.Count} steps");
+            OnSimulationInitialized.Invoke();
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("Error parsing JSON: " + e.Message);
+            yield break;  // Correctly terminating the coroutine on exception
         }
     }
+
+
 
     public Vector3 GetWorldPositionFromGrid(int x, int z)
     {
@@ -208,25 +209,22 @@ public class FarmController : MonoBehaviour
 public class TractorStepData
 {
     public int step;
-    public int[] tractor_0;
-    public string tractor_0_task;
-    public int tractor_0_water_level;
-    public int tractor_0_fuel_level;
+    public List<TractorInfo> tractors = new List<TractorInfo>();
 }
 
-// Helper class to parse JSON arrays (Unity's JsonUtility doesn't handle top-level arrays)
+[System.Serializable]
+public class SimulationDataWrapper
+{
+    public List<TractorStepData> steps = new List<TractorStepData>();
+}
+
+
+
+// Helper class for JSON parsing
 public static class JsonHelper
 {
-    public static T[] FromJson<T>(string json)
+    public static T FromJson<T>(string json)
     {
-        string newJson = "{ \"items\": " + json + "}";
-        Wrapper<T> wrapper = JsonUtility.FromJson<Wrapper<T>>(newJson);
-        return wrapper.items;
-    }
-
-    [System.Serializable]
-    private class Wrapper<T>
-    {
-        public T[] items;
+        return JsonUtility.FromJson<T>(json);
     }
 }

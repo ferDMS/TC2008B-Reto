@@ -79,7 +79,7 @@ public class SimulationVisualizer : MonoBehaviour
         }
     }
 
-     void CreateTractors()
+    void CreateTractors()
     {
         if (tractorPrefab == null)
         {
@@ -91,10 +91,10 @@ public class SimulationVisualizer : MonoBehaviour
         GameObject tractorsParent = new GameObject("Tractors");
         tractorsParent.transform.parent = transform;
         
-
+        StepInfo firstStep = farmController.GetStepInfo(0);
         for(int i = 0; i < farmController.numTractors; i++) {
             // Get the specific position for this tractor from the step info
-            Vector2Int tractorPos = farmController.GetTractorPosition(i);
+            Vector2Int tractorPos = firstStep.GetTractorPosition(i);
             
             Vector3 startPos = farmController.GetWorldPositionFromGrid(
                 tractorPos.x, 
@@ -121,6 +121,7 @@ public class SimulationVisualizer : MonoBehaviour
         while (currentStep < totalSteps)
         {
             StepInfo stepInfo = farmController.GetStepInfo(currentStep);
+
             if (stepInfo != null)
             {
                 // Handle all tractors
@@ -159,9 +160,8 @@ public class SimulationVisualizer : MonoBehaviour
 
                             yield return null;
                         }
-
                         // Update tractor visual state based on task
-                        UpdateTractorVisuals(tractor, stepInfo);
+                        UpdateTractorVisuals(tractor, stepInfo, i);
                     }
                 }
             }
@@ -173,11 +173,11 @@ public class SimulationVisualizer : MonoBehaviour
         isSimulationRunning = false;
     }
 
-    void UpdateTractorVisuals(GameObject tractor, StepInfo stepInfo)
+    void UpdateTractorVisuals(GameObject tractor, StepInfo stepInfo, int tractorId)
     {
         // You can add visual feedback based on the tractor's task
         // For example, different particle effects or color changes
-        switch (stepInfo.tractorTask)
+        switch (stepInfo.GetTractorTask(tractorId))
         {
             case "watering":
                 // Maybe activate a water particle system

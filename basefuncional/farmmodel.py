@@ -265,9 +265,9 @@ def initialize_values():
         global parameters
         parameters = {
             'num_tractors': data['num_tractors'],
-        'water_capacity': data['water_capacity'],
-        'fuel_capacity': data['fuel_capacity'],
-        'wheat_capacity': PLANT_GRID_SIZE,
+            'water_capacity': data['water_capacity'],
+            'fuel_capacity': data['fuel_capacity'],
+            'wheat_capacity': PLANT_GRID_SIZE,
             'steps': data['steps']
         }
 
@@ -284,14 +284,11 @@ def initialize_values():
 def test():
     return jsonify({"message": "Hello, World!"})
 
-
-
 def initialize_simulation():
     # Create and initialize the model
     model = FarmModel(parameters)
     if not model.initialize():
         print("Failed to initialize model")
-        # pygame.quit()
         sys.exit(1)
 
     # Initialize a list to store tractor statuses over time
@@ -300,30 +297,28 @@ def initialize_simulation():
     # Main simulation loop
     running = True
     step_count = 0
-    # clock = pygame.time.Clock()
 
     while running and step_count < parameters['steps']:
         try:
             model.step()
             # Collect status of tractors
-            current_step = {"step": step_count}
-            for idx, tractor in enumerate(model.tractors):
-                tractor_id = f"tractor_{idx}"
-                current_step[tractor_id] = list(tractor.position)  # [x, y]
-                current_step[f"{tractor_id}_task"] = tractor.task
-                current_step[f"{tractor_id}_water_level"] = tractor.water_level
-                current_step[f"{tractor_id}_fuel_level"] = tractor.fuel_level
-                # If you want to include wheat_level, uncomment the next line
-                # current_step[f"{tractor_id}_wheat_level"] = tractor.wheat_level
+            current_step = {"step": step_count, "tractors": []}
+            for tractor in model.tractors:
+                tractor_info = {
+                    "position": list(tractor.position),  # [x, y]
+                    "task": tractor.task,
+                    "water_level": tractor.water_level,
+                    "fuel_level": tractor.fuel_level,
+                    "wheat_level": tractor.wheat_level
+                }
+                current_step["tractors"].append(tractor_info)
+            
             tractor_status_over_time.append(current_step)
             
             step_count += 1
-            # clock.tick(FPS)
         except Exception as e:
             print(f"Error during simulation: {e}")
             running = False
-
-    #pygame.quit()
 
     # After the simulation loop, save the statuses to a JSON file
     try:
@@ -334,7 +329,6 @@ def initialize_simulation():
         print(f"Failed to save tractor statuses: {e}")
     
     return tractor_status_over_time
-
 
 
 if __name__ == '__main__':
