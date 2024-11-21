@@ -12,6 +12,7 @@ import matplotlib.patches as patches
 import random
 import math
 import numpy as np
+from shapely.geometry import Point, LineString, Polygon
 
 # Dimensions of robot (m)
 ROBOT_WIDTH = 0.18
@@ -106,6 +107,8 @@ class RRTStar:
         self.path = None
         self.goal_reached = False
         self.goal_bias = goal_bias
+        # Convert obstacles to shapely Polygons
+        self.obstacle_polygons = [Polygon(obstacle) for obstacle in self.obstacles]
 
     # General utility methods
     def calc_distance(self, node1, node2):
@@ -118,25 +121,21 @@ class RRTStar:
         theta = math.atan2(dy, dx)
         return distance, theta
 
-    def is_collision_free_path(self, node1, node2):
-        # Check if the path between node1 and node2 is collision-free
-        steps = int(self.calc_distance(node1, node2) / self.step_size)
-        for i in range(steps):
-            t = i / steps
-            x = node1.x + t * (node2.x - node1.x)
-            y = node1.y + t * (node2.y - node1.y)
-            if self.is_in_obstacle((x, y)):
-                return False
-        return True
-
-    # Method moved inside the class
+    # Method updated to use shapely for collision detection
     def is_in_obstacle(self, point):
-        # Checks if a point is inside any of the obstacles
-        for obstacle in self.obstacles:
-            polygon = patches.Polygon(obstacle)
-            if polygon.contains_point(point):
+        point = Point(point)
+        for polygon in self.obstacle_polygons:
+            if polygon.contains(point):
                 return True
         return False
+
+    # Updated to check collision along the edge between nodes
+    def is_collision_free_path(self, node1, node2):
+        line = LineString([(node1.x, node1.y), (node2.x, node2.y)])
+        for polygon in self.obstacle_polygons:
+            if line.crosses(polygon) or line.within(polygon) or line.intersects(polygon):
+                return False
+        return True
 
     # Methods in the order they are called in plan()
     def get_random_node(self):
@@ -164,13 +163,15 @@ class RRTStar:
         new_node.parent = from_node
         return new_node
 
+    # Updated to use is_collision_free_path for edge collision detection
     def is_collision_free(self, node):
-        point = (node.x, node.y)
-        if self.is_in_obstacle(point):
+        if self.is_in_obstacle((node.x, node.y)):
             return False
-        # Check map boundaries
         if not (-self.map_size[0]/2 <= node.x <= self.map_size[0]/2 and
                 -self.map_size[1]/2 <= node.y <= self.map_size[1]/2):
+            return False
+        # Check collision along the path from parent to current node
+        if node.parent and not self.is_collision_free_path(node.parent, node):
             return False
         return True
 
@@ -298,17 +299,17 @@ def main():
     initial_positions = parse_initial_positions('input/InitialPositions.txt')
     target_positions = parse_target_positions('input/TargetPositions.txt')
     obstacles = parse_obstacles('input')
-
+    
     paths = []
     for i, initial_position in enumerate(initial_positions):
         rrt_star = RRTStar(
             start=initial_position,
-            goal=target_positions[3],  # Assuming all robots share the first target
+            goal=target_positions[5],  # Assuming all robots share the first target
             obstacles=obstacles,
             map_size=(SPACE_WIDTH, SPACE_HEIGHT),
-            step_size=0.05,
+            step_size=0.4,
             max_iter=20000,
-            goal_bias=0.3  # Set desired goal_bias here
+            goal_bias=0.8  # Set desired goal_bias here
         )
         rrt_star.plan()
         if rrt_star.path:
