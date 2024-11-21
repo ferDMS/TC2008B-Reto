@@ -12,7 +12,8 @@ import matplotlib.patches as patches
 import random
 import math
 import numpy as np
-from shapely.geometry import Point, LineString, Polygon
+from shapely.geometry import Point, LineString, Polygon, box
+from shapely.affinity import rotate
 
 # Dimensions of robot (m)
 ROBOT_WIDTH = 0.18
@@ -20,6 +21,11 @@ ROBOT_HEIGHT = 0.20
 # Dimensions of space (m)
 SPACE_WIDTH = 6.5
 SPACE_HEIGHT = 6.5
+# Margin of error (m)
+MARGIN = 0.05
+# Effective dimensions including margin
+EFFECTIVE_ROBOT_WIDTH = ROBOT_WIDTH + 2 * MARGIN
+EFFECTIVE_ROBOT_HEIGHT = ROBOT_HEIGHT + 2 * MARGIN
 
 
 def parse_initial_positions(file_path):
@@ -107,8 +113,8 @@ class RRTStar:
         self.path = None
         self.goal_reached = False
         self.goal_bias = goal_bias
-        # Convert obstacles to shapely Polygons
-        self.obstacle_polygons = [Polygon(obstacle) for obstacle in self.obstacles]
+        # Convert obstacles to shapely Polygons and add margin
+        self.obstacle_polygons = [Polygon(obstacle).buffer(MARGIN) for obstacle in self.obstacles]
 
     # General utility methods
     def calc_distance(self, node1, node2):
@@ -122,19 +128,68 @@ class RRTStar:
         return distance, theta
 
     # Method updated to use shapely for collision detection
-    def is_in_obstacle(self, point):
-        point = Point(point)
+    def is_in_obstacle(self, node):
+        """
+        Check if the robot at the given node position and orientation intersects any obstacle.
+        """
+        # Determine the orientation (theta) of the robot
+        if node.parent:
+            dx = node.x - node.parent.x
+            dy = node.y - node.parent.y
+            theta = math.degrees(math.atan2(dy, dx))
+        else:
+            theta = 0  # Default orientation if no parent
+        
+        # Create a rectangle representing the robot's dimensions at the node's position
+        robot_rect = box(
+            node.x - EFFECTIVE_ROBOT_WIDTH / 2,
+            node.y - EFFECTIVE_ROBOT_HEIGHT / 2,
+            node.x + EFFECTIVE_ROBOT_WIDTH / 2,
+            node.y + EFFECTIVE_ROBOT_HEIGHT / 2
+        )
+        # Rotate the rectangle to represent the robot's facing direction
+        robot_polygon = rotate(robot_rect, angle=theta, origin=(node.x, node.y))
+        
+        # Check for collision with any obstacle
         for polygon in self.obstacle_polygons:
-            if polygon.contains(point):
+            if robot_polygon.intersects(polygon):
                 return True
         return False
 
     # Updated to check collision along the edge between nodes
     def is_collision_free_path(self, node1, node2):
-        line = LineString([(node1.x, node1.y), (node2.x, node2.y)])
-        for polygon in self.obstacle_polygons:
-            if line.crosses(polygon) or line.within(polygon) or line.intersects(polygon):
+        """
+        Check if the path between node1 and node2 is collision-free,
+        considering the robot's dimensions and facing at each sampled point.
+        """
+        distance = self.calc_distance(node1, node2)
+        if distance == 0:
+            # Nodes are at the same position, check collision at this point
+            temp_node = Node(node1.x, node1.y)
+            temp_node.parent = node1.parent
+            return not self.is_in_obstacle(temp_node)
+        num_samples = max(int(distance / self.step_size), 1)
+        for i in range(num_samples + 1):
+            t = i / num_samples
+            x = node1.x + t * (node2.x - node1.x)
+            y = node1.y + t * (node2.y - node1.y)
+            # Create a temporary node for collision checking
+            temp_node = Node(x, y)
+            temp_node.parent = node1
+            if self.is_in_obstacle(temp_node):
                 return False
+        return True
+
+    # Updated to use is_collision_free_path for edge collision detection
+    def is_collision_free(self, node):
+        if self.is_in_obstacle(node):
+            return False
+        if not (-self.map_size[0]/2 <= node.x <= self.map_size[0]/2 and
+                -self.map_size[1]/2 <= node.y <= self.map_size[1]/2):
+            return False
+        # Check collision along the path from parent to current node
+        if node.parent and not self.is_collision_free_path(node.parent, node):
+            return False
         return True
 
     # Methods in the order they are called in plan()
@@ -162,18 +217,6 @@ class RRTStar:
         new_node.cost = from_node.cost + distance
         new_node.parent = from_node
         return new_node
-
-    # Updated to use is_collision_free_path for edge collision detection
-    def is_collision_free(self, node):
-        if self.is_in_obstacle((node.x, node.y)):
-            return False
-        if not (-self.map_size[0]/2 <= node.x <= self.map_size[0]/2 and
-                -self.map_size[1]/2 <= node.y <= self.map_size[1]/2):
-            return False
-        # Check collision along the path from parent to current node
-        if node.parent and not self.is_collision_free_path(node.parent, node):
-            return False
-        return True
 
     def find_neighbors(self, new_node):
         neighbors = []
@@ -304,12 +347,12 @@ def main():
     for i, initial_position in enumerate(initial_positions):
         rrt_star = RRTStar(
             start=initial_position,
-            goal=target_positions[5],  # Assuming all robots share the first target
+            goal=target_positions[2],
             obstacles=obstacles,
             map_size=(SPACE_WIDTH, SPACE_HEIGHT),
-            step_size=0.4,
+            step_size=0.1,
             max_iter=20000,
-            goal_bias=0.8  # Set desired goal_bias here
+            goal_bias=0.3
         )
         rrt_star.plan()
         if rrt_star.path:
