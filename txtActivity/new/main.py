@@ -11,6 +11,7 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as patches
 import random
 import math
+import numpy as np
 
 # Dimensions of robot (m)
 ROBOT_WIDTH = 0.18
@@ -79,125 +80,155 @@ def parse_obstacles(directory_path):
     return obstacles
 
 
-def is_in_obstacle(point, obstacles):
-    """
-    Used in the rrt_star function, this function checks if a point is inside any of the obstacles.
-    
-    Args:
-        point (tuple): The (x, y) coordinates of the point.
-        obstacles (list): A list of obstacles, where each obstacle is a list of tuples, each representing the (x, y) coordinates of a vertex.
-        
-    Returns:
-        bool: True if the point is inside any of the obstacles, False otherwise.
-    """
-    
-    # TODO: Add functionality so not only does the point not collide with the obstacle, but also the entire dimensions of the robot. This will not only have to consider the robot as a Polygon consisting of its defined dimensions, but also the facing of said Polygon.
-    
-    for obstacle in obstacles:
-        polygon = patches.Polygon(obstacle)
-        if polygon.contains_point(point):
-            return True
-    return False
-
-
 # TODO: Function `is_in_robot` to check not only whether we are colliding with an obstacle, but also whether we are colliding with another robot. Also, might check out this link: https://www.metanetsoftware.com/technique/tutorialA.html, for collision detection.
 
 
-def distance(p1, p2):
-    """
-    Calculates the Euclidean distance between two points.
-    """
-    return math.sqrt((p1[0] - p2[0]) ** 2 + (p1[1] - p2[1]) ** 2)
+# Node class representing a state in the space
+class Node:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.parent = None
+        self.cost = 0
 
+# RRT* algorithm class
+class RRTStar:
+    def __init__(self, start, goal, obstacles, map_size, step_size=0.05, max_iter=2000, goal_bias=0.1):
+        self.start = Node(start[0], start[1])
+        self.goal = Node(goal[0], goal[1])
+        self.obstacles = obstacles
+        self.map_size = map_size
+        self.step_size = step_size
+        self.max_iter = max_iter
+        self.node_list = [self.start]
+        self.goal_region_radius = 0.1  # As per considerations
+        self.search_radius = 0.3       # As per considerations
+        self.path = None
+        self.goal_reached = False
+        self.goal_bias = goal_bias
 
-def nearest_vertex(tree, point):
-    """
-    Finds the vertex in the tree that is nearest to the given point. Remember, the tree is the set of paths that can be taken by the robot. The point is defined is given through a heuristic, in this case, generating it randomly.
-    
-    Args:
-        tree (list): A list of vertices, where each vertex is a tuple representing the (x, y) coordinates.
-        point (tuple): The (x, y) coordinates of the point.
-        
-    Returns:
-        tuple: The (x, y) coordinates of the vertex in the tree that is nearest to the point.
-    """
-    nearest = tree[0]
-    min_dist = distance(nearest, point)
-    for vertex in tree:
-        dist = distance(vertex, point)
-        if dist < min_dist:
-            nearest = vertex
-            min_dist = dist
-    return nearest
+    # General utility methods
+    def calc_distance(self, node1, node2):
+        return math.hypot(node2.x - node1.x, node2.y - node1.y)
 
+    def calc_distance_and_angle(self, from_node, to_node):
+        dx = to_node.x - from_node.x
+        dy = to_node.y - from_node.y
+        distance = math.hypot(dx, dy)
+        theta = math.atan2(dy, dx)
+        return distance, theta
 
-def rrt_star(initial_position, target_positions, obstacles, max_iterations=2000, step_size=0.05, radius=0.3, goal_bias=0.1):
-    tree = [initial_position]
-    parent = {initial_position: None}
-    cost = {initial_position: 0}
-    
-    for _ in range(max_iterations):
-        if random.random() < goal_bias:
-            random_point = random.choice(target_positions)
+    def is_collision_free_path(self, node1, node2):
+        # Check if the path between node1 and node2 is collision-free
+        steps = int(self.calc_distance(node1, node2) / self.step_size)
+        for i in range(steps):
+            t = i / steps
+            x = node1.x + t * (node2.x - node1.x)
+            y = node1.y + t * (node2.y - node1.y)
+            if self.is_in_obstacle((x, y)):
+                return False
+        return True
+
+    # Method moved inside the class
+    def is_in_obstacle(self, point):
+        # Checks if a point is inside any of the obstacles
+        for obstacle in self.obstacles:
+            polygon = patches.Polygon(obstacle)
+            if polygon.contains_point(point):
+                return True
+        return False
+
+    # Methods in the order they are called in plan()
+    def get_random_node(self):
+        if random.random() < self.goal_bias:
+            return Node(self.goal.x, self.goal.y)
         else:
-            random_point = (
-                random.uniform(-SPACE_WIDTH/2, SPACE_WIDTH/2), 
-                random.uniform(-SPACE_HEIGHT/2, SPACE_HEIGHT/2)
+            return Node(
+                random.uniform(-self.map_size[0]/2, self.map_size[0]/2),
+                random.uniform(-self.map_size[1]/2, self.map_size[1]/2)
             )
-        
-        if is_in_obstacle(random_point, obstacles):
-            continue
-        nearest = nearest_vertex(tree, random_point)
-        direction = ((random_point[0] - nearest[0]) / distance(nearest, random_point),
-                     (random_point[1] - nearest[1]) / distance(nearest, random_point))
-        new_point = (nearest[0] + direction[0] * step_size, nearest[1] + direction[1] * step_size)
-        if is_in_obstacle(new_point, obstacles):
-            continue
-        
-        # Find neighbors within radius
-        neighbors = [vertex for vertex in tree if distance(vertex, new_point) < radius]
-        
-        # Choose the best parent for the new point
-        best_parent = nearest
-        min_cost = cost[nearest] + distance(nearest, new_point)
-        for neighbor in neighbors:
-            new_cost = cost[neighbor] + distance(neighbor, new_point)
-            if new_cost < min_cost:
-                best_parent = neighbor
-                min_cost = new_cost
-        
-        tree.append(new_point)
-        parent[new_point] = best_parent
-        cost[new_point] = min_cost
-        
-        # Rewire the tree
-        for neighbor in neighbors:
-            if neighbor == best_parent:
-                continue
-            new_cost = cost[new_point] + distance(new_point, neighbor)
-            if new_cost < cost[neighbor]:
-                parent[neighbor] = new_point
-                cost[neighbor] = new_cost
-        
-        for target in target_positions:
-            if distance(new_point, target) < 0.1:
-                tree.append(target)
-                parent[target] = new_point
-                return tree, parent, target
+
+    def get_nearest_node(self, rand_node):
+        distances = [self.calc_distance(node, rand_node) for node in self.node_list]
+        min_index = distances.index(min(distances))
+        return self.node_list[min_index]
+
+    def steer(self, from_node, to_node):
+        distance, theta = self.calc_distance_and_angle(from_node, to_node)
+        distance = min(self.step_size, distance)
+        new_node = Node(
+            from_node.x + distance * math.cos(theta),
+            from_node.y + distance * math.sin(theta)
+        )
+        new_node.cost = from_node.cost + distance
+        new_node.parent = from_node
+        return new_node
+
+    def is_collision_free(self, node):
+        point = (node.x, node.y)
+        if self.is_in_obstacle(point):
+            return False
+        # Check map boundaries
+        if not (-self.map_size[0]/2 <= node.x <= self.map_size[0]/2 and
+                -self.map_size[1]/2 <= node.y <= self.map_size[1]/2):
+            return False
+        return True
+
+    def find_neighbors(self, new_node):
+        neighbors = []
+        for node in self.node_list:
+            if self.calc_distance(node, new_node) <= self.search_radius:
+                neighbors.append(node)
+        return neighbors
+
+    def choose_parent(self, neighbors, nearest_node, new_node):
+        best_cost = nearest_node.cost + self.calc_distance(nearest_node, new_node)
+        best_node = nearest_node
+        for node in neighbors:
+            cost = node.cost + self.calc_distance(node, new_node)
+            if cost < best_cost and self.is_collision_free_path(node, new_node):
+                best_cost = cost
+                best_node = node
+        new_node.cost = best_cost
+        new_node.parent = best_node
+        return new_node
+
+    def rewire(self, new_node, neighbors):
+        for node in neighbors:
+            cost_through_new = new_node.cost + self.calc_distance(new_node, node)
+            if cost_through_new < node.cost and self.is_collision_free_path(new_node, node):
+                node.parent = new_node
+                node.cost = cost_through_new
+
+    def reached_goal(self, node):
+        distance = self.calc_distance(node, self.goal)
+        return distance <= self.goal_region_radius
+
+    def generate_final_path(self, goal_node):
+        path = []
+        node = goal_node
+        while node is not None:
+            path.append((node.x, node.y))
+            node = node.parent
+        return path[::-1]  # Reverse the path
     
-    return tree, parent, None
+    # Place plan() as the last method
+    def plan(self):
+        for _ in range(self.max_iter):
+            rand_node = self.get_random_node()
+            nearest_node = self.get_nearest_node(rand_node)
+            new_node = self.steer(nearest_node, rand_node)
 
+            if self.is_collision_free(new_node):
+                neighbors = self.find_neighbors(new_node)
+                new_node = self.choose_parent(neighbors, nearest_node, new_node)
+                self.node_list.append(new_node)
+                self.rewire(new_node, neighbors)
 
-def extract_path(tree, parent, target):
-    if target not in parent:
-        return []
-    path = [target]
-    while parent[target] is not None:
-        target = parent[target]
-        path.append(target)
-    path.reverse()
-    return path
-
+                if self.reached_goal(new_node):
+                    self.path = self.generate_final_path(new_node)
+                    self.goal_reached = True
+                    return
 
 def visualize_space(initial_positions, target_positions, obstacles, paths=None):
     """
@@ -270,24 +301,31 @@ def main():
 
     paths = []
     for i, initial_position in enumerate(initial_positions):
-        tree, parent, target = rrt_star(initial_position, target_positions, obstacles)
-        if target:
-            path = extract_path(tree, parent, target)
+        rrt_star = RRTStar(
+            start=initial_position,
+            goal=target_positions[3],  # Assuming all robots share the first target
+            obstacles=obstacles,
+            map_size=(SPACE_WIDTH, SPACE_HEIGHT),
+            step_size=0.05,
+            max_iter=20000,
+            goal_bias=0.3  # Set desired goal_bias here
+        )
+        rrt_star.plan()
+        if rrt_star.path:
+            path = rrt_star.path
             paths.append(path)
-            write_trajectory_to_file(path, f"output/XY_303_1_{i+1}.txt", 303, 1, i+1)
+            write_trajectory_to_file(
+                path,
+                f"output/XY_303_1_{i+1}.txt",
+                303,
+                1,
+                i+1
+            )
         else:
             print(f"No path found for robot starting at {initial_position}.")
 
     # Visualize the space with paths for each robot
     visualize_space(initial_positions, target_positions, obstacles, paths)
-    
-    # Print in pretty format
-    # print('Initial positions:', initial_positions)
-    # print('Target positions:', target_positions)
-    # print('Obstacles:')
-    # for i, obstacle in enumerate(obstacles):
-    #     print(f'Obstacle {i + 1}:', obstacle)
-    
 
 if __name__ == "__main__":    
     main()
