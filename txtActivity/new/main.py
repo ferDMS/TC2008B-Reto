@@ -462,9 +462,9 @@ def generate_paths():
                 goal=end_point,
                 obstacles=obstacles,
                 map_size=(SPACE_WIDTH, SPACE_HEIGHT),
-                step_size=0.05,
-                max_iter=1000000,
-                goal_bias=0.4,
+                step_size=0.3,
+                max_iter=10000,
+                goal_bias=0.1,
                 improvement_threshold=0.01,
                 max_no_improvement_iter=1000
             )
