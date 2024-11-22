@@ -15,6 +15,9 @@ import numpy as np
 from shapely.geometry import Point, LineString, Polygon, box
 from shapely.affinity import rotate
 import time
+import sys
+from matplotlib.animation import FuncAnimation
+import matplotlib.animation as animation
 
 # Dimensions of robot (m)
 ROBOT_WIDTH = 0.18
@@ -27,6 +30,9 @@ MARGIN = 0.03
 # Effective dimensions including margin
 EFFECTIVE_ROBOT_WIDTH = ROBOT_WIDTH + 2 * MARGIN
 EFFECTIVE_ROBOT_HEIGHT = ROBOT_HEIGHT + 2 * MARGIN
+# Add these global variables after the existing dimensions
+ROBOT_SPEED = 0.03  # meters per frame
+PATH_ALPHA = 0.3   # transparency of path lines
 
 
 def parse_initial_positions(file_path):
@@ -290,10 +296,8 @@ class RRTStar:
 
 def visualize_space(initial_positions, target_positions, obstacles, paths=None):
     """
-    Once a simulation is run, this function can be used to visualize the space with the initial positions, target positions, obstacles, and the paths taken by the robots.
-    
-    Args:
-        paths: List of paths, where each path is a list of (x,y) coordinates
+    Visualizes the space with the initial positions, target positions, obstacles, paths,
+    and animates the robots moving along their paths.
     """
     fig, ax = plt.subplots()
     ax.set_xlim(-SPACE_WIDTH/2, SPACE_WIDTH/2)
@@ -320,30 +324,83 @@ def visualize_space(initial_positions, target_positions, obstacles, paths=None):
         polygon = patches.Polygon(obstacle, edgecolor='none', facecolor='red')
         ax.add_patch(polygon)
     
-    # Draw robots
-    for pos in initial_positions:
-        rect = patches.Rectangle(
-            (pos[0] - ROBOT_WIDTH/2, pos[1] - ROBOT_HEIGHT/2), 
-            ROBOT_WIDTH, 
-            ROBOT_HEIGHT, 
-            edgecolor='none', 
-            facecolor='lightgrey'
-        )
-        ax.add_patch(rect)
-    
-    # Draw paths
     if paths:
+        # Draw paths with reduced alpha
         for i, path in enumerate(paths):
             path_x, path_y = zip(*path)
-            color = 'lightblue' if i == 0 else 'lightgreen'
-            ax.plot(path_x, path_y, color=color, linewidth=2, label=f'Robot {i+1} Path')
+            color = 'blue' if i == 0 else 'green'
+            ax.plot(path_x, path_y, color=color, linewidth=2, alpha=PATH_ALPHA, label=f'Robot {i+1} Path')
+        
+        # Create robot patches
+        robots = []
+        robot_colors = ['blue', 'green']
+        for i, pos in enumerate(initial_positions):
+            robot = patches.Rectangle(
+                (pos[0] - ROBOT_WIDTH/2, pos[1] - ROBOT_HEIGHT/2),
+                ROBOT_WIDTH,
+                ROBOT_HEIGHT,
+                edgecolor='none',
+                facecolor=robot_colors[i]
+            )
+            ax.add_patch(robot)
+            robots.append(robot)
+        
+        # Calculate total distance for each path
+        path_distances = []
+        for path in paths:
+            total_dist = 0
+            for i in range(len(path)-1):
+                dx = path[i+1][0] - path[i][0]
+                dy = path[i+1][1] - path[i][1]
+                total_dist += math.sqrt(dx*dx + dy*dy)
+            path_distances.append(total_dist)
+        
+        # Calculate number of frames needed
+        max_distance = max(path_distances)
+        num_frames = int(max_distance / ROBOT_SPEED) + 1
+        
+        def update(frame):
+            # Calculate distance covered
+            distance = frame * ROBOT_SPEED
             
-            ax.plot(path_x, path_y, 'o', color=color, markersize=2)
-
+            # Update each robot's position
+            for robot_idx, (robot, path) in enumerate(zip(robots, paths)):
+                # Find position along path at current distance
+                current_dist = 0
+                current_pos = path[0]
+                
+                for i in range(len(path)-1):
+                    dx = path[i+1][0] - path[i][0]
+                    dy = path[i+1][1] - path[i][1]
+                    segment_dist = math.sqrt(dx*dx + dy*dy)
+                    
+                    if current_dist + segment_dist >= distance:
+                        # Interpolate position
+                        t = (distance - current_dist) / segment_dist
+                        current_pos = (
+                            path[i][0] + t * dx,
+                            path[i][1] + t * dy
+                        )
+                        break
+                    current_dist += segment_dist
+                    if i == len(path)-2:  # If at end of path
+                        current_pos = path[-1]
+                
+                # Update robot position
+                robot.set_xy((current_pos[0] - ROBOT_WIDTH/2, current_pos[1] - ROBOT_HEIGHT/2))
+            
+            return robots
+        
+        # Create and save animation
+        anim = FuncAnimation(
+            fig, update, frames=num_frames,
+            interval=20, blit=True
+        )
+        anim.save('output/simulation.gif', writer='pillow')
+    
     plt.legend()
     plt.gca().set_facecolor('white')
     plt.show()
-
 
 def write_trajectory_to_file(path, file_name, group, team, robot):
     with open(file_name, 'w') as file:
@@ -354,8 +411,29 @@ def write_trajectory_to_file(path, file_name, group, team, robot):
                 file.write(f"{x},{y},0\n")
 
 
-# Example usage
-def main():
+def load_paths_from_directory(directory):
+    """
+    Load paths for robots from a specified directory.
+
+    Args:
+        directory (str): The path to the directory containing the path files.
+
+    Returns:
+        list: A list of paths, where each path is a list of (x, y) coordinates.
+    """
+    paths = []
+    for robot_number in [1, 2]:
+        file_path = os.path.join(directory, f"XY_303_1_{robot_number}.txt")
+        path = []
+        with open(file_path, 'r') as file:
+            lines = file.readlines()
+            for line in lines:
+                x, y, _ = line.strip().split(',')
+                path.append((float(x), float(y)))
+        paths.append(path)
+    return paths
+
+def generate_paths():
     initial_positions = parse_initial_positions('input/InitialPositions.txt')
     target_positions = parse_target_positions('input/TargetPositions.txt')
     obstacles = parse_obstacles('input')
@@ -417,5 +495,28 @@ def main():
     # Visualize the space with paths for each robot
     visualize_space(initial_positions, target_positions, obstacles, paths)
 
-if __name__ == "__main__":    
+def main():
+    print("Reto: Sistema Multiagentes en Robotario")
+    print("1. Generate paths")
+    print("2. Load paths")
+    print("3. Exit")
+    
+    choice = input("Enter your choice (1-3): ")
+    
+    if choice == '1':
+        generate_paths()
+    elif choice == '2':
+        directory_number = input("Enter the directory number to load paths from: ")
+        directory = f"./best/{directory_number}/"
+        paths = load_paths_from_directory(directory)
+        initial_positions = parse_initial_positions('input/InitialPositions.txt')
+        target_positions = parse_target_positions('input/TargetPositions.txt')
+        obstacles = parse_obstacles('input')
+        visualize_space(initial_positions, target_positions, obstacles, paths)
+    elif choice == '3':
+        sys.exit()
+    else:
+        print("Invalid choice. Please enter 1, 2, or 3.")
+
+if __name__ == "__main__":
     main()
