@@ -106,6 +106,11 @@ public class SimulationVisualizer : MonoBehaviour
             tractor.transform.parent = tractorsParent.transform;
             tractor.name = "Tractor_" + i;
             tractors[i] = tractor;
+
+            // Add tractor controller
+            TractorController tractorController = tractor.AddComponent<TractorController>();
+            tractorController.moveSpeed = moveSpeed;
+            tractorController.targetPosition = startPos;
         }
     }
     
@@ -130,6 +135,8 @@ public class SimulationVisualizer : MonoBehaviour
                     if (tractors.ContainsKey(i))
                     {
                         GameObject tractor = tractors[i];
+                        TractorController tractorController = tractor.GetComponent<TractorController>();
+
                         Vector2Int tractorPos = stepInfo.GetTractorPosition(i);
                         Vector3 targetPos = farmController.GetWorldPositionFromGrid(
                             tractorPos.x,
@@ -137,29 +144,32 @@ public class SimulationVisualizer : MonoBehaviour
                         );
                         targetPos.y += tractorHeight;
 
-                        // Smoothly move the tractor
-                        while (Vector3.Distance(tractor.transform.position, targetPos) > 0.01f)
-                        {
-                            tractor.transform.position = Vector3.MoveTowards(
-                                tractor.transform.position,
-                                targetPos,
-                                moveSpeed * Time.deltaTime
-                            );
+                        tractorController.targetPosition = targetPos;
+                        
+                        // // Smoothly move the tractor
+                        // while (Vector3.Distance(tractor.transform.position, targetPos) > 0.01f)
+                        // {
+                        //     tractor.transform.position = Vector3.MoveTowards(
+                        //         tractor.transform.position,
+                        //         targetPos,
+                        //         moveSpeed * Time.deltaTime
+                        //     );
 
-                            // Rotate tractor to face movement direction
-                            Vector3 moveDirection = (targetPos - tractor.transform.position).normalized;
-                            if (moveDirection != Vector3.zero)
-                            {
-                                Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
-                                tractor.transform.rotation = Quaternion.Slerp(
-                                    tractor.transform.rotation,
-                                    targetRotation,
-                                    moveSpeed * Time.deltaTime
-                                );
-                            }
+                        //     // Rotate tractor to face movement direction
+                        //     Vector3 moveDirection = (targetPos - tractor.transform.position).normalized;
+                        //     if (moveDirection != Vector3.zero)
+                        //     {
+                        //         Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
+                        //         tractor.transform.rotation = Quaternion.Slerp(
+                        //             tractor.transform.rotation,
+                        //             targetRotation,
+                        //             moveSpeed * Time.deltaTime
+                        //         );
+                        //     }
 
-                            yield return null;
-                        }
+                        //     yield return null;
+                        // }
+                        
                         // Update tractor visual state based on task
                         UpdateTractorVisuals(tractor, stepInfo, i);
                     }
@@ -181,15 +191,15 @@ public class SimulationVisualizer : MonoBehaviour
         {
             case "watering":
                 // Maybe activate a water particle system
-                Debug.Log("Watering");
+                Debug.Log($"Tractor {tractorId} is watering");
                 break;
             case "harvesting":
                 // Maybe activate a harvesting animation
-                Debug.Log("Harvesting");
+                Debug.Log($"Tractor {tractorId} is harvesting");
                 break;
             case "depositing":
                 // Maybe change the tractor's appearance to show it's carrying wheat
-                Debug.Log("Depositing");
+                Debug.Log($"Tractor {tractorId} is depositing");
                 break;
         }
 

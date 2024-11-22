@@ -355,12 +355,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantGridSize: 5
   pathWidth: 2
-  numTractors: 2
+  numTractors: 3
   waterCapacity: 100
   fuelCapacity: 50
-  steps: 10
+  wheatCapacity: 5
+  steps: 200
   planePrefab: {fileID: 2793192979896523762, guid: 821131ebb2cd8a34caf41c17e7df6e20, type: 3}
   cellSize: 5
+  stepsList: []
   showGridGizmos: 1
   pathColor: {r: 1, g: 0, b: 0, a: 1}
   plantAreaColor: {r: 0, g: 1, b: 0, a: 1}
@@ -381,10 +383,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tractorPrefab: {fileID: 2353667117051812687, guid: 9effba7ea30f9b943bb604bf75f8e947, type: 3}
-  plantPrefab: {fileID: 3498979211894821539, guid: b57251ab50acb074f81247b388e9929b, type: 3}
+  plantPrefab: {fileID: 8015885555923478450, guid: 8757c910c4ac54f41820b1dd5a60d851, type: 3}
   moveSpeed: 5
   stepDelay: 1
-  tractorHeight: 0.5
+  tractorHeight: 1
   plantHeight: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

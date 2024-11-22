@@ -4,8 +4,8 @@
         "tractors": [
             {
                 "position": [
-                    7,
-                    8
+                    0,
+                    4
                 ],
                 "task": "watering",
                 "water_level": 100,
@@ -14,8 +14,18 @@
             },
             {
                 "position": [
-                    8,
+                    4,
                     1
+                ],
+                "task": "watering",
+                "water_level": 100,
+                "fuel_level": 49,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    6,
+                    8
                 ],
                 "task": "watering",
                 "water_level": 100,
@@ -29,8 +39,8 @@
         "tractors": [
             {
                 "position": [
-                    6,
-                    8
+                    1,
+                    4
                 ],
                 "task": "watering",
                 "water_level": 100,
@@ -39,8 +49,18 @@
             },
             {
                 "position": [
-                    7,
-                    1
+                    4,
+                    2
+                ],
+                "task": "watering",
+                "water_level": 99,
+                "fuel_level": 48,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    6,
+                    7
                 ],
                 "task": "watering",
                 "water_level": 100,
@@ -54,21 +74,31 @@
         "tractors": [
             {
                 "position": [
-                    6,
-                    7
+                    2,
+                    4
                 ],
                 "task": "watering",
-                "water_level": 100,
+                "water_level": 99,
+                "fuel_level": 47,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    4,
+                    2
+                ],
+                "task": "watering",
+                "water_level": 99,
                 "fuel_level": 47,
                 "wheat_level": 0
             },
             {
                 "position": [
                     6,
-                    1
+                    6
                 ],
                 "task": "watering",
-                "water_level": 100,
+                "water_level": 99,
                 "fuel_level": 47,
                 "wheat_level": 0
             }
@@ -79,8 +109,8 @@
         "tractors": [
             {
                 "position": [
-                    6,
-                    6
+                    2,
+                    4
                 ],
                 "task": "watering",
                 "water_level": 99,
@@ -89,8 +119,18 @@
             },
             {
                 "position": [
-                    6,
+                    3,
                     2
+                ],
+                "task": "watering",
+                "water_level": 98,
+                "fuel_level": 46,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    6,
+                    6
                 ],
                 "task": "watering",
                 "water_level": 99,
@@ -104,21 +144,31 @@
         "tractors": [
             {
                 "position": [
-                    6,
-                    6
+                    2,
+                    3
                 ],
                 "task": "watering",
-                "water_level": 99,
+                "water_level": 98,
+                "fuel_level": 45,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    3,
+                    2
+                ],
+                "task": "watering",
+                "water_level": 98,
                 "fuel_level": 45,
                 "wheat_level": 0
             },
             {
                 "position": [
                     6,
-                    2
+                    5
                 ],
                 "task": "watering",
-                "water_level": 99,
+                "water_level": 98,
                 "fuel_level": 45,
                 "wheat_level": 0
             }
@@ -129,8 +179,8 @@
         "tractors": [
             {
                 "position": [
-                    6,
-                    5
+                    2,
+                    3
                 ],
                 "task": "watering",
                 "water_level": 98,
@@ -139,8 +189,18 @@
             },
             {
                 "position": [
-                    5,
+                    2,
                     2
+                ],
+                "task": "watering",
+                "water_level": 97,
+                "fuel_level": 44,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    6,
+                    5
                 ],
                 "task": "watering",
                 "water_level": 98,
@@ -154,21 +214,31 @@
         "tractors": [
             {
                 "position": [
-                    6,
-                    5
+                    2,
+                    3
                 ],
                 "task": "watering",
                 "water_level": 98,
+                "fuel_level": 44,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    2,
+                    2
+                ],
+                "task": "watering",
+                "water_level": 97,
                 "fuel_level": 43,
                 "wheat_level": 0
             },
             {
                 "position": [
-                    5,
-                    2
+                    6,
+                    4
                 ],
                 "task": "watering",
-                "water_level": 98,
+                "water_level": 97,
                 "fuel_level": 43,
                 "wheat_level": 0
             }
@@ -179,8 +249,18 @@
         "tractors": [
             {
                 "position": [
-                    6,
-                    4
+                    2,
+                    3
+                ],
+                "task": "watering",
+                "water_level": 98,
+                "fuel_level": 43,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    3,
+                    2
                 ],
                 "task": "watering",
                 "water_level": 97,
@@ -189,8 +269,8 @@
             },
             {
                 "position": [
-                    4,
-                    2
+                    6,
+                    4
                 ],
                 "task": "watering",
                 "water_level": 97,
@@ -204,21 +284,31 @@
         "tractors": [
             {
                 "position": [
-                    6,
-                    4
+                    3,
+                    3
                 ],
                 "task": "watering",
                 "water_level": 97,
-                "fuel_level": 41,
+                "fuel_level": 42,
                 "wheat_level": 0
             },
             {
                 "position": [
-                    4,
+                    3,
                     2
                 ],
                 "task": "watering",
                 "water_level": 97,
+                "fuel_level": 42,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    6,
+                    3
+                ],
+                "task": "watering",
+                "water_level": 96,
                 "fuel_level": 41,
                 "wheat_level": 0
             }
@@ -229,7 +319,42 @@
         "tractors": [
             {
                 "position": [
+                    3,
+                    3
+                ],
+                "task": "watering",
+                "water_level": 97,
+                "fuel_level": 41,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    3,
+                    2
+                ],
+                "task": "watering",
+                "water_level": 97,
+                "fuel_level": 41,
+                "wheat_level": 0
+            },
+            {
+                "position": [
                     6,
+                    3
+                ],
+                "task": "watering",
+                "water_level": 96,
+                "fuel_level": 40,
+                "wheat_level": 0
+            }
+        ]
+    },
+    {
+        "step": 10,
+        "tractors": [
+            {
+                "position": [
+                    4,
                     3
                 ],
                 "task": "watering",
@@ -239,13 +364,6638 @@
             },
             {
                 "position": [
-                    3,
+                    4,
+                    2
+                ],
+                "task": "watering",
+                "water_level": 97,
+                "fuel_level": 40,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    6,
+                    2
+                ],
+                "task": "watering",
+                "water_level": 95,
+                "fuel_level": 39,
+                "wheat_level": 0
+            }
+        ]
+    },
+    {
+        "step": 11,
+        "tractors": [
+            {
+                "position": [
+                    4,
+                    3
+                ],
+                "task": "watering",
+                "water_level": 96,
+                "fuel_level": 39,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
                     2
                 ],
                 "task": "watering",
                 "water_level": 96,
-                "fuel_level": 40,
+                "fuel_level": 39,
                 "wheat_level": 0
+            },
+            {
+                "position": [
+                    6,
+                    2
+                ],
+                "task": "watering",
+                "water_level": 95,
+                "fuel_level": 38,
+                "wheat_level": 0
+            }
+        ]
+    },
+    {
+        "step": 12,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "watering",
+                "water_level": 95,
+                "fuel_level": 38,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "watering",
+                "water_level": 96,
+                "fuel_level": 38,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    6,
+                    3
+                ],
+                "task": "watering",
+                "water_level": 95,
+                "fuel_level": 37,
+                "wheat_level": 0
+            }
+        ]
+    },
+    {
+        "step": 13,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "watering",
+                "water_level": 95,
+                "fuel_level": 37,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    4,
+                    2
+                ],
+                "task": "watering",
+                "water_level": 96,
+                "fuel_level": 37,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    6,
+                    3
+                ],
+                "task": "watering",
+                "water_level": 95,
+                "fuel_level": 37,
+                "wheat_level": 0
+            }
+        ]
+    },
+    {
+        "step": 14,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "watering",
+                "water_level": 94,
+                "fuel_level": 36,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    4,
+                    3
+                ],
+                "task": "watering",
+                "water_level": 96,
+                "fuel_level": 36,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    6,
+                    3
+                ],
+                "task": "watering",
+                "water_level": 95,
+                "fuel_level": 36,
+                "wheat_level": 0
+            }
+        ]
+    },
+    {
+        "step": 15,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "watering",
+                "water_level": 94,
+                "fuel_level": 35,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    4,
+                    4
+                ],
+                "task": "watering",
+                "water_level": 95,
+                "fuel_level": 35,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    6,
+                    4
+                ],
+                "task": "watering",
+                "water_level": 95,
+                "fuel_level": 35,
+                "wheat_level": 0
+            }
+        ]
+    },
+    {
+        "step": 16,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "watering",
+                "water_level": 94,
+                "fuel_level": 35,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    4,
+                    4
+                ],
+                "task": "watering",
+                "water_level": 95,
+                "fuel_level": 35,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    6,
+                    5
+                ],
+                "task": "watering",
+                "water_level": 95,
+                "fuel_level": 34,
+                "wheat_level": 0
+            }
+        ]
+    },
+    {
+        "step": 17,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "watering",
+                "water_level": 94,
+                "fuel_level": 34,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    4,
+                    4
+                ],
+                "task": "watering",
+                "water_level": 95,
+                "fuel_level": 34,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    5
+                ],
+                "task": "watering",
+                "water_level": 94,
+                "fuel_level": 33,
+                "wheat_level": 0
+            }
+        ]
+    },
+    {
+        "step": 18,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "watering",
+                "water_level": 94,
+                "fuel_level": 34,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    3,
+                    4
+                ],
+                "task": "watering",
+                "water_level": 94,
+                "fuel_level": 33,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    4,
+                    5
+                ],
+                "task": "watering",
+                "water_level": 93,
+                "fuel_level": 32,
+                "wheat_level": 0
+            }
+        ]
+    },
+    {
+        "step": 19,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "watering",
+                "water_level": 94,
+                "fuel_level": 33,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    3,
+                    4
+                ],
+                "task": "watering",
+                "water_level": 94,
+                "fuel_level": 32,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    4,
+                    4
+                ],
+                "task": "watering",
+                "water_level": 93,
+                "fuel_level": 31,
+                "wheat_level": 0
+            }
+        ]
+    },
+    {
+        "step": 20,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    5
+                ],
+                "task": "watering",
+                "water_level": 94,
+                "fuel_level": 32,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    3,
+                    5
+                ],
+                "task": "watering",
+                "water_level": 93,
+                "fuel_level": 31,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    4,
+                    4
+                ],
+                "task": "watering",
+                "water_level": 93,
+                "fuel_level": 30,
+                "wheat_level": 0
+            }
+        ]
+    },
+    {
+        "step": 21,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    6
+                ],
+                "task": "watering",
+                "water_level": 93,
+                "fuel_level": 31,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    3,
+                    5
+                ],
+                "task": "watering",
+                "water_level": 93,
+                "fuel_level": 30,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    4,
+                    5
+                ],
+                "task": "watering",
+                "water_level": 93,
+                "fuel_level": 29,
+                "wheat_level": 0
+            }
+        ]
+    },
+    {
+        "step": 22,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    6
+                ],
+                "task": "watering",
+                "water_level": 93,
+                "fuel_level": 30,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    2,
+                    5
+                ],
+                "task": "watering",
+                "water_level": 92,
+                "fuel_level": 29,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    4,
+                    6
+                ],
+                "task": "watering",
+                "water_level": 92,
+                "fuel_level": 28,
+                "wheat_level": 0
+            }
+        ]
+    },
+    {
+        "step": 23,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    6
+                ],
+                "task": "watering",
+                "water_level": 93,
+                "fuel_level": 30,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    2,
+                    5
+                ],
+                "task": "watering",
+                "water_level": 92,
+                "fuel_level": 28,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    4,
+                    6
+                ],
+                "task": "watering",
+                "water_level": 92,
+                "fuel_level": 27,
+                "wheat_level": 0
+            }
+        ]
+    },
+    {
+        "step": 24,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    6
+                ],
+                "task": "watering",
+                "water_level": 93,
+                "fuel_level": 29,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    2,
+                    6
+                ],
+                "task": "watering",
+                "water_level": 91,
+                "fuel_level": 27,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    3,
+                    6
+                ],
+                "task": "watering",
+                "water_level": 91,
+                "fuel_level": 26,
+                "wheat_level": 0
+            }
+        ]
+    },
+    {
+        "step": 25,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    5
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 28,
+                "wheat_level": 1
+            },
+            {
+                "position": [
+                    2,
+                    6
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 26,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    3,
+                    6
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 25,
+                "wheat_level": 0
+            }
+        ]
+    },
+    {
+        "step": 26,
+        "tractors": [
+            {
+                "position": [
+                    4,
+                    5
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 27,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    2,
+                    5
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 25,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    3,
+                    5
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 24,
+                "wheat_level": 1
+            }
+        ]
+    },
+    {
+        "step": 27,
+        "tractors": [
+            {
+                "position": [
+                    4,
+                    5
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 27,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    2,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 24,
+                "wheat_level": 1
+            },
+            {
+                "position": [
+                    3,
+                    5
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 23,
+                "wheat_level": 1
+            }
+        ]
+    },
+    {
+        "step": 28,
+        "tractors": [
+            {
+                "position": [
+                    3,
+                    6
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 26,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    2,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 23,
+                "wheat_level": 1
+            },
+            {
+                "position": [
+                    3,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 22,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 29,
+        "tractors": [
+            {
+                "position": [
+                    3,
+                    6
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 25,
+                "wheat_level": 3
+            },
+            {
+                "position": [
+                    2,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 22,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    3,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 21,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 30,
+        "tractors": [
+            {
+                "position": [
+                    3,
+                    6
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 24,
+                "wheat_level": 3
+            },
+            {
+                "position": [
+                    2,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 21,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    3,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 20,
+                "wheat_level": 3
+            }
+        ]
+    },
+    {
+        "step": 31,
+        "tractors": [
+            {
+                "position": [
+                    2,
+                    6
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 23,
+                "wheat_level": 4
+            },
+            {
+                "position": [
+                    2,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 20,
+                "wheat_level": 3
+            },
+            {
+                "position": [
+                    3,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 19,
+                "wheat_level": 3
+            }
+        ]
+    },
+    {
+        "step": 32,
+        "tractors": [
+            {
+                "position": [
+                    2,
+                    6
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 22,
+                "wheat_level": 4
+            },
+            {
+                "position": [
+                    2,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 19,
+                "wheat_level": 3
+            },
+            {
+                "position": [
+                    3,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 18,
+                "wheat_level": 4
+            }
+        ]
+    },
+    {
+        "step": 33,
+        "tractors": [
+            {
+                "position": [
+                    2,
+                    5
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 21,
+                "wheat_level": 5
+            },
+            {
+                "position": [
+                    2,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 19,
+                "wheat_level": 3
+            },
+            {
+                "position": [
+                    3,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 17,
+                "wheat_level": 4
+            }
+        ]
+    },
+    {
+        "step": 34,
+        "tractors": [
+            {
+                "position": [
+                    2,
+                    5
+                ],
+                "task": "depositing",
+                "water_level": 93,
+                "fuel_level": 20,
+                "wheat_level": 5
+            },
+            {
+                "position": [
+                    2,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 18,
+                "wheat_level": 3
+            },
+            {
+                "position": [
+                    4,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 16,
+                "wheat_level": 5
+            }
+        ]
+    },
+    {
+        "step": 35,
+        "tractors": [
+            {
+                "position": [
+                    2,
+                    4
+                ],
+                "task": "depositing",
+                "water_level": 93,
+                "fuel_level": 19,
+                "wheat_level": 5
+            },
+            {
+                "position": [
+                    2,
+                    1
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 17,
+                "wheat_level": 3
+            },
+            {
+                "position": [
+                    4,
+                    2
+                ],
+                "task": "depositing",
+                "water_level": 91,
+                "fuel_level": 15,
+                "wheat_level": 5
+            }
+        ]
+    },
+    {
+        "step": 36,
+        "tractors": [
+            {
+                "position": [
+                    2,
+                    3
+                ],
+                "task": "depositing",
+                "water_level": 93,
+                "fuel_level": 18,
+                "wheat_level": 5
+            },
+            {
+                "position": [
+                    3,
+                    1
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 16,
+                "wheat_level": 3
+            },
+            {
+                "position": [
+                    4,
+                    1
+                ],
+                "task": "depositing",
+                "water_level": 91,
+                "fuel_level": 14,
+                "wheat_level": 5
+            }
+        ]
+    },
+    {
+        "step": 37,
+        "tractors": [
+            {
+                "position": [
+                    3,
+                    3
+                ],
+                "task": "depositing",
+                "water_level": 93,
+                "fuel_level": 17,
+                "wheat_level": 5
+            },
+            {
+                "position": [
+                    3,
+                    1
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 16,
+                "wheat_level": 3
+            },
+            {
+                "position": [
+                    4,
+                    0
+                ],
+                "task": "depositing",
+                "water_level": 91,
+                "fuel_level": 13,
+                "wheat_level": 5
+            }
+        ]
+    },
+    {
+        "step": 38,
+        "tractors": [
+            {
+                "position": [
+                    4,
+                    3
+                ],
+                "task": "depositing",
+                "water_level": 93,
+                "fuel_level": 16,
+                "wheat_level": 5
+            },
+            {
+                "position": [
+                    4,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 15,
+                "wheat_level": 3
+            },
+            {
+                "position": [
+                    5,
+                    0
+                ],
+                "task": "depositing",
+                "water_level": 91,
+                "fuel_level": 12,
+                "wheat_level": 5
+            }
+        ]
+    },
+    {
+        "step": 39,
+        "tractors": [
+            {
+                "position": [
+                    4,
+                    3
+                ],
+                "task": "depositing",
+                "water_level": 93,
+                "fuel_level": 16,
+                "wheat_level": 5
+            },
+            {
+                "position": [
+                    4,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 14,
+                "wheat_level": 3
+            },
+            {
+                "position": [
+                    6,
+                    0
+                ],
+                "task": "depositing",
+                "water_level": 91,
+                "fuel_level": 11,
+                "wheat_level": 5
+            }
+        ]
+    },
+    {
+        "step": 40,
+        "tractors": [
+            {
+                "position": [
+                    4,
+                    1
+                ],
+                "task": "depositing",
+                "water_level": 93,
+                "fuel_level": 15,
+                "wheat_level": 5
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 13,
+                "wheat_level": 4
+            },
+            {
+                "position": [
+                    7,
+                    0
+                ],
+                "task": "depositing",
+                "water_level": 91,
+                "fuel_level": 10,
+                "wheat_level": 5
+            }
+        ]
+    },
+    {
+        "step": 41,
+        "tractors": [
+            {
+                "position": [
+                    4,
+                    0
+                ],
+                "task": "depositing",
+                "water_level": 93,
+                "fuel_level": 14,
+                "wheat_level": 5
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 12,
+                "wheat_level": 4
+            },
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "depositing",
+                "water_level": 91,
+                "fuel_level": 9,
+                "wheat_level": 0
+            }
+        ]
+    },
+    {
+        "step": 42,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    0
+                ],
+                "task": "depositing",
+                "water_level": 93,
+                "fuel_level": 13,
+                "wheat_level": 5
+            },
+            {
+                "position": [
+                    6,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 11,
+                "wheat_level": 5
+            },
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 8,
+                "wheat_level": 0
+            }
+        ]
+    },
+    {
+        "step": 43,
+        "tractors": [
+            {
+                "position": [
+                    6,
+                    0
+                ],
+                "task": "depositing",
+                "water_level": 93,
+                "fuel_level": 12,
+                "wheat_level": 5
+            },
+            {
+                "position": [
+                    6,
+                    2
+                ],
+                "task": "depositing",
+                "water_level": 91,
+                "fuel_level": 11,
+                "wheat_level": 5
+            },
+            {
+                "position": [
+                    7,
+                    0
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 7,
+                "wheat_level": 0
+            }
+        ]
+    },
+    {
+        "step": 44,
+        "tractors": [
+            {
+                "position": [
+                    6,
+                    0
+                ],
+                "task": "depositing",
+                "water_level": 93,
+                "fuel_level": 12,
+                "wheat_level": 5
+            },
+            {
+                "position": [
+                    6,
+                    2
+                ],
+                "task": "depositing",
+                "water_level": 91,
+                "fuel_level": 10,
+                "wheat_level": 5
+            },
+            {
+                "position": [
+                    7,
+                    1
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 6,
+                "wheat_level": 0
+            }
+        ]
+    },
+    {
+        "step": 45,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "depositing",
+                "water_level": 93,
+                "fuel_level": 11,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    6,
+                    1
+                ],
+                "task": "depositing",
+                "water_level": 91,
+                "fuel_level": 9,
+                "wheat_level": 5
+            },
+            {
+                "position": [
+                    7,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 5,
+                "wheat_level": 0
+            }
+        ]
+    },
+    {
+        "step": 46,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 10,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    7,
+                    1
+                ],
+                "task": "depositing",
+                "water_level": 91,
+                "fuel_level": 8,
+                "wheat_level": 5
+            },
+            {
+                "position": [
+                    7,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 4,
+                "wheat_level": 0
+            }
+        ]
+    },
+    {
+        "step": 47,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    1
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 9,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    7,
+                    1
+                ],
+                "task": "depositing",
+                "water_level": 91,
+                "fuel_level": 8,
+                "wheat_level": 5
+            },
+            {
+                "position": [
+                    6,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 3,
+                "wheat_level": 1
+            }
+        ]
+    },
+    {
+        "step": 48,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 8,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "depositing",
+                "water_level": 91,
+                "fuel_level": 7,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    6,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 2,
+                "wheat_level": 1
+            }
+        ]
+    },
+    {
+        "step": 49,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 7,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 6,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 1,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 50,
+        "tractors": [
+            {
+                "position": [
+                    7,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 6,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    7,
+                    0
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 5,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 51,
+        "tractors": [
+            {
+                "position": [
+                    6,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 5,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    6,
+                    0
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 4,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 52,
+        "tractors": [
+            {
+                "position": [
+                    6,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 4,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    0
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 3,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 53,
+        "tractors": [
+            {
+                "position": [
+                    6,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 3,
+                "wheat_level": 1
+            },
+            {
+                "position": [
+                    5,
+                    1
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 2,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 54,
+        "tractors": [
+            {
+                "position": [
+                    6,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 2,
+                "wheat_level": 1
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 1,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 55,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 1,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 1,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 56,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 57,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 58,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 59,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 60,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 61,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 62,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 63,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 64,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 65,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 66,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 67,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 68,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 69,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 70,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 71,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 72,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 73,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 74,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 75,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 76,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 77,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 78,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 79,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 80,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 81,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 82,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 83,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 84,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 85,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 86,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 87,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 88,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 89,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 90,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 91,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 92,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 93,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 94,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 95,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 96,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 97,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 98,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 99,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 100,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 101,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 102,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 103,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 104,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 105,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 106,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 107,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 108,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 109,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 110,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 111,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 112,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 113,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 114,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 115,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 116,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 117,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 118,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 119,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 120,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 121,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 122,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 123,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 124,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 125,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 126,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 127,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 128,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 129,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 130,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 131,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 132,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 133,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 134,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 135,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 136,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 137,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 138,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 139,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 140,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 141,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 142,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 143,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 144,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 145,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 146,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 147,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 148,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 149,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 150,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 151,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 152,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 153,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 154,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 155,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 156,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 157,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 158,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 159,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 160,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 161,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 162,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 163,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 164,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 165,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 166,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 167,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 168,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 169,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 170,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 171,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 172,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 173,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 174,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 175,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 176,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 177,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 178,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 179,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 180,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 181,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 182,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 183,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 184,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 185,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 186,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 187,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 188,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 189,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 190,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 191,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 192,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 193,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 194,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 195,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 196,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 197,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 198,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
+            }
+        ]
+    },
+    {
+        "step": 199,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    4
+                ],
+                "task": "harvesting",
+                "water_level": 93,
+                "fuel_level": 0,
+                "wheat_level": 2
+            },
+            {
+                "position": [
+                    5,
+                    2
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 0
+            },
+            {
+                "position": [
+                    5,
+                    3
+                ],
+                "task": "harvesting",
+                "water_level": 91,
+                "fuel_level": 0,
+                "wheat_level": 2
             }
         ]
     }

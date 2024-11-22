@@ -8,20 +8,7 @@ public class StepInfo
     public int step;
     public List<TractorInfo> tractors;
 
-    // Constructor to create a StepInfo with multiple tractors
-    public StepInfo(int stepNumber, List<TractorInfo> tractorsInfo)
-    {
-        step = stepNumber;
-        tractors = tractorsInfo;
-    }
-
-    // Default constructor
-    public StepInfo()
-    {
-        step = 0;
-        tractors = new List<TractorInfo>();
-    }
-
+    // Methods to access tractor info (optional)
     public Vector2Int GetTractorPosition(int tractorId)
     {
         return this.tractors[tractorId].tractorPosition;
@@ -29,26 +16,31 @@ public class StepInfo
 
     public string GetTractorTask(int tractorId)
     {
-        return this.tractors[tractorId].tractorTask;
+        return this.tractors[tractorId].task;
     }
 }
+
 
 [System.Serializable]
 public class TractorInfo
 {
-    public Vector2Int tractorPosition { get; set; }
-    public string tractorTask;
-    public int waterLevel;
-    public int fuelLevel;
-    public int wheatLevel;
+    public int[] position;
+    public string task;
+    public int water_level;
+    public int fuel_level;
+    public int wheat_level;
 
-    // Constructor to create a TractorInfo from parameters
-    public TractorInfo(int[] position, string task, int water, int fuel,int wheat)
+    // This property doesn't need to be serialized, so it's fine to keep it as a property
+    public Vector2Int tractorPosition => new Vector2Int(position[0], position[1]);
+
+    // Constructor (optional if you don't use it)
+    public TractorInfo(int[] position, string task, int water, int fuel, int wheat)
     {
-        tractorPosition = new Vector2Int(position[0], position[1]);
-        tractorTask = task;
-        waterLevel = water;
-        fuelLevel = fuel;
-        wheatLevel = wheat;
+        this.position = position;
+        this.task = task;
+        this.water_level = water;
+        this.fuel_level = fuel;
+        this.wheat_level = wheat;
     }
 }
+

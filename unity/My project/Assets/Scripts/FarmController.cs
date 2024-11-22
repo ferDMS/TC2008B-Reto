@@ -18,6 +18,13 @@ public class InitializeData
     public int steps;
 }
 
+[System.Serializable]
+public class StepInfoListWrapper
+{
+    public List<StepInfo> simulationSteps;
+}
+
+
 public class FarmController : MonoBehaviour
 {
 
@@ -33,7 +40,7 @@ public class FarmController : MonoBehaviour
     public GameObject planePrefab;
     private GameObject plane;
     public float cellSize = 1.0f;
-    private List<StepInfo> stepsList = new List<StepInfo>();
+    public List<StepInfo> stepsList;
 
     public bool showGridGizmos = true;
     public Color pathColor = Color.red;
@@ -116,28 +123,18 @@ public class FarmController : MonoBehaviour
         Debug.Log("Received: " + request.downloadHandler.text);
         try
         {
-            string jsonToParse = "{\"steps\": " + request.downloadHandler.text + "}";
-            SimulationDataWrapper simulationData = JsonHelper.FromJson<SimulationDataWrapper>(jsonToParse);
+            string json = $"{{\"simulationSteps\":{request.downloadHandler.text}}}";
+            var wrapper = JsonUtility.FromJson<StepInfoListWrapper>(json);
 
-            List<StepInfo> stepsList = new List<StepInfo>();
+            stepsList = wrapper.simulationSteps;
 
-            foreach (var step in simulationData.steps)
+            foreach (var step in stepsList)
             {
-                List<TractorInfo> tractors = new List<TractorInfo>();
                 foreach (var tractor in step.tractors)
                 {
-                    TractorInfo tractorInfo = new TractorInfo(
-                        new int[] { tractor.tractorPosition[0], tractor.tractorPosition[1] },
-                        tractor.tractorTask,
-                        tractor.waterLevel,
-                        tractor.fuelLevel,
-                        tractor.wheatLevel
-                    );
-                    tractors.Add(tractorInfo);
+                   Debug.Log($"Step {step.step}: Tractor at position {tractor.tractorPosition}");
                 }
-
-                StepInfo stepInfo = new StepInfo(step.step, tractors);
-                stepsList.Add(stepInfo);
+              
             }
             Debug.Log($"Processed {stepsList.Count} steps");
             OnSimulationInitialized.Invoke();
@@ -148,8 +145,6 @@ public class FarmController : MonoBehaviour
             yield break;  // Correctly terminating the coroutine on exception
         }
     }
-
-
 
     public Vector3 GetWorldPositionFromGrid(int x, int z)
     {
@@ -204,27 +199,3 @@ public class FarmController : MonoBehaviour
     }
 }
 
-// Helper class to match the JSON structure
-[System.Serializable]
-public class TractorStepData
-{
-    public int step;
-    public List<TractorInfo> tractors = new List<TractorInfo>();
-}
-
-[System.Serializable]
-public class SimulationDataWrapper
-{
-    public List<TractorStepData> steps = new List<TractorStepData>();
-}
-
-
-
-// Helper class for JSON parsing
-public static class JsonHelper
-{
-    public static T FromJson<T>(string json)
-    {
-        return JsonUtility.FromJson<T>(json);
-    }
-}
