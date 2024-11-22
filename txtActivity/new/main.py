@@ -14,15 +14,16 @@ import math
 import numpy as np
 from shapely.geometry import Point, LineString, Polygon, box
 from shapely.affinity import rotate
+import time
 
 # Dimensions of robot (m)
 ROBOT_WIDTH = 0.18
 ROBOT_HEIGHT = 0.20
 # Dimensions of space (m)
 SPACE_WIDTH = 6.5
-SPACE_HEIGHT = 6.5
+SPACE_HEIGHT = 4.5
 # Margin of error (m)
-MARGIN = 0.05
+MARGIN = 0.03
 # Effective dimensions including margin
 EFFECTIVE_ROBOT_WIDTH = ROBOT_WIDTH + 2 * MARGIN
 EFFECTIVE_ROBOT_HEIGHT = ROBOT_HEIGHT + 2 * MARGIN
@@ -108,7 +109,7 @@ class RRTStar:
         self.step_size = step_size
         self.max_iter = max_iter
         self.node_list = [self.start]
-        self.goal_region_radius = 0.1  # As per considerations
+        self.goal_region_radius = 0.01  # As per considerations
         self.search_radius = 0.3       # As per considerations
         self.path = None
         self.goal_reached = False
@@ -322,8 +323,11 @@ def visualize_space(initial_positions, target_positions, obstacles, paths=None):
         for i, path in enumerate(paths):
             path_x, path_y = zip(*path)
             color = 'lightblue' if i == 0 else 'lightgreen'
-            ax.plot(path_x, path_y, color=color)
+            ax.plot(path_x, path_y, color=color, linewidth=2, label=f'Robot {i+1} Path')
+            
+            ax.plot(path_x, path_y, 'o', color=color, markersize=2)
 
+    plt.legend()
     plt.gca().set_facecolor('white')
     plt.show()
 
@@ -345,28 +349,47 @@ def main():
     
     paths = []
     for i, initial_position in enumerate(initial_positions):
-        rrt_star = RRTStar(
-            start=initial_position,
-            goal=target_positions[2],
-            obstacles=obstacles,
-            map_size=(SPACE_WIDTH, SPACE_HEIGHT),
-            step_size=0.1,
-            max_iter=20000,
-            goal_bias=0.3
-        )
-        rrt_star.plan()
-        if rrt_star.path:
-            path = rrt_star.path
+        path = []
+        current_position = initial_position
+        robot_number = i + 1
+        all_positions = [current_position] + target_positions
+        for j in range(len(target_positions)):
+            start_point = all_positions[j]
+            end_point = all_positions[j + 1]
+            print(f"Calculating from point {j} to point {j+1} for Robot {robot_number}...")
+            start_time = time.time()
+            rrt_star = RRTStar(
+                start=start_point,
+                goal=end_point,
+                obstacles=obstacles,
+                map_size=(SPACE_WIDTH, SPACE_HEIGHT),
+                step_size=0.3,
+                max_iter=1000000,
+                goal_bias=0.2
+            )
+            rrt_star.plan()
+            end_time = time.time()
+            if rrt_star.path:
+                segment_path = rrt_star.path
+                if j > 0:
+                    # Avoid duplicate points between segments
+                    segment_path = segment_path[1:]
+                path.extend(segment_path)
+                print(f"Obtained path in {end_time - start_time:.2f} seconds.")
+            else:
+                print(f"No path found from point {j} to point {j+1} for Robot {robot_number}.")
+                break
+        if path:
             paths.append(path)
             write_trajectory_to_file(
                 path,
-                f"output/XY_303_1_{i+1}.txt",
+                f"output/XY_303_1_{robot_number}.txt",
                 303,
                 1,
-                i+1
+                robot_number
             )
         else:
-            print(f"No path found for robot starting at {initial_position}.")
+            print(f"Failed to generate path for Robot {robot_number}.")
 
     # Visualize the space with paths for each robot
     visualize_space(initial_positions, target_positions, obstacles, paths)

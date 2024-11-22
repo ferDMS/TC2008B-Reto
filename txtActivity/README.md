@@ -73,7 +73,7 @@ Con el objetivo de analizar de manera visual la generación de las trayectorias 
 
 En primer lugar es necesario describir el escenario 2D.
 
-El espacio tiene una altura de $6.5\ m$ y longitud de $6.5\ m$. El fondo del mismo es blanco. Sobre el fondo, existen marcas, puntos negros, a lo largo del plano con el objetivo de tener una mejor perspectiva de las dimensiones del plano. Por ello, los puntos negros están colocados todos en una formación tipo "grid", a $0.5\ m$ de distancia entre cada uno. Existe un punto negro sobre el origen $(0,0)$, desde el cual se designan las posiciones de los demás puntos negros.
+El espacio tiene una altura de $4.5\ m$ y longitud de $6.5\ m$. El fondo del mismo es blanco. Sobre el fondo, existen marcas, puntos negros, a lo largo del plano con el objetivo de tener una mejor perspectiva de las dimensiones del plano. Por ello, los puntos negros están colocados todos en una formación tipo "grid", a $0.5\ m$ de distancia entre cada uno. Existe un punto negro sobre el origen $(0,0)$, desde el cual se designan las posiciones de los demás puntos negros.
 
 Aparte del fondo descrito, también se deben de visualizar los robots y los puntos que existen en el plano:
 
