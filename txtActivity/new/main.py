@@ -101,7 +101,7 @@ class Node:
 
 # RRT* algorithm class
 class RRTStar:
-    def __init__(self, start, goal, obstacles, map_size, step_size=0.05, max_iter=2000, goal_bias=0.1):
+    def __init__(self, start, goal, obstacles, map_size, step_size=0.05, max_iter=2000, goal_bias=0.1, improvement_threshold=0.01, max_no_improvement_iter=100):
         self.start = Node(start[0], start[1])
         self.goal = Node(goal[0], goal[1])
         self.obstacles = obstacles
@@ -114,6 +114,8 @@ class RRTStar:
         self.path = None
         self.goal_reached = False
         self.goal_bias = goal_bias
+        self.improvement_threshold = improvement_threshold
+        self.max_no_improvement_iter = max_no_improvement_iter
         # Convert obstacles to shapely Polygons and add margin
         self.obstacle_polygons = [Polygon(obstacle).buffer(MARGIN) for obstacle in self.obstacles]
 
@@ -259,6 +261,9 @@ class RRTStar:
     
     # Place plan() as the last method
     def plan(self):
+        best_cost = float('inf')
+        no_improvement_count = 0
+
         for _ in range(self.max_iter):
             rand_node = self.get_random_node()
             nearest_node = self.get_nearest_node(rand_node)
@@ -271,9 +276,17 @@ class RRTStar:
                 self.rewire(new_node, neighbors)
 
                 if self.reached_goal(new_node):
-                    self.path = self.generate_final_path(new_node)
-                    self.goal_reached = True
-                    return
+                    current_cost = new_node.cost
+                    if current_cost < best_cost:
+                        best_cost = current_cost
+                        self.path = self.generate_final_path(new_node)
+                        self.goal_reached = True
+                        no_improvement_count = 0
+                    else:
+                        no_improvement_count += 1
+
+                    if no_improvement_count >= self.max_no_improvement_iter:
+                        break
 
 def visualize_space(initial_positions, target_positions, obstacles, paths=None):
     """
@@ -373,7 +386,9 @@ def main():
                 map_size=(SPACE_WIDTH, SPACE_HEIGHT),
                 step_size=0.05,
                 max_iter=1000000,
-                goal_bias=0.4
+                goal_bias=0.4,
+                improvement_threshold=0.01,
+                max_no_improvement_iter=1000
             )
             rrt_star.plan()
             end_time = time.time()
