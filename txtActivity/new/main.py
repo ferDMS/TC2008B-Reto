@@ -347,13 +347,21 @@ def main():
     target_positions = parse_target_positions('input/TargetPositions.txt')
     obstacles = parse_obstacles('input')
     
+    # Define the order for each robot
+    robot_1_order = [1, 2, 4, 5, 3, 7, 6]
+    robot_2_order = [7, 3, 6, 1, 2, 4, 5]
+    
+    # Reorder target positions for each robot
+    robot_1_targets = [target_positions[i - 1] for i in robot_1_order]
+    robot_2_targets = [target_positions[i - 1] for i in robot_2_order]
+    
     paths = []
-    for i, initial_position in enumerate(initial_positions):
+    for i, (initial_position, targets) in enumerate(zip(initial_positions, [robot_1_targets, robot_2_targets])):
         path = []
         current_position = initial_position
         robot_number = i + 1
-        all_positions = [current_position] + target_positions
-        for j in range(len(target_positions)):
+        all_positions = [current_position] + targets
+        for j in range(len(targets)):
             start_point = all_positions[j]
             end_point = all_positions[j + 1]
             print(f"Calculating from point {j} to point {j+1} for Robot {robot_number}...")
@@ -363,9 +371,9 @@ def main():
                 goal=end_point,
                 obstacles=obstacles,
                 map_size=(SPACE_WIDTH, SPACE_HEIGHT),
-                step_size=0.3,
+                step_size=0.05,
                 max_iter=1000000,
-                goal_bias=0.2
+                goal_bias=0.4
             )
             rrt_star.plan()
             end_time = time.time()
