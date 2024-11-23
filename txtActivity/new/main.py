@@ -294,6 +294,10 @@ class RRTStar:
                     if no_improvement_count >= self.max_no_improvement_iter:
                         break
 
+def ensure_output_directory():
+    """Create output directory if it doesn't exist."""
+    os.makedirs('output', exist_ok=True)
+
 def visualize_space(initial_positions, target_positions, obstacles, paths=None):
     """
     Visualizes the space with the initial positions, target positions, obstacles, paths,
@@ -392,6 +396,7 @@ def visualize_space(initial_positions, target_positions, obstacles, paths=None):
             return robots
         
         # Create and save animation
+        ensure_output_directory()  # Add this line
         anim = FuncAnimation(
             fig, update, frames=num_frames,
             interval=20, blit=True
@@ -403,6 +408,7 @@ def visualize_space(initial_positions, target_positions, obstacles, paths=None):
     plt.show()
 
 def write_trajectory_to_file(path, file_name, group, team, robot):
+    ensure_output_directory()  # Add this line
     with open(file_name, 'w') as file:
         for i, (x, y) in enumerate(path):
             if i < 3:
