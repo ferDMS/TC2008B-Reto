@@ -9,7 +9,7 @@ import json  # Import json module for handling JSON operations
 
 # Initialize pygame
 pygame.init()
-PLANT_GRID_SIZE = 5  
+PLANT_GRID_SIZE = 7
 PATH_WIDTH = 2
 GRID_SIZE = PLANT_GRID_SIZE + (PATH_WIDTH * 2)
 WIDTH, HEIGHT = 400, 400  
@@ -343,9 +343,9 @@ def draw_grid(model):
 parameters = {
     'num_tractors': 4,
     'water_capacity': 20,
-    'fuel_capacity': 100,
-    'wheat_capacity': PLANT_GRID_SIZE,
-    'steps': 200,
+    'fuel_capacity': 200,
+    'wheat_capacity': 7,
+    'steps': 300,
 }
 
 # Create and initialize the model

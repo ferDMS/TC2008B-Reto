@@ -1,47 +1,30 @@
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class CameraMovement : MonoBehaviour
 {
-    public float speed = 10.0f;
-    public float mouseSensitivity = 200.0f; // Increased sensitivity
-    private float pitch = 0.0f;
-    private float yaw = 0.0f;
-
-    void Start()
+    [SerializeField] private float movementSpeed = 5f;
+    [SerializeField] private float mouseSensitivity = 2f;
+    
+    private float rotationX;
+    private float rotationY;
+    
+    private void Update()
     {
-        Cursor.lockState = CursorLockMode.Locked;
-        yaw = transform.eulerAngles.y;
-        pitch = transform.eulerAngles.x;
-    }
-
-    void Update()
-    {
-        // Mouse input for looking around
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
-
-        yaw += mouseX;
-        pitch -= mouseY;
-        pitch = Mathf.Clamp(pitch, -90f, 90f);
-
-        transform.eulerAngles = new Vector3(pitch, yaw, 0.0f);
-
-        // Keyboard input for movement
-        float horizontal = Input.GetAxis("Horizontal"); // A, D
-        float vertical = Input.GetAxis("Vertical"); // W, S
-        float up = 0.0f;
-        float down = 0.0f;
-
-        if (Input.GetKey(KeyCode.Space))
-        {
-            up = 1.0f;
-        }
-        if (Input.GetKey(KeyCode.LeftControl))
-        {
-            down = 1.0f;
-        }
-
-        Vector3 direction = transform.right * horizontal + transform.up * (up - down) + transform.forward * vertical;
-        transform.Translate(direction * speed * Time.deltaTime, Space.World);
+        // Mouse rotation
+        rotationX -= Input.GetAxis("Mouse Y") * mouseSensitivity;
+        rotationY += Input.GetAxis("Mouse X") * mouseSensitivity;
+        
+        rotationX = Mathf.Clamp(rotationX, -90f, 90f);
+        transform.rotation = Quaternion.Euler(rotationX, rotationY, 0);
+        
+        // WASD/Arrow movement in looking direction
+        Vector3 input = new Vector3(
+            Input.GetAxisRaw("Horizontal"),
+            0,
+            Input.GetAxisRaw("Vertical")
+        );
+        
+        Vector3 movement = transform.right * input.x + transform.forward * input.z;
+        transform.position += movement.normalized * movementSpeed * Time.deltaTime;
     }
 }

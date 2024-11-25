@@ -37,8 +37,8 @@ public class FarmController : MonoBehaviour
     public int steps = 10;
     private string apiUrl = "http://localhost:5000/initialize";
 
-    public GameObject planePrefab;
-    private GameObject plane;
+    // public GameObject planePrefab;
+    // private GameObject plane;
     public float cellSize = 1.0f;
     public List<StepInfo> stepsList;
 
@@ -61,33 +61,11 @@ public class FarmController : MonoBehaviour
     void Start()
     {
         Debug.Log($"Starting FarmController with values: Grid Size={plantGridSize}, Path Width={pathWidth}, Num Tractors={numTractors}");
-        InitializePlane();
+        // InitializePlane();
         StartCoroutine(SendDataToAPI());
     }
 
-    void InitializePlane()
-    {
-        if (planePrefab == null)
-        {
-            Debug.LogError("Plane prefab not assigned! Please assign it in the Unity Inspector.");
-            return;
-        }
 
-        int totalGridSize = plantGridSize + (pathWidth * 2);
-
-        plane = Instantiate(planePrefab, Vector3.zero, Quaternion.identity);
-        plane.transform.parent = this.transform; 
-
-        float desiredWidth = totalGridSize * cellSize;
-        float scaleFactor = desiredWidth / 10f;
-        
-        plane.transform.localScale = new Vector3(scaleFactor, 1f, scaleFactor);
-        plane.transform.position = new Vector3(0f, 0f, 0f);
-
-        Debug.Log($"Initialized plane with scale: {scaleFactor} for grid size: {totalGridSize}");
-    }
-
-    
     IEnumerator SendDataToAPI()
     {
         InitializeData data = new InitializeData

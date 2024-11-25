@@ -21,6 +21,9 @@ public class SimulationVisualizer : MonoBehaviour
     private Dictionary<Vector2Int, GameObject> plants = new Dictionary<Vector2Int, GameObject>();
     private bool isSimulationRunning = false;
 
+    private int currentStep = 0;
+    
+
     void Start()
     {
         // Get reference to the FarmController
@@ -111,6 +114,12 @@ public class SimulationVisualizer : MonoBehaviour
             TractorController tractorController = tractor.AddComponent<TractorController>();
             tractorController.moveSpeed = moveSpeed;
             tractorController.targetPosition = startPos;
+
+            tractorController.tractorId = i;
+            tractorController.OnTractorReachedTarget += HandleTractorReachedTarget;
+
+            tractorController.gridPosition = firstStep.GetTractorPosition(i);
+            tractorController.currentTask = firstStep.GetTractorTask(i);
         }
     }
     
@@ -120,7 +129,7 @@ public class SimulationVisualizer : MonoBehaviour
         if (isSimulationRunning) yield break;
         isSimulationRunning = true;
 
-        int currentStep = 0;
+        currentStep = 0;
         int totalSteps = farmController.GetTotalSteps();
 
         while (currentStep < totalSteps)
@@ -169,7 +178,12 @@ public class SimulationVisualizer : MonoBehaviour
 
                         //     yield return null;
                         // }
-                        
+
+                        tractorController.targetPosition = targetPos;
+                        tractorController.gridPosition = tractorPos;
+
+                        tractorController.currentTask = stepInfo.GetTractorTask(i);
+
                         // Update tractor visual state based on task
                         UpdateTractorVisuals(tractor, stepInfo, i);
                     }
@@ -181,6 +195,39 @@ public class SimulationVisualizer : MonoBehaviour
         }
 
         isSimulationRunning = false;
+    }
+
+    private void HandleTractorReachedTarget(Vector2Int gridPosition, int tractorId, string task) {
+        Debug.Log($"Tractor {tractorId} has reached its target");
+
+        if(plants.ContainsKey(gridPosition)) {
+
+            GameObject plant = plants[gridPosition];
+
+            switch (task)
+            {
+                
+                case "watering":
+                    // Change the color of the plant to indicate watering
+                    //MeshRenderer renderer = plant.GetComponentInChildren<MeshRenderer>();
+                    MeshRenderer[] renderers = plant.GetComponentsInChildren<MeshRenderer>();
+                    if(renderers.Length > 0) {
+                        foreach (MeshRenderer renderer in renderers) {
+                            Material newMaterial = new Material(renderer.material);
+                            newMaterial.color = Color.blue;
+                            renderer.material = newMaterial;
+                        }
+                    }
+                    Debug.Log($"Tractor {tractorId} watered plant at {gridPosition}");
+                    break;
+                case "harvesting":
+                    // Destroy the plant
+                    Destroy(plant);
+                    plants.Remove(gridPosition);
+                    Debug.Log($"Tractor {tractorId} harvested plant at {gridPosition}");
+                    break;
+            }
+        }
     }
 
     void UpdateTractorVisuals(GameObject tractor, StepInfo stepInfo, int tractorId)
