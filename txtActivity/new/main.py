@@ -26,12 +26,12 @@ ROBOT_HEIGHT = 0.20
 SPACE_WIDTH = 6.5
 SPACE_HEIGHT = 4.5
 # Margin of error (m)
-MARGIN = 0.03
+MARGIN = 0.035
 # Effective dimensions including margin
 EFFECTIVE_ROBOT_WIDTH = ROBOT_WIDTH + 2 * MARGIN
 EFFECTIVE_ROBOT_HEIGHT = ROBOT_HEIGHT + 2 * MARGIN
 # Add these global variables after the existing dimensions
-ROBOT_SPEED = 0.03  # meters per frame
+ROBOT_SPEED = 0.02  # meters per frame
 PATH_ALPHA = 0.3   # transparency of path lines
 
 
@@ -115,7 +115,7 @@ class RRTStar:
         self.step_size = step_size
         self.max_iter = max_iter
         self.node_list = [self.start]
-        self.goal_region_radius = 0.01  # As per considerations
+        self.goal_region_radius = 0.1  # As per considerations
         self.search_radius = 0.3       # As per considerations
         self.path = None
         self.goal_reached = False
@@ -468,9 +468,9 @@ def generate_paths():
                 goal=end_point,
                 obstacles=obstacles,
                 map_size=(SPACE_WIDTH, SPACE_HEIGHT),
-                step_size=0.3,
-                max_iter=10000,
-                goal_bias=0.1,
+                step_size=0.5,
+                max_iter=30000,
+                goal_bias=0.2,
                 improvement_threshold=0.01,
                 max_no_improvement_iter=1000
             )
