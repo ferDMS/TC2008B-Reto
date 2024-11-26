@@ -1,19 +1,24 @@
+from flask import Flask, jsonify, request
 import agentpy as ap
 import numpy as np
 import pygame
 import sys
 from collections import deque
+import json  # Import json module for handling JSON operations
 
-# inicializaciones pygame
+
+# Initialize pygame
 pygame.init()
-PLANT_GRID_SIZE = 5  
+PLANT_GRID_SIZE = 7
 PATH_WIDTH = 2
 GRID_SIZE = PLANT_GRID_SIZE + (PATH_WIDTH * 2)
 WIDTH, HEIGHT = 400, 400  
 CELL_SIZE = WIDTH // GRID_SIZE
 FPS = 2
 
-# colores
+
+
+# Colors
 WHITE = (255, 255, 255)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
@@ -97,18 +102,18 @@ class FarmModel(ap.Model):
                 self.plants.append(plant)
                 positions.append((x, y))
         
-        # convertir las plantas en AgentList y agregarlas a la grid
+        # Convert plants to AgentList and add them to the grid
         self.plants = ap.AgentList(self, self.plants)
         self.grid.add_agents(self.plants, positions)
         
-        # inicializar tractores
+        # Initialize tractors
         self.tractors = []
         tractor_positions = []
         
-        # definir posibles caminos
+        # Define possible paths
         path_positions = []
         
-        # logica de crear tractores
+        # Logic to create tractors
         for x in range(GRID_SIZE):
             for y in range(PATH_WIDTH):
                 path_positions.append((x, y))
@@ -121,7 +126,7 @@ class FarmModel(ap.Model):
             for x in range(GRID_SIZE - PATH_WIDTH, GRID_SIZE):
                 path_positions.append((x, y))
         
-        for _ in range(self.p['num_tractors']):
+        for i in range(self.p['num_tractors']):
             while True:
                 pos = path_positions[np.random.randint(len(path_positions))]
                 if pos not in tractor_positions:
@@ -135,7 +140,7 @@ class FarmModel(ap.Model):
         self.tractors = ap.AgentList(self, self.tractors)
         self.grid.add_agents(self.tractors, tractor_positions)
         
-        # inicializar silo
+        # Initialize silo
         self.silo = Silo(self)
         self.silo.setup()
         self.grid.add_agents([self.silo], [self.silo.position])
@@ -224,6 +229,8 @@ class FarmModel(ap.Model):
                 tractor.task = "watering"
             elif any(plant.is_ready_for_harvest() for plant in self.plants):
                 tractor.task = "harvesting"
+            else:
+                tractor.task = "idle"
             
             if not tractor.current_path:
                 if tractor.task == "depositing":
@@ -250,13 +257,13 @@ class FarmModel(ap.Model):
 def draw_grid(model):
     screen.fill(WHITE)
     
-    # lineas grid
+    # Draw grid lines
     for x in range(GRID_SIZE + 1):
         pygame.draw.line(screen, BLACK, (x * CELL_SIZE, 0), (x * CELL_SIZE, HEIGHT))
     for y in range(GRID_SIZE + 1):
         pygame.draw.line(screen, BLACK, (0, y * CELL_SIZE), (WIDTH, y * CELL_SIZE))
     
-    # path
+    # Draw paths
     for x in range(GRID_SIZE):
         for y in range(GRID_SIZE):
             if (x < PATH_WIDTH or x >= GRID_SIZE - PATH_WIDTH or 
@@ -265,7 +272,7 @@ def draw_grid(model):
                                (x * CELL_SIZE + 1, y * CELL_SIZE + 1,
                                 CELL_SIZE - 2, CELL_SIZE - 2))
     
-    # dibujar plantas
+    # Draw plants
     for plant in model.plants:
         x, y = plant.position
         if plant.harvested:
@@ -287,7 +294,7 @@ def draw_grid(model):
                                         y * CELL_SIZE + CELL_SIZE//2))
         screen.blit(text, text_rect)
     
-    # dibujar tractores
+    # Draw tractors
     for tractor in model.tractors:
         x, y = tractor.position
         color = ORANGE if tractor.task == "watering" else YELLOW
@@ -320,7 +327,7 @@ def draw_grid(model):
         screen.blit(fuel_text, fuel_rect)
         screen.blit(wheat_text, wheat_rect)
     
-    # dibujar silo
+    # Draw silo
     x, y = model.silo.position
     pygame.draw.rect(screen, GRAY,
                    (x * CELL_SIZE + 1, y * CELL_SIZE + 1,
@@ -332,23 +339,26 @@ def draw_grid(model):
     
     pygame.display.flip()
 
-# parametros de inicio
+# Initial parameters
 parameters = {
-    'num_tractors': 4,
-    'water_capacity': 20,
-    'fuel_capacity': 100,
-    'wheat_capacity': PLANT_GRID_SIZE,
+    'num_tractors': 1,
+    'water_capacity': 100,
+    'fuel_capacity': 200,
+    'wheat_capacity': 7,
     'steps': 200,
 }
 
-# crear e inicializar el modelo
+# Create and initialize the model
 model = FarmModel(parameters)
 if not model.initialize():
     print("Failed to initialize model")
     pygame.quit()
     sys.exit(1)
 
-# main loop del juego
+# Initialize a list to store tractor statuses over time
+tractor_status_over_time = []
+
+# Main simulation loop
 running = True
 step_count = 0
 clock = pygame.time.Clock()
@@ -361,6 +371,19 @@ while running and step_count < parameters['steps']:
     try:
         model.step()
         draw_grid(model)
+        
+        # Collect status of tractors
+        current_step = {"step": step_count}
+        for idx, tractor in enumerate(model.tractors):
+            tractor_id = f"tractor_{idx}"
+            current_step[tractor_id] = list(tractor.position)  # [x, y]
+            current_step[f"{tractor_id}_task"] = tractor.task
+            current_step[f"{tractor_id}_water_level"] = tractor.water_level
+            current_step[f"{tractor_id}_fuel_level"] = tractor.fuel_level
+            # If you want to include wheat_level, uncomment the next line
+            # current_step[f"{tractor_id}_wheat_level"] = tractor.wheat_level
+        tractor_status_over_time.append(current_step)
+        
         step_count += 1
         clock.tick(FPS)
     except Exception as e:
@@ -368,3 +391,11 @@ while running and step_count < parameters['steps']:
         running = False
 
 pygame.quit()
+
+# After the simulation loop, save the statuses to a JSON file
+try:
+    with open('tractor_statuses.json', 'w') as f:
+        json.dump(tractor_status_over_time, f, indent=4)
+    print("Tractor statuses saved to tractor_statuses.json")
+except Exception as e:
+    print(f"Failed to save tractor statuses: {e}")

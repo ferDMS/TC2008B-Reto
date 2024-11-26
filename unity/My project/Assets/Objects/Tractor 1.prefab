@@ -26,7 +26,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1cd8c087c2c7f3f4292388da9a7e6dfb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.34
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 1cd8c087c2c7f3f4292388da9a7e6dfb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tractor 1
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1cd8c087c2c7f3f4292388da9a7e6dfb, type: 3}
+      propertyPath: m_TagString
+      value: Tractor
+      objectReference: {fileID: 0}
     - target: {fileID: 3760648493716301875, guid: 1cd8c087c2c7f3f4292388da9a7e6dfb, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -90,20 +94,17 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1cd8c087c2c7f3f4292388da9a7e6dfb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1950686144974788038}
+      addedObject: {fileID: 4868467626289674275}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1cd8c087c2c7f3f4292388da9a7e6dfb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7544432949732058153}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 1cd8c087c2c7f3f4292388da9a7e6dfb, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2552381888308661903}
+      addedObject: {fileID: 2356846995295464357}
   m_SourcePrefab: {fileID: 100100000, guid: 1cd8c087c2c7f3f4292388da9a7e6dfb, type: 3}
 --- !u!1 &2353667117051812687 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1cd8c087c2c7f3f4292388da9a7e6dfb, type: 3}
   m_PrefabInstance: {fileID: 3199963752525538846}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1950686144974788038
+--- !u!114 &4868467626289674275
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,41 +113,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2353667117051812687}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9292220533cbdac43a7f61cf6d309692, type: 3}
+  m_Script: {fileID: 11500000, guid: 13caf7b7d75eef54fb9d7aed2fa90256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WaterCapacity: 20
-  FuelCapacity: 100
-  WheatCapacity: 5
-  moveSpeed: 2
---- !u!54 &7544432949732058153
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2353667117051812687}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!65 &2552381888308661903
+--- !u!65 &2356846995295464357
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -165,5 +135,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 79.58363, y: 83.29187, z: 115.48251}
+  m_Center: {x: 3.6141756, y: 1.7185888, z: 3.5017593}
