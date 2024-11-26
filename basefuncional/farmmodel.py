@@ -54,6 +54,7 @@ class Tractor(ap.Agent):
         self.task = "idle"
         self.position = None
         self.current_path = deque()
+        
 
     def move_to(self, target_pos):
         if self.fuel_level > 0:
@@ -204,14 +205,15 @@ class FarmModel(ap.Model):
                                abs(p.position[1] - tractor.position[1]))
 
     def step(self):
+        # Grow all plants
         for plant in self.plants:
             plant.grow()
         
         for tractor in self.tractors:
             if tractor.fuel_level <= 0:
-                continue
+                continue  # Skip tractors that have no fuel
             
-            # Prioritize watering first, then harvesting, then depositing wheat
+            # Prioritize tasks: depositing > watering > harvesting > idle
             if tractor.wheat_level >= tractor.wheat_capacity:
                 tractor.task = "depositing"
             elif any(plant.needs_water() for plant in self.plants):
@@ -221,6 +223,7 @@ class FarmModel(ap.Model):
             else:
                 tractor.task = "idle"
             
+            # If the tractor has no current path, assign a new target
             if not tractor.current_path:
                 if tractor.task == "depositing":
                     target = self.silo
@@ -231,17 +234,30 @@ class FarmModel(ap.Model):
                     if path:
                         tractor.current_path = deque(path)
             
+            # Move the tractor along its path
             if tractor.current_path:
                 next_pos = tractor.current_path.popleft()
-                if next_pos not in [t.position for t in self.tractors if t != tractor]:
+                # Ensure no collision with other tractors
+                if next_pos not in [t.position for t in self.tractors if t.position != tractor.position]:
                     if tractor.move_to(next_pos):
                         if tractor.task == "depositing" and tractor.position == self.silo.position:
                             tractor.deposit_wheat()
+                            print(f"Tractor at {tractor.position} deposited wheat.")
                         else:
+                            # Perform task on the current position after moving
                             target_plant = next(
-                                (p for p in self.plants if p.position == next_pos), None)
+                                (p for p in self.plants if p.position == tractor.position), None)
                             if target_plant:
-                                tractor.perform_task(target_plant)
+                                success = tractor.perform_task(target_plant)
+                                if success:
+                                    print(f"Tractor at {tractor.position} performed {tractor.task} on plant.")
+                                else:
+                                    print(f"Tractor at {tractor.position} failed to perform {tractor.task} on plant.")
+    
+    # Optionally, reset watered status if needed (e.g., end of day)
+    # for plant in self.plants:
+    #     plant.watered = False
+
 
 
 
@@ -285,23 +301,21 @@ def test():
     return jsonify({"message": "Hello, World!"})
 
 def initialize_simulation():
-    # Create and initialize the model
+    # creación y inicialización del modelo
     model = FarmModel(parameters)
     if not model.initialize():
         print("Failed to initialize model")
         sys.exit(1)
 
-    # Initialize a list to store tractor statuses over time
-    tractor_status_over_time = []
 
-    # Main simulation loop
+    tractor_status_over_time = []
     running = True
     step_count = 0
 
     while running and step_count < parameters['steps']:
         try:
             model.step()
-            # Collect status of tractors
+            # recolección de estado de tractores
             current_step = {"step": step_count, "tractors": []}
             for tractor in model.tractors:
                 tractor_info = {
@@ -320,7 +334,7 @@ def initialize_simulation():
             print(f"Error during simulation: {e}")
             running = False
 
-    # After the simulation loop, save the statuses to a JSON file
+    # guardado del estado de tractores por cada paso en un archivo JSON
     try:
         with open('tractor_statuses.json', 'w') as f:
             json.dump(tractor_status_over_time, f, indent=4)
