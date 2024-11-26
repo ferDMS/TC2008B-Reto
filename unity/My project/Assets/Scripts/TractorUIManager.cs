@@ -4,73 +4,175 @@ using UnityEngine.UI;
 
 public class TractorUIManager : MonoBehaviour
 {
-    // List of Text UI elements to display tractor info
+    [Header("References")]
     public List<Text> tractorTextUIList;
     public FarmController farmController;
 
-    private int currentStep = 0;
-    private float timeSinceLastStep = 0f;
-    public float timeBetweenSteps = 1f; // Adjust as needed
+    [Header("Update Settings")]
+    public float updateInterval = 0.1f;
+
+    private List<TractorController> tractorControllers;
+    private float timeSinceLastUpdate = 0f;
+    private bool isInitialized = false;
+    
 
     void Start()
     {
         if (farmController == null)
         {
             Debug.LogError("FarmController not assigned in TractorUIManager");
+            return;
         }
 
-        // Start updating the UI after the simulation is initialized
-        farmController.OnSimulationInitialized.AddListener(() => UpdateTractorUI());
+        tractorControllers = new List<TractorController>();
+        farmController.OnSimulationInitialized.AddListener(InitializeTractorReferences);
+    }
+
+    void InitializeTractorReferences()
+    {
+        Debug.Log("Initializing TractorUIManager");
+        tractorControllers.Clear();
+        
+        // Wait one frame to ensure all tractors are created
+        StartCoroutine(InitializeAfterDelay());
+    }
+
+    System.Collections.IEnumerator InitializeAfterDelay()
+    {
+        yield return null; // Wait one frame
+
+        GameObject tractorsParent = GameObject.Find("Tractors");
+        if (tractorsParent != null)
+        {
+            foreach (Transform tractorTransform in tractorsParent.transform)
+            {
+                TractorController controller = tractorTransform.GetComponent<TractorController>();
+                if (controller != null)
+                {
+                    tractorControllers.Add(controller);
+                    Debug.Log($"Found Tractor Controller {controller.tractorId}");
+                }
+            }
+        }
+
+        if (tractorControllers.Count == 0)
+        {
+            Debug.LogError("No tractor controllers found!");
+            yield break;
+        }
+
+        if (tractorTextUIList.Count < tractorControllers.Count)
+        {
+            Debug.LogWarning($"Not enough UI elements ({tractorTextUIList.Count}) for all tractors ({tractorControllers.Count})");
+        }
+
+        isInitialized = true;
+        UpdateTractorUI(); // Initial update
     }
 
     void Update()
     {
-        if (farmController == null || farmController.stepsList == null || farmController.stepsList.Count == 0)
+        if (!isInitialized) return;
+
+        timeSinceLastUpdate += Time.deltaTime;
+        if (timeSinceLastUpdate >= updateInterval)
         {
-            return;
-        }
-
-        timeSinceLastStep += Time.deltaTime;
-
-        if (timeSinceLastStep >= timeBetweenSteps)
-        {
-            timeSinceLastStep = 0f;
-            currentStep++;
-
-            if (currentStep >= farmController.GetTotalSteps())
-            {
-                currentStep = 0; // Loop back to start or stop updating
-            }
-
             UpdateTractorUI();
+            timeSinceLastUpdate = 0f;
         }
     }
 
     void UpdateTractorUI()
     {
-        StepInfo stepInfo = farmController.GetStepInfo(currentStep);
-        if (stepInfo == null)
+        if (tractorControllers == null || tractorControllers.Count == 0)
         {
-            Debug.LogError($"No StepInfo found for step {currentStep}");
+            Debug.LogWarning("No tractor controllers available for UI update");
             return;
         }
 
-        for (int i = 0; i < stepInfo.tractors.Count; i++)
+        for (int i = 0; i < tractorControllers.Count && i < tractorTextUIList.Count; i++)
         {
-            if (i >= tractorTextUIList.Count)
-            {
-                Debug.LogError("Not enough Text UI elements assigned for the number of tractors");
-                return;
-            }
-
-            TractorInfo tractor = stepInfo.tractors[i];
+            TractorController tractor = tractorControllers[i];
             Text tractorText = tractorTextUIList[i];
 
-            tractorText.text = $"Tractor {i + 1}:\n" +
-                               $"Task: {tractor.task}\n" +
-                               $"Water: {tractor.water_level}\n" +
-                               $"Fuel: {tractor.fuel_level}\n" +
-                               $"Wheat: {tractor.wheat_level}";
+            if (tractor == null || tractorText == null) continue;
+
+            string status = GetMovementStatus(tractor);
+            Color statusColor = GetStatusColor(tractor.currentTask);
+
+            string resourceWarnings = GetResourceWarnings(tractor);
+            string colorHex = ColorUtility.ToHtmlStringRGB(statusColor);
+
+            string uiText = $"<color=#{colorHex}>Tractor {i + 1}</color>\n" +
+                           $"Status: {status}\n" +
+                           $"Task: {tractor.currentTask}\n" +
+                           $"Position: ({tractor.gridPosition.x}, {tractor.gridPosition.y})\n" +
+                           $"Resources:\n" +
+                           $"• Water: {tractor.waterLevel}{(tractor.waterLevel == 0 ? " ⚠" : "")}\n" +
+                           $"• Fuel: {tractor.fuelLevel}{(tractor.fuelLevel == 0 ? " ⚠" : "")}\n" +
+                           $"• Wheat: {tractor.wheatLevel}\n" +
+                           (resourceWarnings != "" ? $"\n{resourceWarnings}" : "");
+
+            tractorText.text = uiText;
+        }
+    }
+
+    private string GetMovementStatus(TractorController tractor)
+    {
+        if (tractor.fuelLevel <= 0)
+            return "Out of Fuel!";
+        
+        if (Vector3.Distance(tractor.transform.position, tractor.targetPosition) > 0.01f)
+            return "Moving";
+
+        switch (tractor.currentTask.ToLower())
+        {
+            case "watering": return "Watering";
+            case "harvesting": return "Harvesting";
+            case "depositing": return "Depositing";
+            default: return "Idle";
+        }
+    }
+
+    private string GetResourceWarnings(TractorController tractor)
+    {
+        List<string> warnings = new List<string>();
+        
+        if (tractor.fuelLevel == 0)
+            warnings.Add("<color=red>Out of Fuel!</color>");
+        else if (tractor.fuelLevel < 10)
+            warnings.Add("<color=yellow>Low Fuel!</color>");
+            
+        if (tractor.waterLevel == 0)
+            warnings.Add("<color=red>Out of Water!</color>");
+        else if (tractor.waterLevel < 10)
+            warnings.Add("<color=yellow>Low Water!</color>");
+            
+        return string.Join("\n", warnings);
+    }
+
+    private Color GetStatusColor(string task)
+    {
+        switch (task.ToLower())
+        {
+            case "watering":
+                return new Color(0.2f, 0.6f, 1f); // Light blue
+            case "harvesting":
+                return new Color(0.4f, 0.8f, 0.4f); // Light green
+            case "depositing":
+                return new Color(1f, 0.8f, 0.2f); // Gold
+            case "idle":
+                return new Color(0.7f, 0.7f, 0.7f); // Gray
+            default:
+                return Color.white;
+        }
+    }
+
+    void OnDestroy()
+    {
+        if (farmController != null)
+        {
+            farmController.OnSimulationInitialized.RemoveListener(InitializeTractorReferences);
         }
     }
 }

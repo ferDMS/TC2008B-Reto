@@ -13,36 +13,55 @@ public class SimulationVisualizer : MonoBehaviour
     public float stepDelay = 1f;
 
     [Header("Height Offsets")]
-    public float tractorHeight = 1f; // Height offset for tractor from ground
-    public float plantHeight = 0f;     // Height offset for plants from ground
+    public float tractorHeight = 1f;
+    public float plantHeight = 0f;
 
     private FarmController farmController;
     private Dictionary<int, GameObject> tractors = new Dictionary<int, GameObject>();
     private Dictionary<Vector2Int, GameObject> plants = new Dictionary<Vector2Int, GameObject>();
-    private bool isSimulationRunning = false;
+    private List<TractorController> tractorControllers = new List<TractorController>();
+    private HashSet<Vector2Int> harvestedPositions = new HashSet<Vector2Int>();
 
+    private bool isSimulationRunning = false;
     private int currentStep = 0;
-    
+    private float currentStepDelay;  // Added this line
 
     void Start()
     {
-        // Get reference to the FarmController
         farmController = GetComponent<FarmController>();
         if (farmController == null)
         {
             Debug.LogError("FarmController not found!");
             return;
         }
-
-        // Subscribe to the initialization event
+        currentStepDelay = stepDelay;  // Initialize in Start
         farmController.OnSimulationInitialized.AddListener(InitializeVisualization);
     }
 
     void InitializeVisualization()
     {
+        Debug.Log("Initializing Visualization");
+        ClearExistingObjects();
+        harvestedPositions.Clear();
         CreatePlants();
         CreateTractors();
         StartCoroutine(RunSimulation());
+    }
+
+    void ClearExistingObjects()
+    {
+        foreach (var tractor in tractors.Values)
+        {
+            if (tractor != null) Destroy(tractor);
+        }
+        foreach (var plant in plants.Values)
+        {
+            if (plant != null) Destroy(plant);
+        }
+        tractors.Clear();
+        plants.Clear();
+        tractorControllers.Clear();
+        harvestedPositions.Clear();
     }
 
     void CreatePlants()
@@ -53,33 +72,31 @@ public class SimulationVisualizer : MonoBehaviour
             return;
         }
 
-        // Create a parent object for plants
         GameObject plantsParent = new GameObject("Plants");
         plantsParent.transform.parent = transform;
 
-        // Calculate the plant area boundaries
         int pathWidth = farmController.pathWidth;
         int plantGridSize = farmController.plantGridSize;
         int totalGridSize = plantGridSize + (pathWidth * 2);
 
-        // Create plants in the inner grid (excluding paths)
+        Debug.Log($"Creating plants with pathWidth: {pathWidth}, plantGridSize: {plantGridSize}, totalGridSize: {totalGridSize}");
+
         for (int x = pathWidth; x < totalGridSize - pathWidth; x++)
         {
             for (int z = pathWidth; z < totalGridSize - pathWidth; z++)
             {
                 Vector2Int gridPos = new Vector2Int(x, z);
                 Vector3 worldPos = farmController.GetWorldPositionFromGrid(x, z);
-                worldPos.y += plantHeight; // Add height offset
+                worldPos.y += plantHeight;
 
                 GameObject plant = Instantiate(plantPrefab, worldPos, Quaternion.identity);
                 plant.transform.parent = plantsParent.transform;
                 plant.name = $"Plant_{x}_{z}";
                 plants[gridPos] = plant;
-
-                // Add visual debug component
-                //plant.AddComponent<PositionDebugger>().SetGridPosition(gridPos);
+                Debug.Log($"Created plant at position ({x}, {z})");
             }
         }
+        Debug.Log($"Created total of {plants.Count} plants");
     }
 
     void CreateTractors()
@@ -90,201 +107,164 @@ public class SimulationVisualizer : MonoBehaviour
             return;
         }
 
-        // Create a parent object for tractors
         GameObject tractorsParent = new GameObject("Tractors");
         tractorsParent.transform.parent = transform;
         
         StepInfo firstStep = farmController.GetStepInfo(0);
-        for(int i = 0; i < farmController.numTractors; i++) {
-            // Get the specific position for this tractor from the step info
+        if (firstStep == null)
+        {
+            Debug.LogError("No initial step info available!");
+            return;
+        }
+
+        Debug.Log($"Creating {farmController.numTractors} tractors");
+        for (int i = 0; i < farmController.numTractors; i++)
+        {
             Vector2Int tractorPos = firstStep.GetTractorPosition(i);
-            
-            Vector3 startPos = farmController.GetWorldPositionFromGrid(
-                tractorPos.x, 
-                tractorPos.y
-            );
+            Vector3 startPos = farmController.GetWorldPositionFromGrid(tractorPos.x, tractorPos.y);
             startPos.y += tractorHeight;
 
             GameObject tractor = Instantiate(tractorPrefab, startPos, Quaternion.identity);
             tractor.transform.parent = tractorsParent.transform;
-            tractor.name = "Tractor_" + i;
+            tractor.name = $"Tractor_{i}";
             tractors[i] = tractor;
 
-            // Add tractor controller
-            TractorController tractorController = tractor.AddComponent<TractorController>();
+            TractorController tractorController = tractor.GetComponent<TractorController>();
+            if (tractorController == null)
+            {
+                tractorController = tractor.AddComponent<TractorController>();
+            }
+
             tractorController.moveSpeed = moveSpeed;
             tractorController.targetPosition = startPos;
-
             tractorController.tractorId = i;
             tractorController.OnTractorReachedTarget += HandleTractorReachedTarget;
-
             tractorController.gridPosition = firstStep.GetTractorPosition(i);
             tractorController.currentTask = firstStep.GetTractorTask(i);
+
+            // Initialize resource levels
+            TractorInfo tractorInfo = firstStep.tractors[i];
+            tractorController.UpdateResources(
+                tractorInfo.water_level,
+                tractorInfo.fuel_level,
+                tractorInfo.wheat_level
+            );
+
+            tractorControllers.Add(tractorController);
+            Debug.Log($"Created Tractor {i} at position {tractorPos}");
         }
     }
-    
 
     IEnumerator RunSimulation()
     {
-        if (isSimulationRunning) yield break;
-        isSimulationRunning = true;
+        if (isSimulationRunning)
+        {
+            Debug.LogWarning("Simulation already running!");
+            yield break;
+        }
 
+        Debug.Log("Starting simulation");
+        isSimulationRunning = true;
         currentStep = 0;
+        harvestedPositions.Clear(); // Clear harvested positions at start
         int totalSteps = farmController.GetTotalSteps();
 
         while (currentStep < totalSteps)
         {
             StepInfo stepInfo = farmController.GetStepInfo(currentStep);
-
-            if (stepInfo != null)
+            if (stepInfo == null)
             {
-                // Handle all tractors
-                for (int i = 0; i < farmController.numTractors; i++)
-                {
-                    if (tractors.ContainsKey(i))
-                    {
-                        GameObject tractor = tractors[i];
-                        TractorController tractorController = tractor.GetComponent<TractorController>();
-
-                        Vector2Int tractorPos = stepInfo.GetTractorPosition(i);
-                        Vector3 targetPos = farmController.GetWorldPositionFromGrid(
-                            tractorPos.x,
-                            tractorPos.y
-                        );
-                        targetPos.y += tractorHeight;
-
-                        tractorController.targetPosition = targetPos;
-                        
-                        // // Smoothly move the tractor
-                        // while (Vector3.Distance(tractor.transform.position, targetPos) > 0.01f)
-                        // {
-                        //     tractor.transform.position = Vector3.MoveTowards(
-                        //         tractor.transform.position,
-                        //         targetPos,
-                        //         moveSpeed * Time.deltaTime
-                        //     );
-
-                        //     // Rotate tractor to face movement direction
-                        //     Vector3 moveDirection = (targetPos - tractor.transform.position).normalized;
-                        //     if (moveDirection != Vector3.zero)
-                        //     {
-                        //         Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
-                        //         tractor.transform.rotation = Quaternion.Slerp(
-                        //             tractor.transform.rotation,
-                        //             targetRotation,
-                        //             moveSpeed * Time.deltaTime
-                        //         );
-                        //     }
-
-                        //     yield return null;
-                        // }
-
-                        tractorController.targetPosition = targetPos;
-                        tractorController.gridPosition = tractorPos;
-
-                        tractorController.currentTask = stepInfo.GetTractorTask(i);
-
-                        // Update tractor visual state based on task
-                        UpdateTractorVisuals(tractor, stepInfo, i);
-                    }
-                }
+                Debug.LogError($"No step info for step {currentStep}");
+                break;
             }
 
-            yield return new WaitForSeconds(stepDelay);
+            Debug.Log($"Processing step {currentStep}/{totalSteps}");
+            
+            foreach (var controller in tractorControllers)
+            {
+                int tractorId = controller.tractorId;
+                TractorInfo tractorInfo = stepInfo.tractors[tractorId];
+                
+                Vector2Int newPos = new Vector2Int(tractorInfo.position[0], tractorInfo.position[1]);
+                Vector3 targetPos = farmController.GetWorldPositionFromGrid(newPos.x, newPos.y);
+                targetPos.y += tractorHeight;
+
+                controller.targetPosition = targetPos;
+                controller.gridPosition = newPos;
+                controller.currentTask = tractorInfo.task;
+                controller.UpdateResources(
+                    tractorInfo.water_level,
+                    tractorInfo.fuel_level,
+                    tractorInfo.wheat_level
+                );
+
+                Debug.Log($"Tractor {tractorId} at step {currentStep}: Position: {newPos}, Task: {tractorInfo.task}");
+            }
+
+            yield return new WaitForSeconds(currentStepDelay);
             currentStep++;
         }
 
+        Debug.Log($"Simulation complete. Remaining plants: {plants.Count}");
         isSimulationRunning = false;
     }
 
-    private void HandleTractorReachedTarget(Vector2Int gridPosition, int tractorId, string task) {
-        Debug.Log($"Tractor {tractorId} has reached its target");
-
-        if(plants.ContainsKey(gridPosition)) {
-
-            GameObject plant = plants[gridPosition];
-
-            switch (task)
-            {
-                
-                case "watering":
-                    // Change the color of the plant to indicate watering
-                    //MeshRenderer renderer = plant.GetComponentInChildren<MeshRenderer>();
-                    MeshRenderer[] renderers = plant.GetComponentsInChildren<MeshRenderer>();
-                    if(renderers.Length > 0) {
-                        foreach (MeshRenderer renderer in renderers) {
-                            Material newMaterial = new Material(renderer.material);
-                            newMaterial.color = Color.blue;
-                            renderer.material = newMaterial;
-                        }
-                    }
-                    Debug.Log($"Tractor {tractorId} watered plant at {gridPosition}");
-                    break;
-                case "harvesting":
-                    // Destroy the plant
-                    Destroy(plant);
-                    plants.Remove(gridPosition);
-                    Debug.Log($"Tractor {tractorId} harvested plant at {gridPosition}");
-                    break;
-            }
-        }
-    }
-
-    void UpdateTractorVisuals(GameObject tractor, StepInfo stepInfo, int tractorId)
+    private void HandleTractorReachedTarget(Vector2Int gridPosition, int tractorId, string task)
     {
-        // You can add visual feedback based on the tractor's task
-        // For example, different particle effects or color changes
-        switch (stepInfo.GetTractorTask(tractorId))
+        Debug.Log($"Tractor {tractorId} reached position {gridPosition} with task: {task}");
+
+        if (!plants.ContainsKey(gridPosition))
+        {
+            Debug.Log($"No plant found at position {gridPosition}");
+            return;
+        }
+
+        GameObject plant = plants[gridPosition];
+        TractorController tractor = tractorControllers[tractorId];
+
+        switch (task.ToLower())
         {
             case "watering":
-                // Maybe activate a water particle system
-                Debug.Log($"Tractor {tractorId} is watering");
+                if (tractor.waterLevel > 0)
+                {
+                    var renderers = plant.GetComponentsInChildren<MeshRenderer>();
+                    foreach (var renderer in renderers)
+                    {
+                        Material newMaterial = new Material(renderer.material);
+                        newMaterial.color = Color.blue;
+                        renderer.material = newMaterial;
+                    }
+                    Debug.Log($"Tractor {tractorId} watered plant at {gridPosition}");
+                }
                 break;
+
             case "harvesting":
-                // Maybe activate a harvesting animation
-                Debug.Log($"Tractor {tractorId} is harvesting");
+                if (tractor.wheatLevel < farmController.wheatCapacity && !harvestedPositions.Contains(gridPosition))
+                {
+                    Debug.Log($"Harvesting plant at {gridPosition}");
+                    Destroy(plant);
+                    plants.Remove(gridPosition);
+                    harvestedPositions.Add(gridPosition);
+                    Debug.Log($"Tractor {tractorId} harvested plant at {gridPosition}. Remaining plants: {plants.Count}");
+                }
                 break;
+
             case "depositing":
-                // Maybe change the tractor's appearance to show it's carrying wheat
-                Debug.Log($"Tractor {tractorId} is depositing");
+                Debug.Log($"Tractor {tractorId} depositing at {gridPosition}");
                 break;
         }
-
-        // You could also update UI elements showing water and fuel levels
-        // This would require adding UI elements to your scene
     }
 
     public void RestartSimulation()
     {
         StopAllCoroutines();
         isSimulationRunning = false;
-        StartCoroutine(RunSimulation());
+        InitializeVisualization();
+    }
+
+    void OnDisable()
+    {
+        StopAllCoroutines();
+        isSimulationRunning = false;
     }
 }
-
-// public class PositionDebugger : MonoBehaviour
-// {
-//     private Vector2Int gridPosition;
-
-//     public void SetGridPosition(Vector2Int pos)
-//     {
-//         gridPosition = pos;
-//     }
-
-//     void OnDrawGizmos()
-//     {
-//         // Draw a vertical line from the object to the ground
-//         Gizmos.color = Color.yellow;
-//         Vector3 position = transform.position;
-//         Gizmos.DrawLine(position, new Vector3(position.x, 0, position.z));
-
-//         // Draw position text
-//         #if UNITY_EDITOR
-//         UnityEditor.Handles.Label(position + Vector3.up * 0.5f, 
-//             $"Grid: {gridPosition.x},{gridPosition.y}\nWorld: {position}");
-//         #endif
-//     }
-// }
-
-
-

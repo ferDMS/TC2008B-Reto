@@ -329,7 +329,6 @@ RectTransform:
   - {fileID: 1084370934}
   - {fileID: 505582228}
   - {fileID: 1925840515}
-  - {fileID: 901931008}
   m_Father: {fileID: 1900286559}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -489,7 +488,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -845, y: 232}
+  m_AnchoredPosition: {x: -845, y: 179}
   m_SizeDelta: {x: 191.5826, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &505582229
@@ -522,7 +521,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -567,8 +566,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tractorTextUIList:
   - {fileID: 1084370935}
+  - {fileID: 505582230}
+  - {fileID: 1925840517}
   farmController: {fileID: 1664451088}
-  timeBetweenSteps: 1
+  updateInterval: 0.1
 --- !u!4 &705576446
 Transform:
   m_ObjectHideFlags: 0
@@ -584,87 +585,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &901931005
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 901931008}
-  - component: {fileID: 901931007}
-  - component: {fileID: 901931006}
-  m_Layer: 5
-  m_Name: TractorStats4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &901931006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 901931005}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 0
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 0
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 60
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 1
-    m_VerticalOverflow: 1
-    m_LineSpacing: 1
-  m_Text: 'Stats
-
-'
---- !u!222 &901931007
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 901931005}
-  m_CullTransparentMesh: 1
---- !u!224 &901931008
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 901931005}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -92.7}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 223935864}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -845, y: -317}
-  m_SizeDelta: {x: 191.5826, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1084370933
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,7 +644,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1509,12 +1429,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plantGridSize: 7
-  pathWidth: 2
+  pathWidth: 1
   numTractors: 1
-  waterCapacity: 10
-  fuelCapacity: 100
-  wheatCapacity: 7
-  steps: 200
+  waterCapacity: 51
+  fuelCapacity: 300
+  wheatCapacity: 25
+  steps: 300
   cellSize: 5
   stepsList: []
   showGridGizmos: 1
@@ -1542,6 +1462,7 @@ MonoBehaviour:
   stepDelay: 1
   tractorHeight: 1
   plantHeight: 0
+  currentStepDelay: 0
 --- !u!1 &1900286555
 GameObject:
   m_ObjectHideFlags: 0
@@ -1678,7 +1599,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -845, y: -54}
+  m_AnchoredPosition: {x: -845, y: -139}
   m_SizeDelta: {x: 191.5826, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1925840516
@@ -1711,7 +1632,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0

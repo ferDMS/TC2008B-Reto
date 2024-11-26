@@ -5,20 +5,23 @@ public class TractorController : MonoBehaviour
     public Vector3 targetPosition;
     public float moveSpeed = 5f;
 
-    // Add these fields to store tractor state
-    public int tractorId;                // Unique ID for the tractor
-    public Vector2Int gridPosition;      // Current grid position of the tractor
-    public string currentTask;           // Current task the tractor is performing
+    public int tractorId;
+    public Vector2Int gridPosition;
+    public string currentTask;
+    
+    // Add resource tracking
+    public int waterLevel;
+    public int fuelLevel;
+    public int wheatLevel;
 
     private bool hasReachedTarget = false;
 
-    // Declare a delegate and an event to notify when the tractor reaches its target position
     public delegate void TractorReachedTargetHandler(Vector2Int gridPosition, int tractorId, string task);
     public event TractorReachedTargetHandler OnTractorReachedTarget;
 
     void Update()
     {
-        if (transform.position != targetPosition)
+        if (transform.position != targetPosition && fuelLevel > 0)  // Only move if has fuel
         {
             hasReachedTarget = false;
 
@@ -33,20 +36,26 @@ public class TractorController : MonoBehaviour
                 transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, moveSpeed * Time.deltaTime);
             }
         }
-        else
+        else if (!hasReachedTarget)
         {
-            if (!hasReachedTarget)
-            {
-                hasReachedTarget = true;
-                // Tractor has just reached the target position
-                OnReachedTargetPosition();
-            }
+            hasReachedTarget = true;
+            OnReachedTargetPosition();
         }
+    }
+
+    // Update resource levels
+    public void UpdateResources(int water, int fuel, int wheat)
+    {
+        waterLevel = water;
+        fuelLevel = fuel;
+        wheatLevel = wheat;
     }
 
     void OnReachedTargetPosition()
     {
-        // Invoke the event to notify that the tractor has reached the target
-        OnTractorReachedTarget?.Invoke(gridPosition, tractorId, currentTask);
+        if (OnTractorReachedTarget != null)
+        {
+            OnTractorReachedTarget(gridPosition, tractorId, currentTask);
+        }
     }
 }

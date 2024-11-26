@@ -5,11 +5,11 @@
             {
                 "position": [
                     3,
-                    1
+                    8
                 ],
                 "task": "watering",
-                "water_level": 10,
-                "fuel_level": 99,
+                "water_level": 51,
+                "fuel_level": 299,
                 "wheat_level": 0
             }
         ]
@@ -20,11 +20,11 @@
             {
                 "position": [
                     3,
-                    2
+                    7
                 ],
                 "task": "watering",
-                "water_level": 9,
-                "fuel_level": 98,
+                "water_level": 50,
+                "fuel_level": 298,
                 "wheat_level": 0
             }
         ]
@@ -35,11 +35,11 @@
             {
                 "position": [
                     3,
-                    2
+                    7
                 ],
                 "task": "watering",
-                "water_level": 9,
-                "fuel_level": 97,
+                "water_level": 50,
+                "fuel_level": 297,
                 "wheat_level": 0
             }
         ]
@@ -49,12 +49,12 @@
         "tractors": [
             {
                 "position": [
-                    2,
-                    2
+                    3,
+                    6
                 ],
                 "task": "watering",
-                "water_level": 8,
-                "fuel_level": 96,
+                "water_level": 49,
+                "fuel_level": 296,
                 "wheat_level": 0
             }
         ]
@@ -64,12 +64,12 @@
         "tractors": [
             {
                 "position": [
-                    2,
-                    2
+                    3,
+                    6
                 ],
                 "task": "watering",
-                "water_level": 8,
-                "fuel_level": 95,
+                "water_level": 49,
+                "fuel_level": 295,
                 "wheat_level": 0
             }
         ]
@@ -79,12 +79,12 @@
         "tractors": [
             {
                 "position": [
-                    2,
-                    3
+                    3,
+                    5
                 ],
                 "task": "watering",
-                "water_level": 7,
-                "fuel_level": 94,
+                "water_level": 48,
+                "fuel_level": 294,
                 "wheat_level": 0
             }
         ]
@@ -94,12 +94,12 @@
         "tractors": [
             {
                 "position": [
-                    2,
-                    3
+                    3,
+                    5
                 ],
                 "task": "watering",
-                "water_level": 7,
-                "fuel_level": 93,
+                "water_level": 48,
+                "fuel_level": 293,
                 "wheat_level": 0
             }
         ]
@@ -110,11 +110,11 @@
             {
                 "position": [
                     3,
-                    3
+                    4
                 ],
                 "task": "watering",
-                "water_level": 6,
-                "fuel_level": 92,
+                "water_level": 47,
+                "fuel_level": 292,
                 "wheat_level": 0
             }
         ]
@@ -125,11 +125,11 @@
             {
                 "position": [
                     3,
-                    3
+                    4
                 ],
                 "task": "watering",
-                "water_level": 6,
-                "fuel_level": 91,
+                "water_level": 47,
+                "fuel_level": 291,
                 "wheat_level": 0
             }
         ]
@@ -139,12 +139,12 @@
         "tractors": [
             {
                 "position": [
-                    4,
+                    3,
                     3
                 ],
                 "task": "watering",
-                "water_level": 5,
-                "fuel_level": 90,
+                "water_level": 46,
+                "fuel_level": 290,
                 "wheat_level": 0
             }
         ]
@@ -154,12 +154,12 @@
         "tractors": [
             {
                 "position": [
-                    4,
+                    3,
                     3
                 ],
                 "task": "watering",
-                "water_level": 5,
-                "fuel_level": 89,
+                "water_level": 46,
+                "fuel_level": 289,
                 "wheat_level": 0
             }
         ]
@@ -169,12 +169,12 @@
         "tractors": [
             {
                 "position": [
-                    4,
+                    3,
                     2
                 ],
                 "task": "watering",
-                "water_level": 4,
-                "fuel_level": 88,
+                "water_level": 45,
+                "fuel_level": 288,
                 "wheat_level": 0
             }
         ]
@@ -184,12 +184,12 @@
         "tractors": [
             {
                 "position": [
-                    4,
+                    3,
                     2
                 ],
                 "task": "watering",
-                "water_level": 4,
-                "fuel_level": 87,
+                "water_level": 45,
+                "fuel_level": 287,
                 "wheat_level": 0
             }
         ]
@@ -199,12 +199,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    2
+                    3,
+                    1
                 ],
                 "task": "watering",
-                "water_level": 3,
-                "fuel_level": 86,
+                "water_level": 44,
+                "fuel_level": 286,
                 "wheat_level": 0
             }
         ]
@@ -214,12 +214,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    2
+                    3,
+                    1
                 ],
                 "task": "watering",
-                "water_level": 3,
-                "fuel_level": 85,
+                "water_level": 44,
+                "fuel_level": 285,
                 "wheat_level": 0
             }
         ]
@@ -229,12 +229,12 @@
         "tractors": [
             {
                 "position": [
-                    6,
-                    2
+                    2,
+                    1
                 ],
                 "task": "watering",
-                "water_level": 2,
-                "fuel_level": 84,
+                "water_level": 43,
+                "fuel_level": 284,
                 "wheat_level": 0
             }
         ]
@@ -244,12 +244,12 @@
         "tractors": [
             {
                 "position": [
-                    6,
-                    2
+                    2,
+                    1
                 ],
                 "task": "watering",
-                "water_level": 2,
-                "fuel_level": 83,
+                "water_level": 43,
+                "fuel_level": 283,
                 "wheat_level": 0
             }
         ]
@@ -259,12 +259,12 @@
         "tractors": [
             {
                 "position": [
-                    6,
-                    3
+                    1,
+                    1
                 ],
                 "task": "watering",
-                "water_level": 1,
-                "fuel_level": 82,
+                "water_level": 42,
+                "fuel_level": 282,
                 "wheat_level": 0
             }
         ]
@@ -274,12 +274,12 @@
         "tractors": [
             {
                 "position": [
-                    6,
-                    3
+                    1,
+                    1
                 ],
                 "task": "watering",
-                "water_level": 1,
-                "fuel_level": 81,
+                "water_level": 42,
+                "fuel_level": 281,
                 "wheat_level": 0
             }
         ]
@@ -289,12 +289,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    3
+                    1,
+                    2
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 80,
+                "water_level": 41,
+                "fuel_level": 280,
                 "wheat_level": 0
             }
         ]
@@ -304,12 +304,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    3
+                    1,
+                    2
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 79,
+                "water_level": 41,
+                "fuel_level": 279,
                 "wheat_level": 0
             }
         ]
@@ -319,12 +319,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    2,
+                    2
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 78,
+                "water_level": 40,
+                "fuel_level": 278,
                 "wheat_level": 0
             }
         ]
@@ -334,12 +334,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    2,
+                    2
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 77,
+                "water_level": 40,
+                "fuel_level": 277,
                 "wheat_level": 0
             }
         ]
@@ -349,12 +349,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    2,
+                    3
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 76,
+                "water_level": 39,
+                "fuel_level": 276,
                 "wheat_level": 0
             }
         ]
@@ -364,12 +364,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    2,
+                    3
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 75,
+                "water_level": 39,
+                "fuel_level": 275,
                 "wheat_level": 0
             }
         ]
@@ -379,12 +379,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    1,
+                    3
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 74,
+                "water_level": 38,
+                "fuel_level": 274,
                 "wheat_level": 0
             }
         ]
@@ -394,12 +394,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    1,
+                    3
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 73,
+                "water_level": 38,
+                "fuel_level": 273,
                 "wheat_level": 0
             }
         ]
@@ -409,12 +409,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
+                    1,
                     4
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 72,
+                "water_level": 37,
+                "fuel_level": 272,
                 "wheat_level": 0
             }
         ]
@@ -424,12 +424,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
+                    1,
                     4
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 71,
+                "water_level": 37,
+                "fuel_level": 271,
                 "wheat_level": 0
             }
         ]
@@ -439,12 +439,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
+                    2,
                     4
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 70,
+                "water_level": 36,
+                "fuel_level": 270,
                 "wheat_level": 0
             }
         ]
@@ -454,12 +454,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
+                    2,
                     4
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 69,
+                "water_level": 36,
+                "fuel_level": 269,
                 "wheat_level": 0
             }
         ]
@@ -469,12 +469,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    2,
+                    5
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 68,
+                "water_level": 35,
+                "fuel_level": 268,
                 "wheat_level": 0
             }
         ]
@@ -484,12 +484,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    2,
+                    5
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 67,
+                "water_level": 35,
+                "fuel_level": 267,
                 "wheat_level": 0
             }
         ]
@@ -499,12 +499,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    1,
+                    5
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 66,
+                "water_level": 34,
+                "fuel_level": 266,
                 "wheat_level": 0
             }
         ]
@@ -514,12 +514,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    1,
+                    5
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 65,
+                "water_level": 34,
+                "fuel_level": 265,
                 "wheat_level": 0
             }
         ]
@@ -529,12 +529,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    1,
+                    6
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 64,
+                "water_level": 33,
+                "fuel_level": 264,
                 "wheat_level": 0
             }
         ]
@@ -544,12 +544,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    1,
+                    6
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 63,
+                "water_level": 33,
+                "fuel_level": 263,
                 "wheat_level": 0
             }
         ]
@@ -559,12 +559,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    2,
+                    6
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 62,
+                "water_level": 32,
+                "fuel_level": 262,
                 "wheat_level": 0
             }
         ]
@@ -574,12 +574,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    2,
+                    6
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 61,
+                "water_level": 32,
+                "fuel_level": 261,
                 "wheat_level": 0
             }
         ]
@@ -589,12 +589,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    2,
+                    7
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 60,
+                "water_level": 31,
+                "fuel_level": 260,
                 "wheat_level": 0
             }
         ]
@@ -604,12 +604,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    2,
+                    7
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 59,
+                "water_level": 31,
+                "fuel_level": 259,
                 "wheat_level": 0
             }
         ]
@@ -619,12 +619,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    1,
+                    7
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 58,
+                "water_level": 30,
+                "fuel_level": 258,
                 "wheat_level": 0
             }
         ]
@@ -634,12 +634,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    1,
+                    7
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 57,
+                "water_level": 30,
+                "fuel_level": 257,
                 "wheat_level": 0
             }
         ]
@@ -649,12 +649,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    2,
+                    7
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 56,
+                "water_level": 30,
+                "fuel_level": 256,
                 "wheat_level": 0
             }
         ]
@@ -664,12 +664,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    3,
+                    7
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 55,
+                "water_level": 30,
+                "fuel_level": 255,
                 "wheat_level": 0
             }
         ]
@@ -679,12 +679,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    4,
+                    7
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 54,
+                "water_level": 29,
+                "fuel_level": 254,
                 "wheat_level": 0
             }
         ]
@@ -694,12 +694,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    4,
+                    7
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 53,
+                "water_level": 29,
+                "fuel_level": 253,
                 "wheat_level": 0
             }
         ]
@@ -709,12 +709,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    4,
+                    6
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 52,
+                "water_level": 28,
+                "fuel_level": 252,
                 "wheat_level": 0
             }
         ]
@@ -724,12 +724,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    4,
+                    6
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 51,
+                "water_level": 28,
+                "fuel_level": 251,
                 "wheat_level": 0
             }
         ]
@@ -739,12 +739,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    4,
+                    5
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 50,
+                "water_level": 27,
+                "fuel_level": 250,
                 "wheat_level": 0
             }
         ]
@@ -754,12 +754,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    4,
+                    5
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 49,
+                "water_level": 27,
+                "fuel_level": 249,
                 "wheat_level": 0
             }
         ]
@@ -769,12 +769,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
+                    4,
                     4
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 48,
+                "water_level": 26,
+                "fuel_level": 248,
                 "wheat_level": 0
             }
         ]
@@ -784,12 +784,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
+                    4,
                     4
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 47,
+                "water_level": 26,
+                "fuel_level": 247,
                 "wheat_level": 0
             }
         ]
@@ -799,12 +799,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    4,
+                    3
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 46,
+                "water_level": 25,
+                "fuel_level": 246,
                 "wheat_level": 0
             }
         ]
@@ -814,12 +814,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    4,
+                    3
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 45,
+                "water_level": 25,
+                "fuel_level": 245,
                 "wheat_level": 0
             }
         ]
@@ -829,12 +829,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    4,
+                    2
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 44,
+                "water_level": 24,
+                "fuel_level": 244,
                 "wheat_level": 0
             }
         ]
@@ -844,12 +844,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    4,
+                    2
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 43,
+                "water_level": 24,
+                "fuel_level": 243,
                 "wheat_level": 0
             }
         ]
@@ -859,12 +859,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    4,
+                    1
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 42,
+                "water_level": 23,
+                "fuel_level": 242,
                 "wheat_level": 0
             }
         ]
@@ -874,12 +874,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    4,
+                    1
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 41,
+                "water_level": 23,
+                "fuel_level": 241,
                 "wheat_level": 0
             }
         ]
@@ -890,11 +890,11 @@
             {
                 "position": [
                     5,
-                    4
+                    1
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 40,
+                "water_level": 22,
+                "fuel_level": 240,
                 "wheat_level": 0
             }
         ]
@@ -905,11 +905,11 @@
             {
                 "position": [
                     5,
-                    4
+                    1
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 39,
+                "water_level": 22,
+                "fuel_level": 239,
                 "wheat_level": 0
             }
         ]
@@ -919,12 +919,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    1
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 38,
+                "water_level": 21,
+                "fuel_level": 238,
                 "wheat_level": 0
             }
         ]
@@ -934,12 +934,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    1
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 37,
+                "water_level": 21,
+                "fuel_level": 237,
                 "wheat_level": 0
             }
         ]
@@ -949,12 +949,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    1
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 36,
+                "water_level": 20,
+                "fuel_level": 236,
                 "wheat_level": 0
             }
         ]
@@ -964,12 +964,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    1
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 35,
+                "water_level": 20,
+                "fuel_level": 235,
                 "wheat_level": 0
             }
         ]
@@ -979,12 +979,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    2
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 34,
+                "water_level": 19,
+                "fuel_level": 234,
                 "wheat_level": 0
             }
         ]
@@ -994,12 +994,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    2
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 33,
+                "water_level": 19,
+                "fuel_level": 233,
                 "wheat_level": 0
             }
         ]
@@ -1009,12 +1009,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    2
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 32,
+                "water_level": 18,
+                "fuel_level": 232,
                 "wheat_level": 0
             }
         ]
@@ -1024,12 +1024,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    2
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 31,
+                "water_level": 18,
+                "fuel_level": 231,
                 "wheat_level": 0
             }
         ]
@@ -1040,11 +1040,11 @@
             {
                 "position": [
                     5,
-                    4
+                    2
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 30,
+                "water_level": 17,
+                "fuel_level": 230,
                 "wheat_level": 0
             }
         ]
@@ -1055,11 +1055,11 @@
             {
                 "position": [
                     5,
-                    4
+                    2
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 29,
+                "water_level": 17,
+                "fuel_level": 229,
                 "wheat_level": 0
             }
         ]
@@ -1070,11 +1070,11 @@
             {
                 "position": [
                     5,
-                    4
+                    3
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 28,
+                "water_level": 16,
+                "fuel_level": 228,
                 "wheat_level": 0
             }
         ]
@@ -1085,11 +1085,11 @@
             {
                 "position": [
                     5,
-                    4
+                    3
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 27,
+                "water_level": 16,
+                "fuel_level": 227,
                 "wheat_level": 0
             }
         ]
@@ -1099,12 +1099,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    3
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 26,
+                "water_level": 15,
+                "fuel_level": 226,
                 "wheat_level": 0
             }
         ]
@@ -1114,12 +1114,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    3
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 25,
+                "water_level": 15,
+                "fuel_level": 225,
                 "wheat_level": 0
             }
         ]
@@ -1129,12 +1129,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    3
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 24,
+                "water_level": 14,
+                "fuel_level": 224,
                 "wheat_level": 0
             }
         ]
@@ -1144,12 +1144,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    3
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 23,
+                "water_level": 14,
+                "fuel_level": 223,
                 "wheat_level": 0
             }
         ]
@@ -1159,12 +1159,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
+                    7,
                     4
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 22,
+                "water_level": 13,
+                "fuel_level": 222,
                 "wheat_level": 0
             }
         ]
@@ -1174,12 +1174,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
+                    7,
                     4
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 21,
+                "water_level": 13,
+                "fuel_level": 221,
                 "wheat_level": 0
             }
         ]
@@ -1189,12 +1189,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
+                    6,
                     4
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 20,
+                "water_level": 12,
+                "fuel_level": 220,
                 "wheat_level": 0
             }
         ]
@@ -1204,12 +1204,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
+                    6,
                     4
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 19,
+                "water_level": 12,
+                "fuel_level": 219,
                 "wheat_level": 0
             }
         ]
@@ -1223,8 +1223,8 @@
                     4
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 18,
+                "water_level": 11,
+                "fuel_level": 218,
                 "wheat_level": 0
             }
         ]
@@ -1238,8 +1238,8 @@
                     4
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 17,
+                "water_level": 11,
+                "fuel_level": 217,
                 "wheat_level": 0
             }
         ]
@@ -1250,11 +1250,11 @@
             {
                 "position": [
                     5,
-                    4
+                    5
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 16,
+                "water_level": 10,
+                "fuel_level": 216,
                 "wheat_level": 0
             }
         ]
@@ -1265,11 +1265,11 @@
             {
                 "position": [
                     5,
-                    4
+                    5
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 15,
+                "water_level": 10,
+                "fuel_level": 215,
                 "wheat_level": 0
             }
         ]
@@ -1279,12 +1279,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    5
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 14,
+                "water_level": 9,
+                "fuel_level": 214,
                 "wheat_level": 0
             }
         ]
@@ -1294,12 +1294,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    5
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 13,
+                "water_level": 9,
+                "fuel_level": 213,
                 "wheat_level": 0
             }
         ]
@@ -1309,12 +1309,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    5
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 12,
+                "water_level": 8,
+                "fuel_level": 212,
                 "wheat_level": 0
             }
         ]
@@ -1324,12 +1324,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    5
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 11,
+                "water_level": 8,
+                "fuel_level": 211,
                 "wheat_level": 0
             }
         ]
@@ -1339,12 +1339,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    6
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 10,
+                "water_level": 7,
+                "fuel_level": 210,
                 "wheat_level": 0
             }
         ]
@@ -1354,12 +1354,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    6
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 9,
+                "water_level": 7,
+                "fuel_level": 209,
                 "wheat_level": 0
             }
         ]
@@ -1369,12 +1369,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    6
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 8,
+                "water_level": 6,
+                "fuel_level": 208,
                 "wheat_level": 0
             }
         ]
@@ -1384,12 +1384,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    6
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 7,
+                "water_level": 6,
+                "fuel_level": 207,
                 "wheat_level": 0
             }
         ]
@@ -1400,11 +1400,11 @@
             {
                 "position": [
                     5,
-                    4
+                    6
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 6,
+                "water_level": 5,
+                "fuel_level": 206,
                 "wheat_level": 0
             }
         ]
@@ -1415,11 +1415,11 @@
             {
                 "position": [
                     5,
-                    4
+                    6
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 5,
+                "water_level": 5,
+                "fuel_level": 205,
                 "wheat_level": 0
             }
         ]
@@ -1430,11 +1430,11 @@
             {
                 "position": [
                     5,
-                    4
+                    7
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 4,
+                "water_level": 4,
+                "fuel_level": 204,
                 "wheat_level": 0
             }
         ]
@@ -1445,11 +1445,11 @@
             {
                 "position": [
                     5,
-                    4
+                    7
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 3,
+                "water_level": 4,
+                "fuel_level": 203,
                 "wheat_level": 0
             }
         ]
@@ -1459,12 +1459,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    7
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 2,
+                "water_level": 3,
+                "fuel_level": 202,
                 "wheat_level": 0
             }
         ]
@@ -1474,12 +1474,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    7
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 1,
+                "water_level": 3,
+                "fuel_level": 201,
                 "wheat_level": 0
             }
         ]
@@ -1489,12 +1489,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    7
                 ],
                 "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
+                "water_level": 2,
+                "fuel_level": 200,
                 "wheat_level": 0
             }
         ]
@@ -1504,12 +1504,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    7
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 199,
                 "wheat_level": 0
             }
         ]
@@ -1519,13 +1519,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    6
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 198,
+                "wheat_level": 1
             }
         ]
     },
@@ -1534,13 +1534,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    6
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 197,
+                "wheat_level": 1
             }
         ]
     },
@@ -1549,13 +1549,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    5
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 196,
+                "wheat_level": 2
             }
         ]
     },
@@ -1564,13 +1564,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    5
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 195,
+                "wheat_level": 2
             }
         ]
     },
@@ -1579,13 +1579,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
+                    7,
                     4
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 194,
+                "wheat_level": 3
             }
         ]
     },
@@ -1594,13 +1594,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
+                    7,
                     4
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 193,
+                "wheat_level": 3
             }
         ]
     },
@@ -1609,13 +1609,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    3
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 192,
+                "wheat_level": 4
             }
         ]
     },
@@ -1624,13 +1624,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    3
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 191,
+                "wheat_level": 4
             }
         ]
     },
@@ -1639,13 +1639,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    2
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 190,
+                "wheat_level": 5
             }
         ]
     },
@@ -1654,13 +1654,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    2
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 189,
+                "wheat_level": 5
             }
         ]
     },
@@ -1669,13 +1669,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    1
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 188,
+                "wheat_level": 6
             }
         ]
     },
@@ -1684,13 +1684,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    1
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 187,
+                "wheat_level": 6
             }
         ]
     },
@@ -1699,13 +1699,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    1
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 186,
+                "wheat_level": 7
             }
         ]
     },
@@ -1714,13 +1714,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    1
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 185,
+                "wheat_level": 7
             }
         ]
     },
@@ -1730,12 +1730,12 @@
             {
                 "position": [
                     5,
-                    4
+                    1
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 184,
+                "wheat_level": 8
             }
         ]
     },
@@ -1745,12 +1745,12 @@
             {
                 "position": [
                     5,
-                    4
+                    1
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 183,
+                "wheat_level": 8
             }
         ]
     },
@@ -1759,13 +1759,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    4,
+                    1
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 182,
+                "wheat_level": 9
             }
         ]
     },
@@ -1774,13 +1774,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    4,
+                    1
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 181,
+                "wheat_level": 9
             }
         ]
     },
@@ -1789,13 +1789,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    3,
+                    1
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 180,
+                "wheat_level": 10
             }
         ]
     },
@@ -1804,13 +1804,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    3,
+                    1
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 179,
+                "wheat_level": 10
             }
         ]
     },
@@ -1819,13 +1819,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    2,
+                    1
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 178,
+                "wheat_level": 11
             }
         ]
     },
@@ -1834,13 +1834,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    2,
+                    1
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 177,
+                "wheat_level": 11
             }
         ]
     },
@@ -1849,13 +1849,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    1,
+                    1
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 176,
+                "wheat_level": 12
             }
         ]
     },
@@ -1864,13 +1864,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    1,
+                    1
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 175,
+                "wheat_level": 12
             }
         ]
     },
@@ -1879,13 +1879,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    1,
+                    2
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 174,
+                "wheat_level": 13
             }
         ]
     },
@@ -1894,13 +1894,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    1,
+                    2
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 173,
+                "wheat_level": 13
             }
         ]
     },
@@ -1909,13 +1909,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    2,
+                    2
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 172,
+                "wheat_level": 14
             }
         ]
     },
@@ -1924,13 +1924,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    2,
+                    2
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 171,
+                "wheat_level": 14
             }
         ]
     },
@@ -1939,13 +1939,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    3,
+                    2
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 170,
+                "wheat_level": 15
             }
         ]
     },
@@ -1954,13 +1954,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    3,
+                    2
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 169,
+                "wheat_level": 15
             }
         ]
     },
@@ -1969,13 +1969,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    4,
+                    2
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 168,
+                "wheat_level": 16
             }
         ]
     },
@@ -1984,13 +1984,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    4,
+                    2
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 167,
+                "wheat_level": 16
             }
         ]
     },
@@ -2000,12 +2000,12 @@
             {
                 "position": [
                     5,
-                    4
+                    2
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 166,
+                "wheat_level": 17
             }
         ]
     },
@@ -2015,12 +2015,12 @@
             {
                 "position": [
                     5,
-                    4
+                    2
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 165,
+                "wheat_level": 17
             }
         ]
     },
@@ -2029,13 +2029,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    2
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 164,
+                "wheat_level": 18
             }
         ]
     },
@@ -2044,13 +2044,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    2
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 163,
+                "wheat_level": 18
             }
         ]
     },
@@ -2059,13 +2059,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    3
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 162,
+                "wheat_level": 19
             }
         ]
     },
@@ -2074,13 +2074,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    3
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 161,
+                "wheat_level": 19
             }
         ]
     },
@@ -2090,12 +2090,12 @@
             {
                 "position": [
                     5,
-                    4
+                    3
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 160,
+                "wheat_level": 20
             }
         ]
     },
@@ -2105,12 +2105,12 @@
             {
                 "position": [
                     5,
-                    4
+                    3
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 159,
+                "wheat_level": 20
             }
         ]
     },
@@ -2119,13 +2119,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    4,
+                    3
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 158,
+                "wheat_level": 21
             }
         ]
     },
@@ -2134,13 +2134,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    4,
+                    3
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 157,
+                "wheat_level": 21
             }
         ]
     },
@@ -2149,13 +2149,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    3,
+                    3
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 156,
+                "wheat_level": 22
             }
         ]
     },
@@ -2164,13 +2164,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    3,
+                    3
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 155,
+                "wheat_level": 22
             }
         ]
     },
@@ -2179,13 +2179,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    2,
+                    3
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 154,
+                "wheat_level": 23
             }
         ]
     },
@@ -2194,13 +2194,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    2,
+                    3
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 153,
+                "wheat_level": 23
             }
         ]
     },
@@ -2209,13 +2209,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    1,
+                    3
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 152,
+                "wheat_level": 24
             }
         ]
     },
@@ -2224,13 +2224,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    1,
+                    3
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 151,
+                "wheat_level": 24
             }
         ]
     },
@@ -2239,13 +2239,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
+                    1,
                     4
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 150,
+                "wheat_level": 25
             }
         ]
     },
@@ -2254,13 +2254,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
+                    1,
                     4
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "depositing",
+                "water_level": 2,
+                "fuel_level": 149,
+                "wheat_level": 25
             }
         ]
     },
@@ -2269,13 +2269,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    1,
+                    3
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "depositing",
+                "water_level": 2,
+                "fuel_level": 148,
+                "wheat_level": 25
             }
         ]
     },
@@ -2284,13 +2284,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    1,
+                    2
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "depositing",
+                "water_level": 2,
+                "fuel_level": 147,
+                "wheat_level": 25
             }
         ]
     },
@@ -2299,13 +2299,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    1,
+                    1
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "depositing",
+                "water_level": 2,
+                "fuel_level": 146,
+                "wheat_level": 25
             }
         ]
     },
@@ -2314,13 +2314,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    1,
+                    0
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "depositing",
+                "water_level": 2,
+                "fuel_level": 145,
+                "wheat_level": 25
             }
         ]
     },
@@ -2329,13 +2329,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    2,
+                    0
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "depositing",
+                "water_level": 2,
+                "fuel_level": 144,
+                "wheat_level": 25
             }
         ]
     },
@@ -2344,13 +2344,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    3,
+                    0
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "depositing",
+                "water_level": 2,
+                "fuel_level": 143,
+                "wheat_level": 25
             }
         ]
     },
@@ -2359,13 +2359,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    4,
+                    0
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "depositing",
+                "water_level": 2,
+                "fuel_level": 142,
+                "wheat_level": 25
             }
         ]
     },
@@ -2375,12 +2375,12 @@
             {
                 "position": [
                     5,
-                    4
+                    0
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "depositing",
+                "water_level": 2,
+                "fuel_level": 141,
+                "wheat_level": 25
             }
         ]
     },
@@ -2389,13 +2389,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    0
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "depositing",
+                "water_level": 2,
+                "fuel_level": 140,
+                "wheat_level": 25
             }
         ]
     },
@@ -2404,13 +2404,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    0
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "depositing",
+                "water_level": 2,
+                "fuel_level": 139,
+                "wheat_level": 25
             }
         ]
     },
@@ -2419,12 +2419,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    8,
+                    0
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
+                "task": "depositing",
+                "water_level": 2,
+                "fuel_level": 138,
                 "wheat_level": 0
             }
         ]
@@ -2434,12 +2434,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    8,
+                    0
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 137,
                 "wheat_level": 0
             }
         ]
@@ -2449,12 +2449,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    7,
+                    0
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 136,
                 "wheat_level": 0
             }
         ]
@@ -2464,12 +2464,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    0
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 135,
                 "wheat_level": 0
             }
         ]
@@ -2479,12 +2479,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    1
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 134,
                 "wheat_level": 0
             }
         ]
@@ -2494,12 +2494,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    2
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 133,
                 "wheat_level": 0
             }
         ]
@@ -2509,12 +2509,12 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    3
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 132,
                 "wheat_level": 0
             }
         ]
@@ -2524,13 +2524,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
+                    6,
                     4
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 131,
+                "wheat_level": 1
             }
         ]
     },
@@ -2539,13 +2539,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
+                    6,
                     4
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 130,
+                "wheat_level": 1
             }
         ]
     },
@@ -2557,10 +2557,10 @@
                     5,
                     4
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 129,
+                "wheat_level": 2
             }
         ]
     },
@@ -2572,10 +2572,10 @@
                     5,
                     4
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 128,
+                "wheat_level": 2
             }
         ]
     },
@@ -2584,13 +2584,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
+                    4,
                     4
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 127,
+                "wheat_level": 3
             }
         ]
     },
@@ -2599,13 +2599,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
+                    4,
                     4
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 126,
+                "wheat_level": 3
             }
         ]
     },
@@ -2614,13 +2614,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
+                    3,
                     4
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 125,
+                "wheat_level": 4
             }
         ]
     },
@@ -2629,13 +2629,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
+                    3,
                     4
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 124,
+                "wheat_level": 4
             }
         ]
     },
@@ -2644,13 +2644,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
+                    2,
                     4
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 123,
+                "wheat_level": 5
             }
         ]
     },
@@ -2659,13 +2659,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
+                    2,
                     4
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 122,
+                "wheat_level": 5
             }
         ]
     },
@@ -2674,13 +2674,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    2,
+                    5
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 121,
+                "wheat_level": 6
             }
         ]
     },
@@ -2689,13 +2689,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    2,
+                    5
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 120,
+                "wheat_level": 6
             }
         ]
     },
@@ -2704,13 +2704,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    1,
+                    5
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 119,
+                "wheat_level": 7
             }
         ]
     },
@@ -2719,13 +2719,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    1,
+                    5
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 118,
+                "wheat_level": 7
             }
         ]
     },
@@ -2734,13 +2734,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    1,
+                    6
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 117,
+                "wheat_level": 8
             }
         ]
     },
@@ -2749,13 +2749,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    1,
+                    6
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 116,
+                "wheat_level": 8
             }
         ]
     },
@@ -2764,13 +2764,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    2,
+                    6
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 115,
+                "wheat_level": 9
             }
         ]
     },
@@ -2779,13 +2779,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    2,
+                    6
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 114,
+                "wheat_level": 9
             }
         ]
     },
@@ -2794,13 +2794,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    3,
+                    6
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 113,
+                "wheat_level": 10
             }
         ]
     },
@@ -2809,13 +2809,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    3,
+                    6
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 112,
+                "wheat_level": 10
             }
         ]
     },
@@ -2824,13 +2824,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    3,
+                    5
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 111,
+                "wheat_level": 11
             }
         ]
     },
@@ -2839,13 +2839,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    3,
+                    5
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 110,
+                "wheat_level": 11
             }
         ]
     },
@@ -2854,13 +2854,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    4,
+                    5
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 109,
+                "wheat_level": 12
             }
         ]
     },
@@ -2869,13 +2869,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    4,
+                    5
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 108,
+                "wheat_level": 12
             }
         ]
     },
@@ -2885,12 +2885,12 @@
             {
                 "position": [
                     5,
-                    4
+                    5
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 107,
+                "wheat_level": 13
             }
         ]
     },
@@ -2900,12 +2900,12 @@
             {
                 "position": [
                     5,
-                    4
+                    5
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 106,
+                "wheat_level": 13
             }
         ]
     },
@@ -2914,13 +2914,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    5
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 105,
+                "wheat_level": 14
             }
         ]
     },
@@ -2929,13 +2929,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    5
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 104,
+                "wheat_level": 14
             }
         ]
     },
@@ -2944,13 +2944,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    6
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 103,
+                "wheat_level": 15
             }
         ]
     },
@@ -2959,13 +2959,13 @@
         "tractors": [
             {
                 "position": [
-                    5,
-                    4
+                    6,
+                    6
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 102,
+                "wheat_level": 15
             }
         ]
     },
@@ -2975,12 +2975,12 @@
             {
                 "position": [
                     5,
-                    4
+                    6
                 ],
-                "task": "watering",
-                "water_level": 0,
-                "fuel_level": 0,
-                "wheat_level": 0
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 101,
+                "wheat_level": 16
             }
         ]
     },
@@ -2990,12 +2990,1512 @@
             {
                 "position": [
                     5,
+                    6
+                ],
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 100,
+                "wheat_level": 16
+            }
+        ]
+    },
+    {
+        "step": 200,
+        "tractors": [
+            {
+                "position": [
+                    4,
+                    6
+                ],
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 99,
+                "wheat_level": 17
+            }
+        ]
+    },
+    {
+        "step": 201,
+        "tractors": [
+            {
+                "position": [
+                    4,
+                    6
+                ],
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 98,
+                "wheat_level": 17
+            }
+        ]
+    },
+    {
+        "step": 202,
+        "tractors": [
+            {
+                "position": [
+                    4,
+                    7
+                ],
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 97,
+                "wheat_level": 18
+            }
+        ]
+    },
+    {
+        "step": 203,
+        "tractors": [
+            {
+                "position": [
+                    4,
+                    7
+                ],
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 96,
+                "wheat_level": 18
+            }
+        ]
+    },
+    {
+        "step": 204,
+        "tractors": [
+            {
+                "position": [
+                    3,
+                    7
+                ],
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 95,
+                "wheat_level": 19
+            }
+        ]
+    },
+    {
+        "step": 205,
+        "tractors": [
+            {
+                "position": [
+                    3,
+                    7
+                ],
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 94,
+                "wheat_level": 19
+            }
+        ]
+    },
+    {
+        "step": 206,
+        "tractors": [
+            {
+                "position": [
+                    2,
+                    7
+                ],
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 93,
+                "wheat_level": 20
+            }
+        ]
+    },
+    {
+        "step": 207,
+        "tractors": [
+            {
+                "position": [
+                    2,
+                    7
+                ],
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 92,
+                "wheat_level": 20
+            }
+        ]
+    },
+    {
+        "step": 208,
+        "tractors": [
+            {
+                "position": [
+                    1,
+                    7
+                ],
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 91,
+                "wheat_level": 21
+            }
+        ]
+    },
+    {
+        "step": 209,
+        "tractors": [
+            {
+                "position": [
+                    1,
+                    7
+                ],
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 90,
+                "wheat_level": 21
+            }
+        ]
+    },
+    {
+        "step": 210,
+        "tractors": [
+            {
+                "position": [
+                    2,
+                    7
+                ],
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 89,
+                "wheat_level": 21
+            }
+        ]
+    },
+    {
+        "step": 211,
+        "tractors": [
+            {
+                "position": [
+                    3,
+                    7
+                ],
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 88,
+                "wheat_level": 21
+            }
+        ]
+    },
+    {
+        "step": 212,
+        "tractors": [
+            {
+                "position": [
+                    4,
+                    7
+                ],
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 87,
+                "wheat_level": 21
+            }
+        ]
+    },
+    {
+        "step": 213,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    7
+                ],
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 86,
+                "wheat_level": 22
+            }
+        ]
+    },
+    {
+        "step": 214,
+        "tractors": [
+            {
+                "position": [
+                    5,
+                    7
+                ],
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 85,
+                "wheat_level": 22
+            }
+        ]
+    },
+    {
+        "step": 215,
+        "tractors": [
+            {
+                "position": [
+                    6,
+                    7
+                ],
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 84,
+                "wheat_level": 23
+            }
+        ]
+    },
+    {
+        "step": 216,
+        "tractors": [
+            {
+                "position": [
+                    6,
+                    7
+                ],
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 83,
+                "wheat_level": 23
+            }
+        ]
+    },
+    {
+        "step": 217,
+        "tractors": [
+            {
+                "position": [
+                    7,
+                    7
+                ],
+                "task": "harvesting",
+                "water_level": 2,
+                "fuel_level": 82,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 218,
+        "tractors": [
+            {
+                "position": [
+                    7,
+                    7
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 81,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 219,
+        "tractors": [
+            {
+                "position": [
+                    7,
+                    6
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 80,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 220,
+        "tractors": [
+            {
+                "position": [
+                    7,
+                    5
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 79,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 221,
+        "tractors": [
+            {
+                "position": [
+                    7,
                     4
                 ],
-                "task": "watering",
-                "water_level": 0,
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 78,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 222,
+        "tractors": [
+            {
+                "position": [
+                    7,
+                    3
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 77,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 223,
+        "tractors": [
+            {
+                "position": [
+                    7,
+                    2
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 76,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 224,
+        "tractors": [
+            {
+                "position": [
+                    7,
+                    1
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 75,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 225,
+        "tractors": [
+            {
+                "position": [
+                    7,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 74,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 226,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 73,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 227,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 72,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 228,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 71,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 229,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 70,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 230,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 69,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 231,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 68,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 232,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 67,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 233,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 66,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 234,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 65,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 235,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 64,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 236,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 63,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 237,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 62,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 238,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 61,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 239,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 60,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 240,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 59,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 241,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 58,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 242,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 57,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 243,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 56,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 244,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 55,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 245,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 54,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 246,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 53,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 247,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 52,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 248,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 51,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 249,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 50,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 250,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 49,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 251,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 48,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 252,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 47,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 253,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 46,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 254,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 45,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 255,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 44,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 256,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 43,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 257,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 42,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 258,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 41,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 259,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 40,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 260,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 39,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 261,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 38,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 262,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 37,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 263,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 36,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 264,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 35,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 265,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 34,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 266,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 33,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 267,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 32,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 268,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 31,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 269,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 30,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 270,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 29,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 271,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 28,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 272,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 27,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 273,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 26,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 274,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 25,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 275,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 24,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 276,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 23,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 277,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 22,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 278,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 21,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 279,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 20,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 280,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 19,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 281,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 18,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 282,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 17,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 283,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 16,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 284,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 15,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 285,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 14,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 286,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 13,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 287,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 12,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 288,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 11,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 289,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 10,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 290,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 9,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 291,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 8,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 292,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 7,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 293,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 6,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 294,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 5,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 295,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 4,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 296,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 3,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 297,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 2,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 298,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
+                "fuel_level": 1,
+                "wheat_level": 24
+            }
+        ]
+    },
+    {
+        "step": 299,
+        "tractors": [
+            {
+                "position": [
+                    8,
+                    0
+                ],
+                "task": "idle",
+                "water_level": 2,
                 "fuel_level": 0,
-                "wheat_level": 0
+                "wheat_level": 24
             }
         ]
     }

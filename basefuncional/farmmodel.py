@@ -267,7 +267,7 @@ def initialize_values():
             'num_tractors': data['num_tractors'],
             'water_capacity': data['water_capacity'],
             'fuel_capacity': data['fuel_capacity'],
-            'wheat_capacity': PLANT_GRID_SIZE,
+            'wheat_capacity': data['wheat_capacity'],
             'steps': data['steps']
         }
 

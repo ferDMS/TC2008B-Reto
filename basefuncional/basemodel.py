@@ -341,11 +341,11 @@ def draw_grid(model):
 
 # Initial parameters
 parameters = {
-    'num_tractors': 4,
-    'water_capacity': 20,
+    'num_tractors': 1,
+    'water_capacity': 100,
     'fuel_capacity': 200,
     'wheat_capacity': 7,
-    'steps': 300,
+    'steps': 200,
 }
 
 # Create and initialize the model
