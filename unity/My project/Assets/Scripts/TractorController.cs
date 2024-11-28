@@ -21,14 +21,14 @@ public class TractorController : MonoBehaviour
 
     void Update()
     {
-        if (transform.position != targetPosition && fuelLevel > 0) // solo se mueve si tiene combustible
+        if (transform.position != targetPosition && fuelLevel > 0)  // Only move if has fuel
         {
             hasReachedTarget = false;
 
-            // se mueve hacia la posición objetivo
+            // Move towards target position
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
-            // se rota hacia la dirección de movimiento
+            // Rotate tractor to face movement direction
             Vector3 moveDirection = (targetPosition - transform.position).normalized;
             if (moveDirection != Vector3.zero)
             {
