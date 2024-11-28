@@ -16,7 +16,7 @@
 - **Python** (Versión 3.8 o superior)  
   [Descargar Python](https://www.python.org/downloads/)
 - **Pip** (Administrador de paquetes de Python, incluido con Python)
-- **Unity 3D** (Versión recomendada: 2022.3.51f1
+- **Unity 3D** (Versión recomendada: 2022.3.51f1)
 
 ### Librerías Python
 Ejecuta el siguiente comando para instalar las dependencias:
