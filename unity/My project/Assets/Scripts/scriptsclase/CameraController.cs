@@ -10,14 +10,14 @@ public class CameraMovement : MonoBehaviour
     
     private void Update()
     {
-        // Mouse rotation
+        // Rotacion de mouse
         rotationX -= Input.GetAxis("Mouse Y") * mouseSensitivity;
         rotationY += Input.GetAxis("Mouse X") * mouseSensitivity;
         
         rotationX = Mathf.Clamp(rotationX, -90f, 90f);
         transform.rotation = Quaternion.Euler(rotationX, rotationY, 0);
         
-        // WASD/Arrow movement in looking direction
+        //Movimiento con WASD y Flechas
         Vector3 input = new Vector3(
             Input.GetAxisRaw("Horizontal"),
             0,
