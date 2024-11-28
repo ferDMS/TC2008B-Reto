@@ -8,7 +8,7 @@ public class StepInfo
     public int step;
     public List<TractorInfo> tractors;
 
-    // Methods to access tractor info (optional)
+
     public Vector2Int GetTractorPosition(int tractorId)
     {
         return this.tractors[tractorId].tractorPosition;
@@ -30,10 +30,9 @@ public class TractorInfo
     public int fuel_level;
     public int wheat_level;
 
-    // This property doesn't need to be serialized, so it's fine to keep it as a property
+  
     public Vector2Int tractorPosition => new Vector2Int(position[0], position[1]);
 
-    // Constructor (optional if you don't use it)
     public TractorInfo(int[] position, string task, int water, int fuel, int wheat)
     {
         this.position = position;

@@ -5,7 +5,6 @@ using System.Text;
 using System.Collections.Generic;
 using UnityEngine.Events;
 
-// Define the InitializeData class outside of the coroutine
 [System.Serializable]
 public class InitializeData
 {
@@ -61,7 +60,7 @@ public class FarmController : MonoBehaviour
     void Start()
     {
         Debug.Log($"Starting FarmController with values: Grid Size={plantGridSize}, Path Width={pathWidth}, Num Tractors={numTractors}");
-        // InitializePlane();
+      
         StartCoroutine(SendDataToAPI());
     }
 
@@ -95,7 +94,7 @@ public class FarmController : MonoBehaviour
         {
             Debug.LogError(request.error);
             Debug.LogError($"Response: {request.downloadHandler.text}");
-            yield break;  // Correctly terminating the coroutine on error
+            yield break;  
         }
 
         Debug.Log("Received: " + request.downloadHandler.text);
@@ -120,7 +119,7 @@ public class FarmController : MonoBehaviour
         catch (System.Exception e)
         {
             Debug.LogError("Error parsing JSON: " + e.Message);
-            yield break;  // Correctly terminating the coroutine on exception
+            yield break; 
         }
     }
 
@@ -153,21 +152,21 @@ public class FarmController : MonoBehaviour
         {
             for (int z = 0; z < totalGridSize; z++)
             {
-                // Determine if this is a path or plant area
+             // determinar si es parte del camino o no
                 bool isPath = x < pathWidth || x >= totalGridSize - pathWidth || 
                             z < pathWidth || z >= totalGridSize - pathWidth;
 
-                // Set color based on area type
+                // color en base a area
                 Gizmos.color = isPath ? pathColor : plantAreaColor;
 
-                // Calculate position
+                // posicion
                 Vector3 position = GetWorldPositionFromGrid(x, z);
                 
-                // Draw cube
+                // grid
                 Gizmos.DrawWireCube(position + Vector3.up * (gizmoHeight / 2f), 
                     new Vector3(cellSize, gizmoHeight, cellSize));
 
-                // Optionally draw position labels for debugging
+
                 #if UNITY_EDITOR
                 UnityEditor.Handles.Label(position + Vector3.up * gizmoHeight, 
                     $"({x},{z})");

@@ -33,14 +33,13 @@ public class TractorUIManager : MonoBehaviour
         Debug.Log("Initializing TractorUIManager");
         tractorControllers.Clear();
         
-        // Wait one frame to ensure all tractors are created
+       
         StartCoroutine(InitializeAfterDelay());
     }
 
     System.Collections.IEnumerator InitializeAfterDelay()
     {
-        yield return null; // Wait one frame
-
+        yield return null; 
         GameObject tractorsParent = GameObject.Find("Tractors");
         if (tractorsParent != null)
         {
@@ -67,7 +66,7 @@ public class TractorUIManager : MonoBehaviour
         }
 
         isInitialized = true;
-        UpdateTractorUI(); // Initial update
+        UpdateTractorUI(); 
     }
 
     void Update()
@@ -156,13 +155,13 @@ public class TractorUIManager : MonoBehaviour
         switch (task.ToLower())
         {
             case "watering":
-                return new Color(0.2f, 0.6f, 1f); // Light blue
+                return new Color(0.2f, 0.6f, 1f); // blue
             case "harvesting":
-                return new Color(0.4f, 0.8f, 0.4f); // Light green
+                return new Color(0.4f, 0.8f, 0.4f); // light green
             case "depositing":
-                return new Color(1f, 0.8f, 0.2f); // Gold
+                return new Color(1f, 0.8f, 0.2f); //gold
             case "idle":
-                return new Color(0.7f, 0.7f, 0.7f); // Gray
+                return new Color(0.7f, 0.7f, 0.7f); // gray
             default:
                 return Color.white;
         }
