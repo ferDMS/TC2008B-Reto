@@ -10,18 +10,6 @@
 
 ---
 
-## Introducción
-
-Este proyecto consiste en el desarrollo de una simulación multiagente que modela el comportamiento de tractores cosechadores (**Harvesters**) y camiones contenedores (**Containers**) en un entorno agrícola. Los agentes interactúan de forma autónoma en tareas de cosecha, almacenamiento y transporte. La simulación también incluye elementos adicionales como:
-
-- **Plots** (áreas de cultivo)
-- **Silo** (almacenamiento central)
-- Puntos de abastecimiento de combustible
-
-La implementación se realizó utilizando **Python**, **Unity 3D** y un sistema de comunicación mediante una **REST API**.
-
----
-
 ## Requisitos Previos para clonar el repositorio
 
 ### Software Requerido
