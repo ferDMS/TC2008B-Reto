@@ -9,7 +9,7 @@ public class TractorController : MonoBehaviour
     public Vector2Int gridPosition;
     public string currentTask;
     
-    // Add resource tracking
+
     public int waterLevel;
     public int fuelLevel;
     public int wheatLevel;
@@ -21,14 +21,14 @@ public class TractorController : MonoBehaviour
 
     void Update()
     {
-        if (transform.position != targetPosition && fuelLevel > 0)  // Only move if has fuel
+        if (transform.position != targetPosition && fuelLevel > 0)  // moverse si hay gasolina
         {
             hasReachedTarget = false;
 
-            // Move towards target position
+            // ir hacia posicion meta
             transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
 
-            // Rotate tractor to face movement direction
+            // rotar tractor hacia la direccion del movimiento
             Vector3 moveDirection = (targetPosition - transform.position).normalized;
             if (moveDirection != Vector3.zero)
             {
@@ -43,7 +43,7 @@ public class TractorController : MonoBehaviour
         }
     }
 
-    // Update resource levels
+    // update de recursos
     public void UpdateResources(int water, int fuel, int wheat)
     {
         waterLevel = water;
