@@ -61,7 +61,7 @@ Puedes personalizar los parámetros de la simulación enviando una solicitud POS
 
 Ejecuta el servidor Flask con:
 ```bash
-python api/<nombre_del_archivo>.py
+python api/api.py
 ```
 
 El servidor estará disponible en: http://127.0.0.1:5000.
